@@ -1,5 +1,6 @@
-a{
+div > a{
     font-size: 18pt;
+    padding: 10px;
 }
 
 a:link {
