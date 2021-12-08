@@ -7,6 +7,11 @@ body {
     padding-bottom: 3rem;
     color: #5a5a5a;
   }
+
+i{
+  color: aliceblue;
+  float: left;
+}
   
 .marketing .col-lg-4{
     object-fit: cover;
@@ -35,7 +40,19 @@ body {
     height: 15rem;
   }
 
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
 
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
   /*adattamento desktop*/
   @media screen and (min-width: 768px){
 
