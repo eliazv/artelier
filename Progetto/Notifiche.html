@@ -18,39 +18,48 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-12">
-          <nav class="navbar navbar-dark bg-dark" style="padding: 10px; margin-top: 0px; margin-left: 0px;">
-            
-          <img src="Immagini/logobiancocut.png" class="d-block w-25" alt="..." style="margin: 0px; padding: 0px;"   >
-              
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+          <div class="col-12">
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="HomePage.html">Home</a>
-              </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="#">Categorie</a>
-                    <a class="nav-link" href="#">Artisti</a>
-                    <a class="nav-link" href="login.html">Account</a>
-                    <a class="nav-link" href="Cart.html">Carrello</a>
-                    <a class="nav-link" href="#">Notifiche</a>
-                    <a class="nav-link" href="#">Chi Siamo</a>
-              </li>
-              
-              </ul>
-              <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
-            </div>
-          </nav>		
-        </div>   
-    </div>
+            <nav class="navbar navbar-dark bg-dark fixed-top">
+              <div class="container-fluid">
+                <a href="HomePage2.html"><img src="Immagini/logobiancocut.png" class="d-block w-25" alt="..." style="margin: 0px; padding: 0px;"></a>
 
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: white;">Menù</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="HomePage2.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                            <a class="nav-link" href="#">Categorie</a>
+                            <a class="nav-link" href="#">Artisti</a>
+                            <a class="nav-link" href="login.html">Login</a>
+                            <a class="nav-link" href="Utente.html">Account</a>
+                            <a class="nav-link" href="Registrazione.html">Registrazione</a>
+                            <a class="nav-link" href="Cart.html">Carrello</a>
+                            <a class="nav-link" href="Notifiche.html">Notifiche</a>
+                            <a class="nav-link" href="#">Chi Siamo</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-light" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </nav>
+
+
+          </div>   
+      </div>
 
 <h1 style="font-size: 35px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding: 10px"><br>Centro Notifiche</h1><br><br>
 
