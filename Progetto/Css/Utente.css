@@ -1,8 +1,12 @@
 div > a{
-    font-size: 18pt;
+    font-size: 16pt;
     padding: 10px;
 }
 
+label{
+  font-size: medium;
+  padding-top: 5px;
+}
 a:link {
     color:black;
     background-color: transparent;
