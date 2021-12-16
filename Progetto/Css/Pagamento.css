@@ -1,0 +1,14 @@
+.inlineimage {
+    margin-right: 15px;
+    margin-left: 15px
+}
+
+.images {
+    display: inline-block;
+    height: auto;
+    width: 13%;
+    margin-left: 6%;
+    margin-right: 5%;
+
+    text-align: center
+}
