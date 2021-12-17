@@ -153,6 +153,10 @@ i{
     margin-right: .75rem;
     margin-left: .75rem;
   }
+  .marketing a{
+    color: #5a5a5a;
+    text-decoration: none;
+  }
   /* rtl:end:ignore */
   
   
@@ -160,7 +164,7 @@ i{
   ------------------------- */
   
   .featurette-divider {
-    margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+    margin: 40px 0; /* Space out the Bootstrap <hr> more */
   }
   
   /* Thin out the marketing headings */
