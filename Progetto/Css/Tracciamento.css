@@ -1,6 +1,6 @@
 body {
     letter-spacing: 0.8px;
-    background: linear-gradient(0deg, #fff, 50%, #697285);
+    background: linear-gradient(0deg, #fff, 50%, #676f80);
     background-repeat: no-repeat
 }
 
@@ -19,8 +19,9 @@ p {
 }
 
 a {
+    font-size: large;
     text-decoration: none !important;
-    color: #651FFF !important
+    color: white !important
 }
 
 .bold {
@@ -45,16 +46,16 @@ a {
 }
 
 .btn-outline-primary:hover {
-    background-color: #415a57 !important;
+    background-color: #4c6662 !important;
     color: #fff !important;
-    border: 1.3px solid #4bb8a9
+    border: 1.3px solid #50726d
 }
 
 .btn-outline-primary:focus,
 .btn-outline-primary:active {
     outline: none !important;
     box-shadow: none !important;
-    border-color: #42A5F5 !important
+    border-color: #505b64 !important
 }
 
 #progressbar {
@@ -139,7 +140,7 @@ a {
 
 .card {
     background-color: #fff;
-    box-shadow: 2px 4px 15px 0px rgb(0, 108, 170);
+    box-shadow: 2px 4px 15px 0px rgb(81, 101, 112);
     z-index: 0
 }
 
