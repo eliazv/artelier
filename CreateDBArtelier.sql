@@ -7,7 +7,8 @@ CREATE TABLE Artista(
     codArtista int PRIMARY KEY AUTO_INCREMENT,
     nome varchar(50),
     cognome varchar(50),
-    dataNascita date
+    dataNascita date,
+    descrizione varchar(200)
 );
 
 CREATE TABLE Utente(
@@ -46,6 +47,8 @@ CREATE TABLE Quadro(
     dimensione varchar(20),
     artista int,
     nomeCorrArt varchar(50),
+    prezzo double,
+    descrizione varchar(200),
     FOREIGN KEY(artista) REFERENCES Artista(codArtista),
     FOREIGN KEY(nomeCorrArt) REFERENCES CorrenteArtistica(nomeCorrArt)
 );
