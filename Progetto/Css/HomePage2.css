@@ -19,6 +19,9 @@ body {
   top: 25%;
   width: 580px;
   z-index: 10;
+  padding-left: 20px;
+  padding-right: 20px;
+
 }
 
 .title{
