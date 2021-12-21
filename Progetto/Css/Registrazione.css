@@ -1,11 +1,9 @@
-a{
-    color: black;
-}
-div > a{
-    font-size: 16pt;
-    padding: 10px;
-}
-label{
-    font-size: medium;
-    padding-top: 5px;
+body {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #5a5a5a;
+  }
+
+  .offcanvas{
+    background:#303030;
   }
