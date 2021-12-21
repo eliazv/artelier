@@ -1,14 +1,13 @@
 CREATE TABLE Pagamento(
     codPagamento int PRIMARY KEY AUTO_INCREMENT,
-    importo double
+    importo float(7,2)
 );
 
 CREATE TABLE Artista(
-    codArtista int PRIMARY KEY AUTO_INCREMENT,
+    cognome varchar(50) PRIMARY KEY,
     nome varchar(50),
-    cognome varchar(50),
-    dataNascita date,
-    descrizione varchar(200)
+    immagine varchar(500),
+    descrizione varchar(500)
 );
 
 CREATE TABLE Utente(
@@ -20,7 +19,8 @@ CREATE TABLE Utente(
 
 CREATE TABLE CorrenteArtistica(
     nomeCorrArt varchar(20) PRIMARY KEY,
-    descrizione varchar(200)
+    immagine varchar(500),
+    descrizione varchar(1000)
 );
 
 CREATE TABLE Carrello(
@@ -42,30 +42,30 @@ CREATE TABLE Ordine(
 );
 
 CREATE TABLE Quadro(
-    codQuadro int PRIMARY KEY AUTO_INCREMENT,
-    titolo varchar(50),
+    titolo varchar(50) PRIMARY KEY,
+    immagine varchar(500),
     dimensione varchar(20),
-    artista int,
+    artista varchar(50),
     nomeCorrArt varchar(50),
-    prezzo double,
-    descrizione varchar(200),
-    FOREIGN KEY(artista) REFERENCES Artista(codArtista),
+    prezzo float(7,2),
+    descrizione varchar(500),
+    FOREIGN KEY(artista) REFERENCES Artista(cognome),
     FOREIGN KEY(nomeCorrArt) REFERENCES CorrenteArtistica(nomeCorrArt)
 );
 
 CREATE TABLE Quadro_Ordinato(
     codQuadroOrdinato int PRIMARY KEY AUTO_INCREMENT,
     quantita int,
-    codQuadro int,
-    FOREIGN KEY(codQuadro) REFERENCES Quadro(codQuadro)
+    titolo varchar(50),
+    FOREIGN KEY(titolo) REFERENCES Quadro(titolo)
 );
 
 CREATE TABLE Compone(
     codCarrello int,
-    codQuadro int,
-    PRIMARY KEY (codCarrello, codQuadro),
+    titolo varchar(50),
+    PRIMARY KEY (codCarrello, titolo),
     FOREIGN KEY(codCarrello) REFERENCES Carrello(codCarrello),
-    FOREIGN KEY(codQuadro) REFERENCES Quadro(codQuadro)
+    FOREIGN KEY(titolo) REFERENCES Quadro(titolo)
 );
 
 CREATE TABLE Notifica(
