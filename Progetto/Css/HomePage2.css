@@ -4,8 +4,7 @@
 
 body {
   padding-top: 3rem;
-  padding-bottom: 3rem;
-  color: #5a5a5a;
+  color: rgb(90, 90, 90);
 }
 
 .slider-ctn{
@@ -224,6 +223,7 @@ ul {
 .card li{
 margin: 6px;
 }
+
 ul>a:hover {
   color: #957bda;
   cursor: pointer
@@ -253,11 +253,6 @@ hr {
 
 .footer-text > h1, h5{
 color: #fff;
-}
-
-.footer-text > h1{
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
 }
 
 .card a{
