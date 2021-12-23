@@ -21,3 +21,60 @@ a:link {
     color:black;
     background-color: transparent;
   }
+
+
+  .card {
+    padding: 4% 7%;
+    color: #646771;
+    background-color: #16151a;
+    border-radius: 0px
+    
+  
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+  }
+  
+  
+  .card li{
+  margin: 6px;
+  }
+  
+  ul>a:hover {
+    color: #957bda;
+    cursor: pointer
+  }
+  
+  hr {
+    border-width: 3px
+  }
+  
+  .social>i {
+    padding: 5%;
+    font-size: 26px
+  }
+  
+  .social>i:hover {
+    color: #957bda;
+    cursor: pointer
+  }
+  
+  .policy>div {
+    padding: 4px
+  }
+  
+  .divider {
+    border-top: 2px solid rgba(189, 196, 203, 0.5);
+  }
+  
+  .footer-text > h1, h5{
+  color: #fff;
+  }
+  
+  .card a{
+  text-decoration: none;
+  color: #646771;
+  }
