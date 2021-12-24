@@ -99,6 +99,17 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getCompone($codCarrello){
+        $query = "SELECT titolo, quantita FROM compone WHERE codCarrello = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i',$codCarrello);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
    
 }
 ?>

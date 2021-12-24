@@ -100,7 +100,7 @@
                     <div class="carousel-inner">
                         <?php foreach($templateParams["4Quadri"] as $quadro): ?>
 
-                            <div class="carousel-item"><!-- per il primo ci deve essere carousel-item-active-->
+                            <div class="carousel-item-active"><!-- per il primo ci deve essere carousel-item-active-->
                             <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="...">
 
                         </div>
