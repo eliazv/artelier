@@ -20,7 +20,7 @@
   <body>
     
 <header>
-    <div class="container-fluid">
+    <div class="container-fluid" style="padding: 0px">
         <div class="row">
             <div class="col-12">
 
@@ -80,12 +80,12 @@
 
               <p class="text-center"><a class="btn btn-secondary" href="#">Mostra Opere &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
-            <div class="col-2"></div> 
+            <div class="col-1"></div> 
 
            <?php endforeach; ?>  
 
           </div><!-- /.row -->
-
+        </div>
            <!-- FOOTER -->
 
   <div class="container-fluid mt-5" style="padding: 0px; text-align: center;">
