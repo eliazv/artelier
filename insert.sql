@@ -9,11 +9,11 @@ values ("giovanni@ciao.com", "ciao", "giovanni", "maffi");
 
 Insert into artista()
 values ("Picasso", "Pablo", "picasso.jpg", 
-"Nato il 25 ottobre 1881 è uno dei più grandi artisti mai esistiti, fondatore del cubismo. ");
+"Nato il 25 ottobre 1881 e' uno dei piu' grandi artisti mai esistiti, fondatore del cubismo. ");
 
 Insert into artista()
-values ("Dalì", "Salvador", "dali.jpg", 
-"Lo spagnolo Salvador Dalí (Figueres, 1904-1989) è considerato uno dei più importanti artisti del XX secolo, ed uno degli esponenti di punta del Surrealismo.");
+values ("Dali'", "Salvador", "dali.jpg", 
+"Lo spagnolo Salvador Dali' (Figueres, 1904-1989) e' considerato uno dei piu' importanti artisti del XX secolo, ed uno degli esponenti di punta del Surrealismo.");
 
 Insert into artista()
 values ("Van Gogh", "Vincent", "vangogh.jpg", 
@@ -31,7 +31,7 @@ values ("Da Vinci", "Leonardo", "leodavinci.jpg",
 
 
 insert into CorrenteArtistica()
-values ("Cubismo", "cubismo.jpg", "Cubismo è il termine col quale si è soliti rappresentare una corrente artistica e culturale ben riconoscibile, distinta e fondante rispetto a molte altre correnti e movimenti che si sarebbero successivamente sviluppate. Tuttavia il cubismo non è un movimento capeggiato da un fondatore e non ha una direzione unitaria.");
+values ("Cubismo", "cubismo.jpg", "Cubismo e' il termine col quale si e' soliti rappresentare una corrente artistica e culturale ben riconoscibile, distinta e fondante rispetto a molte altre correnti e movimenti che si sarebbero successivamente sviluppate. Tuttavia il cubismo non è un movimento capeggiato da un fondatore e non ha una direzione unitaria.");
 
 insert into CorrenteArtistica()
 values ("Espressionismo", "espressionismo.jpg", "Espressionismo bella corrente");
@@ -50,7 +50,7 @@ Insert into quadro()
 values ("Notte stellata","Nottestellata.jpg", "200x100", "Van Gogh", "Cubismo", "199.99", "bel quadro");
 
 Insert into quadro()
-values ("La persistenza della memoria","tempo.jpg", "200x100", "Dal�", "Cubismo", "179.99", "bel quadro");
+values ("La persistenza della memoria","tempo.jpg", "200x100", "Dali'", "Cubismo", "179.99", "bel quadro");
 
 Insert into quadro()
 values ("La dama con l'ermellino","damaermellino.jpg", "200x100", "Da Vinci", "Cubismo", "279.99", "bel quadro");
@@ -62,5 +62,8 @@ values ("Per te", "consigli quadri pkwfwlfwn", '2021-12-20 18:00:00', false , "e
 insert into Carrello(email)
 values("elia@ciao.com");
 
-insert into Compone(codCarrello, titolo)
-values (1, "Guernica");
+insert into Compone()
+values (1, "Guernica", 2);
+
+insert into Compone()
+values (1, "L'urlo", 1);

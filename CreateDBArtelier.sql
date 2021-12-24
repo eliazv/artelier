@@ -63,6 +63,7 @@ CREATE TABLE Quadro_Ordinato(
 CREATE TABLE Compone(
     codCarrello int,
     titolo varchar(50),
+    quantita int,
     PRIMARY KEY (codCarrello, titolo),
     FOREIGN KEY(codCarrello) REFERENCES Carrello(codCarrello),
     FOREIGN KEY(titolo) REFERENCES Quadro(titolo)
