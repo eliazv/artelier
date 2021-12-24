@@ -1,7 +1,7 @@
 <?php
 session_start();
-//define("UPLOAD_DIR", "./upload/");
+define("UPLOAD_DIR", "../Immagini/");
 //require_once("utils/functions.php");
-require_once("db/database.php");
-$dbh = new DatabaseHelper("localhost", "root", "", "artelier", 3306);
+require_once("database.php");
+$dbh = new DatabaseHelper("localhost", "root", "", "artelier",3306);
 ?>

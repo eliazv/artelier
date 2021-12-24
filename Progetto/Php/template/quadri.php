@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="Css/Quadri.css" rel="stylesheet">
+    <link href="../Css/Quadri.css" rel="stylesheet">
   </head>
   <body>
     
@@ -27,7 +27,7 @@
               <nav class="navbar navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
 
-                  <a href="HomePage2.html"><img src="Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
+                  <a href="HomePage2.html"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
 
                   <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -68,13 +68,15 @@
 
         <div class="container" style="margin-top: 100px;">
           <h1 style="margin-bottom: 15px;">Tutti i nostri Quadri</h1>
+
           <div class="row d-flex justify-content-center g-1">
           <?php foreach($templateParams["quadri"] as $quadro): ?>
+            
             <div class="col-lg-4">
-                  <div class="product text-center"> <img src=" <?php $quadro["immagine"]; ?> width="250">
+                  <div class="product text-center"> <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" alt="" width="250" />
                       <div class="about text-left px-3">
-                          <h4><?php $quadro["titolo"]; ?> </h4> <span class="text-muted"><?php $quadro["artista"]; ?> </span>
-                          <h3><?php $quadro["prezzo"]; ?> </h3>
+                          <h4><?php echo $quadro["titolo"]; ?> </h4> <span class="text-muted"><?php echo $quadro["artista"]; ?> </span>
+                          <h3><?php echo $quadro["prezzo"]; ?> </h3>
                         </div> <a href="Quadro.html"><span class="dot"><span class="inner-dot"><i class="fa fa-plus"></i></span></span></a>                  </div>
               </div>
             <?php endforeach; ?>

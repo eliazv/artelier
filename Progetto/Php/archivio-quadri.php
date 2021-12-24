@@ -3,8 +3,9 @@ require_once 'bootstrap.php';
 
 //Base Template
 $templateParams["titolo"] = "ArtElier - Quadri";
-$templateParams["nome"] = "lista-quadri.php";
-$templateParams["quadri"] = $dbh->getQuadri();
+$templateParams["nome"] = "";
 
+$templateParams["quadri"] = $dbh->getQuadri();
+//var_dump($templateParams);
 require 'template/quadri.php';
 ?>
