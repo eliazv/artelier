@@ -40,11 +40,31 @@ class DatabaseHelper{
 
     //N QUADRI RANDOM (home.html)
     public function getRandomQuadri($n){
-        $stmt = $this->db->prepare("SELECT titolo, immagine, autore FROM quadro ORDER BY RAND() LIMIT ?");
+        $stmt = $this->db->prepare("SELECT titolo, immagine, artista FROM quadro ORDER BY RAND() LIMIT ?");
         $stmt->bind_param('i',$n);
         $stmt->execute();
         $result = $stmt->get_result();
 
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+     //N ARTISTI RANDOM (home.html)
+     public function getRandomArtisti($n){
+        $stmt = $this->db->prepare("SELECT nome, cognome, immagine FROM artista ORDER BY RAND() LIMIT ?");
+        $stmt->bind_param('i',$n);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+         //N ARTISTI RANDOM (home.html)
+    public function getRandomCategorie($n){
+        $stmt = $this->db->prepare("SELECT nomeCorrArt, immagine FROM correnteartistica ORDER BY RAND() LIMIT ?");
+        $stmt->bind_param('i',$n);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
