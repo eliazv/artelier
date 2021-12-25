@@ -1,11 +1,11 @@
 Insert into utente()
-values ("elia@ciao.com", "ciao", "elia", "zavatta");
+values ("elia@ciao.com", "ciao", "elia", "zavatta", "via verdi 1", "Italia", 47035);
 
 Insert into utente()
-values ("pietro@ciao.com", "ciao", "pietro", "lelli");
+values ("pietro@ciao.com", "ciao", "pietro", "lelli", "via verdi 2", "Italia", 47122);
 
 Insert into utente()
-values ("giovanni@ciao.com", "ciao", "giovanni", "maffi");
+values ("giovanni@ciao.com", "ciao", "giovanni", "maffi", "via rossi 12", "Italia", 47065);
 
 Insert into artista()
 values ("Picasso", "Pablo", "picasso.jpg", 
@@ -58,6 +58,10 @@ values ("La dama con l'ermellino","damaermellino.jpg", "200x100", "Da Vinci", "C
 
 insert into notifica(titolo, testo, dataeora, visualizzato, email)
 values ("Per te", "consigli quadri pkwfwlfwn", '2021-12-20 18:00:00', false , "elia@ciao.com");
+
+
+insert into notifica(titolo, testo, dataeora, visualizzato, email)
+values ("Ordine Confermato", "Abbiamo confermato il tuo ordine, il pacco verrà spedito a breve", '2021-12-20 19:00:00', true , "elia@ciao.com");
 
 insert into Carrello(email)
 values("elia@ciao.com");

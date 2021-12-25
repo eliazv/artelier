@@ -14,7 +14,10 @@ CREATE TABLE Utente(
     email varchar(50) PRIMARY KEY,
     passwordd varchar(50),
     nome varchar(50),
-    cognome varchar(50)
+    cognome varchar(50),
+    indirizzo varchar(150),
+    paese varchar(50),
+    cap int
 );
 
 CREATE TABLE CorrenteArtistica(

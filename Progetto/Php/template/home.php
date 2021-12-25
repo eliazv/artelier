@@ -27,7 +27,7 @@
               <nav class="navbar navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
 
-                  <a href="home2.php"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
+                  <a href="HomePage2.html"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
 
                   <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -50,7 +50,7 @@
                               <a class="nav-link" href="Cart.html"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
                               <a class="nav-link" href="Categorie.html"> &nbsp; Categorie</a>
                               <a class="nav-link" href="Artisti.html"> &nbsp; Artisti</a>
-                              <a class="nav-link" href="home2.php#chisiamo"> &nbsp; Chi Siamo</a>
+                              <a class="nav-link" href="HomePage2.html#chisiamo"> &nbsp; Chi Siamo</a>
                         </li>
                       </ul>
                       <form class="d-flex">
@@ -81,12 +81,12 @@
     <h2 class="title">PITTURA</h2>
     <h2 class="subtitle">Le migliori repliche dei quadri più famosi.</h2>
     <div class="button">
-        <a href="archivio-quadri.php">Esplora<i class="icon icon-ico-arrow-new-right"></i></a>
+        <a href="Quadri.html">Esplora<i class="icon icon-ico-arrow-new-right"></i></a>
     </div>
 </div>
 </section>
 
-<div class="row">
+        <div class="row">
             <div class="col-12">
               <div id="carosello">
                 <h1 style="padding-bottom: 30px; padding-left: 90px; padding-top: 50px;"><br>Nuovi Arrivi</h1>
@@ -102,13 +102,15 @@
                         <?php foreach($templateParams["4Quadri"] as $quadro): ?>
                           <?php if($first == true): 
                             $first = false;
-                          ?>                              
-                          <div class="carousel-item-active">
-                          <?php else: ?>
+                            ?>
+                              
+                              
+                              <div class="carousel-item-active">
+                                <?php else: ?>
                           
-                            <div class="carousel-item">
-                          <?php endif; ?>
-                          <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="...">
+                              <div class="carousel-item">
+                            <?php endif; ?>
+                            <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="...">
 
                         </div>
 
@@ -166,10 +168,9 @@
 
     <h1>I nostri quadri</h1>
 
-    <?php $right = true; $num = 0;
+    <?php $right = true; 
     
-    foreach($templateParams["4Quadri"] as $quadro): 
-      $num +=1;?>
+    foreach($templateParams["4Quadri"] as $quadro): ?>
     
     <?php if($right == true):
       $right = false;
@@ -185,9 +186,10 @@
       </div>
     </div>
 
+    <hr class="featurette-divider">
+
     <?php else:
-      $right = true;
-      ?>
+      $right = true; ?>
       <div class="row featurette">
       
       <div class="col-7">
@@ -199,24 +201,17 @@
         <p class="lead"><?php echo $quadro["artista"] ?></p>
       </div>
     </div>
-<?php endif; ?>
+    <hr class="featurette-divider">
 
-    <?php if($num != 4):?>
-      <hr class="featurette-divider">
-      <?php endif; ?>
-    
-    
+    <?php endif; ?>
     <?php endforeach; ?>
 
     
-    <div class="row">
-      <div class="col-9"></div>
-        <div class="col-2">
-            <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="archivio-quadri.php">Mostra tutti</a></button>
-        </div>
-    </div>
     
-        
+        <div class="col-9"></div>
+        <div class="col-2">
+            <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="Quadri.html">Mostra tutti</a></button>
+        </div>
       </div>
 
 
@@ -235,12 +230,29 @@
 <?php endforeach; ?>
 
 <div class="row">
-      <div class="col-9"></div>
-        <div class="col-2">
-            <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="archivio-categorie.php">Mostra tutte</a></button>
-        </div>
-    </div>
+  <div class="col-12">
+    <a href="HomePage2.html"><img src="Immagini/cubismo.jpg" alt="" class="rounded mx-auto d-block";  style=" margin: 20px; max-height: 300px; max-width:90%;"> </a>
+  </div>
 </div>
+
+<div class="row">
+  <div class="col-12">
+    <a href="HomePage2.html"><img src="Immagini/espressionismo.jpg" alt="" class="rounded mx-auto d-block";  style=" margin: 20px; max-height: 300px; max-width: 90%;"> </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <a href="HomePage2.html"> <img src="Immagini/futurismo.jpg" alt="" class="rounded mx-auto d-block";  style=" margin: 20px; max-height: 300px; max-width: 90%;"></a>
+  </div>
+  <div class="col-9"></div>
+        <div class="col-2">
+            <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="Categorie.html">Mostra tutte</a></button>
+        </div>
+</div>
+
+</div>
+
 
     <!-- /END THE FEATURETTES -->
 
@@ -265,10 +277,10 @@
             <div class="col-md-3">
                 <h5 class="heading" style="margin-top: 15px;">Pagine</h5>
                 <ul>
-                  <a href="home2.php"><li>Home</li></a>
-                  <a href="archivio-quadri.php"><li>Quadri</li></a>
-                  <a href="archivio-artisti.php"><li>Artisti</li></a>
-                  <a href="archivio-categorie.php"><li>Categorie</li></a>
+                  <a href="HomePage2.html"><li>Home</li></a>
+                  <a href="Quadri.html"><li>Quadri</li></a>
+                  <a href="Artisti.html"><li>Artisti</li></a>
+                  <a href="Categorie.html"><li>Categorie</li></a>
                 </ul>
             </div>
             

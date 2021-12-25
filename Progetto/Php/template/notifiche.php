@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="Css/Notifiche.css" rel="stylesheet">
+    <link href="../Css/Notifiche.css" rel="stylesheet">
   </head>
   <body>
     
@@ -28,7 +28,7 @@
                 <nav class="navbar navbar-dark bg-dark fixed-top">
                   <div class="container-fluid">
   
-                    <a href="HomePage2.html"><img src="Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
+                    <a href="HomePage2.html"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
   
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                       <span class="navbar-toggler-icon"></span>
@@ -69,9 +69,17 @@
 
 <h1 style="font-size: 35px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding: 10px"><br><i class="fa fa-bell" style="color:gray;"></i>&nbsp;Notifiche</h1><br><br>
 
+
+<!--scorrere dall'ultima notifica alla prima, non così!!-->
+<?php foreach($templateParams["notifica"] as $notifica): 
+    $visualizzato="alert alert-secondary";
+    if($notifica["visualizzato"]==0):
+        $visualizzato="alert alert-primary";
+    endif; ?>
+
 <div class="row justify-content-center">
   <div class="col-8">
-    <div class="alert alert-primary" role="alert">
+    <div class="<?php echo $visualizzato?>" role="alert">
     <details>
       <summary>
         
@@ -79,11 +87,11 @@
 <div class="row">
   <div class="col-12 col-md-8">
     
-    <h3>Ordine Consegnato</h2>
+    <h3><?php echo $notifica["titolo"] ?></h2>
   </div> 
 
   <div class="col-6 col-md-4">
-    <label for="fname">1 minuto fa </label>
+    <label for="fname"><?php echo $notifica["dataeora"] ?> </label>
   </div>   
 </div>
 
@@ -91,7 +99,7 @@
 
       <div class="row justify-content-center">
         <div class="col-12">
-          <label for="fname">Ordine 123 confermato. testo della notifica.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </label>
+          <label for="fname"><?php echo $notifica["testo"] ?> </label>
           
         </div>   
       </div>
@@ -102,97 +110,13 @@
 </div>
 </div>
 
-
-<div class="row justify-content-center">
-  <div class="col-8">
-    <div class="alert alert-primary" role="alert">
-    <details>
-      <summary>
-        
-<div class="row">
-  <div class="col-12 col-md-8">
-    <h3>Ordine Spedito</h2>
-  </div> 
-
-  <div class="col-6 col-md-4">
-    <label for="fname">4 Novembre </label>
-  </div>   
-</div>
-
-      </summary>
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <label for="fname">Ordine 123 confermato. testo della notifica.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </label>
-          
-        </div>   
-      </div>
-    </details>
-    </div>
-    <hr class="rounded">
-  </div> 
-</div>
-</div>
+<?php endforeach; ?>
 
 
 
-<div class="row justify-content-center">
-  <div class="col-8">
-    <div class="alert alert-secondary" role="alert">
-    <details>
-      <summary>
-        
-<div class="row">
-  <div class="col-12 col-md-8">
-    <h3>Ordine Confermato </h2>
-  </div> 
-
-  <div class="col-6 col-md-4">
-    <label for="fname">2 Ottobre </label>
-  </div>   
-</div>
-
-      </summary>
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <label for="fname">Ordine 123 confermato. testo della notifica.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </label>
-          
-        </div>   
-      </div>
-    </details>
-    </div>
-    <hr class="rounded">
-  </div> 
-</div>
 
 
-<div class="row justify-content-center">
-  <div class="col-8">
-    <div class="alert alert-secondary" role="alert">
-    <details>
-      <summary>
-        
-<div class="row">
-  <div class="col-12 col-md-8">
-    <h3>Sconti autunnali </h2>
-  </div> 
 
-  <div class="col-6 col-md-4">
-    <label for="fname">23 Settembre </label>
-  </div>   
-</div>
-
-      </summary>
-      <div class="row justify-content-center">
-        <div class="col-12">
-          <label for="fname">Ordine 123 confermato. testo della notifica.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </label>
-          
-        </div>   
-      </div>
-    </details>
-    </div>
-    <hr class="rounded">
-  </div> 
-</div>
 
 
   <!-- FOOTER -->
@@ -203,7 +127,7 @@
             <div class="col-md-4 ">
                 <div class="footer-text">
                     
-                        <a href="HomePage2.html"> <img src="Immagini/logobiancocut.png" alt="" style="max-height: 50px; margin-bottom: 10px;"></a>
+                        <a href="HomePage2.html"> <img src="../Immagini/logobiancocut.png" alt="" style="max-height: 50px; margin-bottom: 10px;"></a>
                     
                     <p class="card-text">Artelier è un progetto universitario con l'obiettivo di simulare il funzionamento di un negozio online che mette a disposizione riproduzioni di quadri famosi.<br> 
                       E' sviluppato dagli studenti: Elia Zavatta, Pietro Lelli e Giovanni Maffi dell'Università di Bologna per la materia Tecnologie Web.</p>

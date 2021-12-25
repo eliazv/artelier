@@ -26,7 +26,7 @@
               <nav class="navbar navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
 
-                  <a href="HomePage2.html"><img src="Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
+                  <a href="HomePage2.html"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
 
                   <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -45,11 +45,11 @@
                               <a class="nav-link" href="Utente.html"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
                               <a class="nav-link" href="login.html">&emsp;&emsp; Login</a>
                               <a class="nav-link" href="Registrazione.html">&emsp;&emsp; Registrazione</a>
-                              <a class="nav-link" href="Notifiche.html"><i class="fa fa-bell"></i>&nbsp; Notifiche</a>
-                              <a class="nav-link" href="Cart.html"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
-                              <a class="nav-link" href="Categorie.html"> &nbsp; Categorie</a>
-                              <a class="nav-link" href="Artisti.html"> &nbsp; Artisti</a>
-                              <a class="nav-link" href="HomePage2.html#chisiamo"> &nbsp; Chi Siamo</a>
+                              <a class="nav-link" href="./archivio-notifiche.php"><i class="fa fa-bell"></i>&nbsp; Notifiche</a>
+                              <a class="nav-link" href="./archivio-carrello.php"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
+                              <a class="nav-link" href="./archivio-Categorie.php"> &nbsp; Categorie</a>
+                              <a class="nav-link" href="./archivio-artisti.php"> &nbsp; Artisti</a>
+                              <a class="nav-link" href="#chisiamo"> &nbsp; Chi Siamo</a>
                         </li>
                       </ul>
                       <form class="d-flex">
@@ -118,7 +118,7 @@
             <div class="col-md-4 ">
                 <div class="footer-text">
                     
-                        <a href="HomePage2.html"> <img src="Immagini/logobiancocut.png" alt="" style="max-height: 50px; margin-bottom: 10px;"></a>
+                        <a href="HomePage2.html"> <img src="../Immagini/logobiancocut.png" alt="" style="max-height: 50px; margin-bottom: 10px;"></a>
                     
                     <p class="card-text">Artelier è un progetto universitario con l'obiettivo di simulare il funzionamento di un negozio online che mette a disposizione riproduzioni di quadri famosi.<br> 
                       E' sviluppato dagli studenti: Elia Zavatta, Pietro Lelli e Giovanni Maffi dell'Università di Bologna per la materia Tecnologie Web.</p>

@@ -3,8 +3,8 @@ require_once 'bootstrap.php';
 
 //Base Template
 //$templateParams["titolo"] = "ArtElier - Articolo";
-$templateParams["notifica"] = $dbh->getNotifiche();
+//$templateParams["quadro"] = $dbh->getQuadroByTitolo("Guernica");
 
 //var_dump($templateParams);
-require 'template/notifiche.php';
+require 'template/inserimentoArticoli.php';
 ?>
