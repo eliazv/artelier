@@ -79,17 +79,6 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-
-    public function getQuadritByCategoria($idcategory){
-        $query = "SELECT titolo, immagine, dimensione, autore, prezzo, nomeCorrArt FROM quadro WHERE nomeCorrArt = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$idcategory);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-
     public function getQuadritByCategoria($categoryName){
         $query = "SELECT titolo, immagine, dimensione, artista, prezzo, nomeCorrArt FROM quadro WHERE nomeCorrArt = ?";
         $stmt = $this->db->prepare($query);

@@ -98,9 +98,18 @@
                       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner">
+                      <?php $first = true; ?>
                         <?php foreach($templateParams["4Quadri"] as $quadro): ?>
-
-                            <div class="carousel-item-active"><!-- per il primo ci deve essere carousel-item-active-->
+                          <?php if($first == true): 
+                            $first = false;
+                            ?>
+                              
+                              
+                              <div class="carousel-item-active">
+                                <?php else: ?>
+                          
+                              <div class="carousel-item">
+                            <?php endif; ?>
                             <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="...">
 
                         </div>
