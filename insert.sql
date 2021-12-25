@@ -16,11 +16,11 @@ values ("Dali'", "Salvador", "dali.jpg",
 "Lo spagnolo Salvador Dali' (Figueres, 1904-1989) e' considerato uno dei piu' importanti artisti del XX secolo, ed uno degli esponenti di punta del Surrealismo.");
 
 Insert into artista()
-values ("Van Gogh", "Vincent", "vangogh.jpg", 
+values ("Van Gogh", "Vincent", "vangogh.png", 
 "Van gohh è molto bravo");
 
 Insert into artista()
-values ("Munch", "Edvard", "Munch.jpg", 
+values ("Munch", "Edvard", "Munch.jpeg", 
 "Munch è molto bravo");
 
 Insert into artista()
