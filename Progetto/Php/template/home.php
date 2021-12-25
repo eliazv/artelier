@@ -167,55 +167,46 @@
     <hr class="featurette-divider">
 
     <h1>I nostri quadri</h1>
+
+    <?php $right = true; 
+    
+    foreach($templateParams["4Quadri"] as $quadro): ?>
+    
+    <?php if($right == true):
+      $right = false;
+    ?>
+
     <div class="row featurette">
       <div class="col-5">
-        <a href="HomePage2.html"><h2 class="featurette-heading">Guernica</h2></a>
-        <p class="lead">Pablo Picasso</p>
+        <a href="HomePage2.html"><h2 class="featurette-heading"><?php echo $quadro["titolo"] ?></h2></a>
+        <p class="lead"><?php echo $quadro["artista"] ?></p>
       </div>
       <div class="col-7">
-        <a href="HomePage2.html"> <img src="Immagini/000051-reprodukce-modernismus-guernica-5194l.jpg" class="d-block w-100" alt="..."></a>
+        <a href="HomePage2.html"> <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="..."></a>
       </div>
     </div>
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-7">
-        <a href="HomePage2.html"><img src="Immagini/R.jpg" class="d-block w-100" alt="..."></a>
-
-      </div>
-      <div class="col-5">
-        <a href="HomePage2.html"><h2 class="featurette-heading">L'Urlo</h2></a>
-        <p class="lead">Edvard Munch</p>
-      </div>
+    <?php else:
+      $right = true; ?>
+      <div class="row featurette">
       
-    </div>
+      <div class="col-7">
+        <a href="HomePage2.html"> <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="..."></a>
+      </div>
 
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
       <div class="col-5">
-        <a href="HomePage2.html"><h2 class="featurette-heading">Dama con l'ermellino</h2></a>
-        <p class="lead">Leonardo da Vinci</p>
-      </div>
-      <div class="col-7">
-        <a href="HomePage2.html"><img src="Immagini/damaermellino.jpg" class="d-block w-100" alt="..."></a>
-
+        <a href="HomePage2.html"><h2 class="featurette-heading"><?php echo $quadro["titolo"] ?></h2></a>
+        <p class="lead"><?php echo $quadro["artista"] ?></p>
       </div>
     </div>
-
     <hr class="featurette-divider">
 
-    <div class="row featurette">
-      <div class="col-7">
-        <a href="HomePage2.html"><img src="Immagini/R (1).jpg" class="d-block w-100" alt="..."> </a>
-  
-        </div>
-        <div class="col-5">
-          <a href="HomePage2.html"><h2 class="featurette-heading">Notte stellata</h2></a>
-          <p class="lead">Vincent van Gogh</p>
-        </div>
-        
+    <?php endif; ?>
+    <?php endforeach; ?>
+
+    
     
         <div class="col-9"></div>
         <div class="col-2">
