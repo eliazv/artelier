@@ -89,6 +89,16 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getQuadriByArtista($artista){
+        $query = "SELECT titolo, immagine, dimensione, artista, prezzo, nomeCorrArt FROM quadro WHERE artista = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$artista);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     //tutti i quadri di un carrello specifico
     public function getCompone($codCarrello){
         $query = "SELECT titolo, quantita FROM compone WHERE codCarrello = ?";
