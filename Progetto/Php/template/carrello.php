@@ -63,6 +63,7 @@
             </div>   
         </div>
 
+        
 
         <div class="container mt-5 mb-5">
             <div class="d-flex justify-content-center row">
@@ -70,64 +71,40 @@
                     <div class="p-2">
                         <h2>Carrello</h2>
                     </div>
+
+                    <?php $indx=0; $somma=0;?>
+                    <?php foreach($templateParams["compone"] as $compone): ?>
+                      
+                      <?php $templateParams["quadro"] = $dbh->getQuadroByTitolo($compone["titolo"]);  ?>
+
                     <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                        <div class="mr-1"><img class="rounded" src="Immagini/R.jpg" width="150"></div>
-                        <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">l'Urlo</span>
+                        <div class="mr-1"><img class="rounded" src="../Immagini/<?php echo $templateParams["quadro"][$indx]["immagine"] ?>" width="150"></div>
+                        <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">
+                            <?php echo $compone["titolo"] ?>
+                        </span>
+                       
                             <div class="d-flex flex-row product-desc">
                               
                               
                             </div>
                             <div class="d-flex flex-row product-desc">
-                              <h6 class="text-grey mt-1 mr-1 ml-1">&emsp;-&nbsp;1&nbsp;+ </h6>
+                              <h6 class="text-grey mt-1 mr-1 ml-1">&emsp;-&nbsp;<?php echo $compone["quantita"] ?>&nbsp;+ </h6>
                               
                             </div>
                         </div>
                         <div>
-                            <h6 class="text-grey">&nbsp;&nbsp;&nbsp;$100.00&nbsp;</h6>
+                            <?php $totPaziale=($templateParams["quadro"][$indx]["prezzo"] * $compone["quantita"]);?>
+                            <h6 class="text-grey">&nbsp;&nbsp;&nbsp;€<?php echo $totPaziale ?> &nbsp;</h6> <!--*php echo $compone["quantita"]-->
                         </div>
                         <div class="d-flex align-items-center"><i class="fa fa-trash-o" style="color: red;"></i></div>
                     </div>
-                    <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                        <div class="mr-1"><img class="rounded" src="Immagini/tempo.jpg" width="150"></div>
-                        <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">Tempo</span>
+                    <?php 
+                      $somma = $somma + $totPaziale;
+                      $indx++; ?>
+                    <?php endforeach; ?>
 
-                          <div class="d-flex flex-row product-desc">
-                            <h6 class="text-grey mt-1 mr-1 ml-1">&emsp;-&nbsp;1&nbsp;+ </h6>
-                            
-                          </div>
-                      </div>
-                      <div>
-                          <h6 class="text-grey">&nbsp;&nbsp;&nbsp;$90.00&nbsp;</h6>
-                      </div>
-                      <div class="d-flex align-items-center"><i class="fa fa-trash-o" style="color: red;"></i></div>
-                  </div>
-                    <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                        <div class="mr-1"><img class="rounded" src="Immagini/R (1).jpg" width="150"></div>
-                        <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">Notte Stellata</span>
-                          <div class="d-flex flex-row product-desc">
-                            <h6 class="text-grey mt-1 mr-1 ml-1">&emsp;-&nbsp;2&nbsp;+ </h6>
-                            
-                          </div>
-                      </div>
-                      <div>
-                          <h6 class="text-grey">&nbsp;&nbsp;&nbsp;$190.00&nbsp;</h6>
-                      </div>
-                      <div class="d-flex align-items-center"><i class="fa fa-trash-o" style="color: red;"></i></div>
-                  </div>
-                    <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                        <div class="mr-1"><img class="rounded" src="Immagini/R (2).jpg" width="150" ></div>  <!--problema l'altezza-->
-                        <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">Il Bacio</span>
-                          <div class="d-flex flex-row product-desc">
-                            <h6 class="text-grey mt-1 mr-1 ml-1">&emsp;-&nbsp;1&nbsp;+ </h6>
-                            
-                          </div>
-                      </div>
-                      <div>
-                          <h6 class="text-grey">&nbsp;&nbsp;&nbsp;$80.00&nbsp;</h6>
-                      </div>
-                      <div class="d-flex align-items-center"><i class="fa fa-trash-o" style="color: red;"></i></div>
-                  </div><br><br>
-                    <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text" class="form-control border-0 gift-card" placeholder="Totale:"><h6>€800.00</h6></div> 
+<br><br>
+                    <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text" class="form-control border-0 gift-card" placeholder="Totale:"><h6>€<?php echo $somma?></h6></div> 
                     <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><a href="Checkout.html"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button" style="position: absolute; right: 20%;">Procedi all'ordine</button></a></div>
                 </div>
             </div>

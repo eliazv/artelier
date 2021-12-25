@@ -1,5 +1,3 @@
-<!--da cambiare la disposizione in mobile, cambia la dimensione in base alla size-->
-
 <!doctype html>
 <html lang="it">
   <head>
@@ -17,10 +15,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="../Css/Articolo.css" rel="stylesheet">
+    <link href="Css/Notifiche.css" rel="stylesheet">
   </head>
   <body>
     
+   
     <header>
       <div class="container-fluid">
           <div class="row">
@@ -29,7 +28,7 @@
                 <nav class="navbar navbar-dark bg-dark fixed-top">
                   <div class="container-fluid">
   
-                    <a href="HomePage2.html"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
+                    <a href="HomePage2.html"><img src="Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
   
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                       <span class="navbar-toggler-icon"></span>
@@ -65,115 +64,146 @@
                 </nav>
               </div>   
           </div>
-    </div>
-</header>
-
-<h2 style="padding-top: 80px; padding-left: 40px;">Dettagli Articolo</h2>
-
-
-<div class="container">
-  <div class="row">
-  <div class="col-lg-6">
-    <br>
-    <?php $first = true; ?>
-    <?php foreach($templateParams["quadro"] as $quadro): ?>
-      <?php if($first == true): 
-        $first = false;
-      ?>
-    <img src="../Immagini/<?php echo $quadro["immagine"] ?>" class="d-block w-100" style="border-radius:5% ;" alt="...">
-
-  </div>
-    <div class="col-lg-6">
-    
-
-        <h2><br><?php echo $quadro["titolo"] ?></h2>
-        <p class="mb-2 text-muted small"><?php echo $quadro["artista"] ?></p>
   
-        <p><span class="mr-1">$<?php echo $quadro["prezzo"] ?></span></p>
+  
 
-        <p class="pt-1"><?php echo $quadro["descrizione"] ?></p>
+<h1 style="font-size: 35px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding: 10px"><br><i class="fa fa-bell" style="color:gray;"></i>&nbsp;Notifiche</h1><br><br>
 
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div class="alert alert-primary" role="alert">
+    <details>
+      <summary>
+        
+        
+<div class="row">
+  <div class="col-12 col-md-8">
     
-        <div class="table-responsive">
-          <table class="table table-sm table-borderless mb-0">
-            <tbody>
-              <tr>
-                <th class="pl-0 w-25" scope="row">Corrente: </th>
-                <td><?php echo $quadro["nomeCorrArt"] ?></td>
-              </tr>
-              <tr>
-                <th class="pl-0 w-25" scope="row">Dimensioni: </th>
-                <td><?php echo $quadro["dimensione"] ?></td>
-              </tr>
-              <tr>
-                <th class="pl-0 w-25" scope="row">Spedizione:</th>
-                <td>USA, Europe</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <?php endif; ?>
-        <?php endforeach; ?>
+    <h3>Ordine Consegnato</h2>
+  </div> 
 
-        <hr>
-        <div class="table-responsive mb-2">
-          <table class="table table-sm table-borderless">
-            <tbody>
-              <tr>
-                <td class="pl-0 pb-0 w-25">Quantità:</td>
-                <td class="pb-0">Spedizione:</td>
-              </tr>
-              <tr>
-                <td class="pl-0">
-                  <div class="def-number-input number-input safari_only mb-0">
-                    <!--<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                      class="minus"></button>-->
-                    <input class="quantity" min="0" name="quantity" value="1" type="number">
-                    <!--<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                      class="plus"></button>-->
-                  </div>
-                </td>
-                <td>
-                  <div class="mt-1">
-                    <div class="form-check form-check-inline pl-0">
-                      <input type="radio" class="form-check-input" id="small" name="materialExampleRadios"
-                        checked>
-                      <label class="form-check-label small text-uppercase card-link-secondary"
-                        for="small">Rapida</label>
-                    </div>
-                    <div class="form-check form-check-inline pl-0">
-                      <input type="radio" class="form-check-input" id="medium" name="materialExampleRadios">
-                      <label class="form-check-label small text-uppercase card-link-secondary"
-                        for="medium">Standard</label>
-                    </div>
+  <div class="col-6 col-md-4">
+    <label for="fname">1 minuto fa </label>
+  </div>   
+</div>
 
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Compra ora!</button>
-        <button type="button" class="btn btn-light btn-md mr-1 mb-2" style="background-color:rgb(228, 228, 2)"><i
-            class="fa fa-shopping-cart "></i> &nbsp;Aggiungi al carrello</button>
+      </summary>
+
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <label for="fname">Ordine 123 confermato. testo della notifica.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </label>
+          
+        </div>   
       </div>
+    </details>
   </div>
+    <hr class="rounded">
+  </div> 
+</div>
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div class="alert alert-primary" role="alert">
+    <details>
+      <summary>
+        
+<div class="row">
+  <div class="col-12 col-md-8">
+    <h3>Ordine Spedito</h2>
+  </div> 
+
+  <div class="col-6 col-md-4">
+    <label for="fname">4 Novembre </label>
+  </div>   
+</div>
+
+      </summary>
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <label for="fname">Ordine 123 confermato. testo della notifica.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </label>
+          
+        </div>   
+      </div>
+    </details>
+    </div>
+    <hr class="rounded">
+  </div> 
+</div>
 </div>
 
 
 
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div class="alert alert-secondary" role="alert">
+    <details>
+      <summary>
+        
+<div class="row">
+  <div class="col-12 col-md-8">
+    <h3>Ordine Confermato </h2>
+  </div> 
 
+  <div class="col-6 col-md-4">
+    <label for="fname">2 Ottobre </label>
+  </div>   
+</div>
+
+      </summary>
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <label for="fname">Ordine 123 confermato. testo della notifica.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </label>
+          
+        </div>   
+      </div>
+    </details>
+    </div>
+    <hr class="rounded">
+  </div> 
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div class="alert alert-secondary" role="alert">
+    <details>
+      <summary>
+        
+<div class="row">
+  <div class="col-12 col-md-8">
+    <h3>Sconti autunnali </h2>
+  </div> 
+
+  <div class="col-6 col-md-4">
+    <label for="fname">23 Settembre </label>
+  </div>   
+</div>
+
+      </summary>
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <label for="fname">Ordine 123 confermato. testo della notifica.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </label>
+          
+        </div>   
+      </div>
+    </details>
+    </div>
+    <hr class="rounded">
+  </div> 
+</div>
 
 
   <!-- FOOTER -->
 
-  <div id="chisiamo" class="container-fluid mt-5" style="padding: 0px; text-align: center;">
+  <div class="container-fluid mt-5" style="padding: 0px; text-align: center;">
     <div class="card" style="width: 100%;">
         <div class="row mb-4 ">
             <div class="col-md-4 ">
                 <div class="footer-text">
                     
-                        <a href="HomePage2.html"> <img src="../Immagini/logobiancocut.png" alt="" style="max-height: 50px; margin-bottom: 10px;"></a>
+                        <a href="HomePage2.html"> <img src="Immagini/logobiancocut.png" alt="" style="max-height: 50px; margin-bottom: 10px;"></a>
                     
                     <p class="card-text">Artelier è un progetto universitario con l'obiettivo di simulare il funzionamento di un negozio online che mette a disposizione riproduzioni di quadri famosi.<br> 
                       E' sviluppato dagli studenti: Elia Zavatta, Pietro Lelli e Giovanni Maffi dell'Università di Bologna per la materia Tecnologie Web.</p>
@@ -193,7 +223,7 @@
             <div class="col-md-3">
                 <h5 class="heading" style="margin-top: 15px;">Utente</h5>
                 <ul class="card-text">
-                    <a href="Utente.html"><li>Account</li></a>
+                    <a href="Utente.html"><li>Modifica</li></a>
                     <a href="Cart.html"><li>Carrello</li></a>
                     <a href=""><li>Logout</li></a>              
                 </ul>

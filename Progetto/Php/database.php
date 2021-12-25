@@ -89,6 +89,7 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    //tutti i quadri di un carrello specifico
     public function getCompone($codCarrello){
         $query = "SELECT titolo, quantita FROM compone WHERE codCarrello = ?";
         $stmt = $this->db->prepare($query);
@@ -99,6 +100,13 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-   
+       //TUTTE LE NOTIFICHE
+       public function getNotifiche(){
+        $stmt = $this->db->prepare("SELECT * FROM notifica");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>
