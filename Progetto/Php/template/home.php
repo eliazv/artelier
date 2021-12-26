@@ -168,9 +168,10 @@
 
     <h1>I nostri quadri</h1>
 
-    <?php $right = true; 
+    <?php $right = true; $num = 0; 
     
-    foreach($templateParams["4Quadri"] as $quadro): ?>
+    foreach($templateParams["4Quadri"] as $quadro): 
+      $num +=1;?>
     
     <?php if($right == true):
       $right = false;
@@ -186,7 +187,6 @@
       </div>
     </div>
 
-    <hr class="featurette-divider">
 
     <?php else:
       $right = true; ?>
@@ -201,17 +201,21 @@
         <p class="lead"><?php echo $quadro["artista"] ?></p>
       </div>
     </div>
-    <hr class="featurette-divider">
 
     <?php endif; ?>
+    <?php if($num != 4):?>
+      <hr class="featurette-divider">
+      <?php endif; ?>
     <?php endforeach; ?>
 
     
     
-        <div class="col-9"></div>
+    <div class="row">
+      <div class="col-9"></div>
         <div class="col-2">
-            <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="Quadri.html">Mostra tutti</a></button>
+            <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="archivio-quadri.php">Mostra tutti</a></button>
         </div>
+    </div>
       </div>
 
 
