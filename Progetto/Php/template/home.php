@@ -232,27 +232,12 @@
         </div>
 
 <?php endforeach; ?>
-
-<div class="row">
-  <div class="col-12">
-    <a href="HomePage2.html"><img src="Immagini/cubismo.jpg" alt="" class="rounded mx-auto d-block";  style=" margin: 20px; max-height: 300px; max-width:90%;"> </a>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-12">
-    <a href="HomePage2.html"><img src="Immagini/espressionismo.jpg" alt="" class="rounded mx-auto d-block";  style=" margin: 20px; max-height: 300px; max-width: 90%;"> </a>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-12">
-    <a href="HomePage2.html"> <img src="Immagini/futurismo.jpg" alt="" class="rounded mx-auto d-block";  style=" margin: 20px; max-height: 300px; max-width: 90%;"></a>
-  </div>
-  <div class="col-9"></div>
+<div class="row"><div class="col-9"></div>
         <div class="col-2">
             <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="Categorie.html">Mostra tutte</a></button>
         </div>
+</div>
+  
 </div>
 
 </div>
