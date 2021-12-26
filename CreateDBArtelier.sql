@@ -60,6 +60,7 @@ CREATE TABLE Quadro_Ordinato(
     codQuadroOrdinato int PRIMARY KEY AUTO_INCREMENT,
     quantita int,
     titolo varchar(50),
+    arrivato boolean,
     FOREIGN KEY(titolo) REFERENCES Quadro(titolo)
 );
 

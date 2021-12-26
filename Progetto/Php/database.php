@@ -118,5 +118,24 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getOrders(){
+        $query = "SELECT quadro_ordinato.titolo, quadro_ordinato.quantita, quadro.immagine, quadro.prezzo FROM quadro_ordinato, quadro WHERE quadro_ordinato.titolo = quadro.titolo 
+        AND quadro_ordinato.arrivato = 0";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getDeliveredOrders(){
+        $query = "SELECT quadro_ordinato.titolo, quadro_ordinato.quantita, quadro.immagine, quadro.prezzo FROM quadro_ordinato, quadro WHERE quadro_ordinato.titolo = quadro.titolo AND quadro_ordinato.arrivato = 1";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>

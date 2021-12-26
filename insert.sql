@@ -17,15 +17,15 @@ values ("Dali'", "Salvador", "dali.jpg",
 
 Insert into artista()
 values ("Van Gogh", "Vincent", "vangogh.png", 
-"Van gohh è molto bravo");
+"Van gohh ï¿½ molto bravo");
 
 Insert into artista()
 values ("Munch", "Edvard", "Munch.jpeg", 
-"Munch è molto bravo");
+"Munch ï¿½ molto bravo");
 
 Insert into artista()
 values ("Da Vinci", "Leonardo", "leodavinci.jpg", 
-"Leo è molto bravo");
+"Leo ï¿½ molto bravo");
 
 
 
@@ -61,7 +61,7 @@ values ("Per te", "consigli quadri pkwfwlfwn", '2021-12-20 18:00:00', false , "e
 
 
 insert into notifica(titolo, testo, dataeora, visualizzato, email)
-values ("Ordine Confermato", "Abbiamo confermato il tuo ordine, il pacco verrà spedito a breve", '2021-12-20 19:00:00', true , "elia@ciao.com");
+values ("Ordine Confermato", "Abbiamo confermato il tuo ordine, il pacco verrï¿½ spedito a breve", '2021-12-20 19:00:00', true , "elia@ciao.com");
 
 insert into Carrello(email)
 values("elia@ciao.com");
@@ -71,3 +71,9 @@ values (1, "Guernica", 2);
 
 insert into Compone()
 values (1, "L'urlo", 1);
+
+insert into quadro_ordinato(quantita, titolo, arrivato)
+values (1, "Guernica", 0)
+
+insert into quadro_ordinato(quantita, titolo, arrivato)
+values (3, "Notte stellata", true)
