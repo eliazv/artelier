@@ -9,129 +9,117 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
 
     <!-- Bootstrap core CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
       
-  <!-- icone-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- icone-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
     <link href="../Css/HomePage2.css" rel="stylesheet">
   </head>
   <body>
     
-<header>
-    <div class="container-fluid" style="padding: 0px;">
+    <header>
+      <div class="container-fluid" style="padding: 0px;">
         <div class="row">
-            <div class="col-12">
+          <div class="col-12">
 
-              <nav class="navbar navbar-dark bg-dark fixed-top">
-                <div class="container-fluid">
+            <nav class="navbar navbar-dark bg-dark fixed-top">
+              <div class="container-fluid">
 
-                  <a href="HomePage2.html"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
+                <a href="HomePage2.html"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
 
-                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: white;">Menù</h5>
-                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="HomePage2.html"><i class="fa fa-home"></i>&nbsp; Home</a>
-                        </li>
-                        <li class="nav-item">
-                              <a class="nav-link" href="Utente.html"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
-                              <a class="nav-link" href="login.html">&emsp;&emsp; Login</a>
-                              <a class="nav-link" href="Registrazione.html">&emsp;&emsp; Registrazione</a>
-                              <a class="nav-link" href="Notifiche.html"><i class="fa fa-bell"></i>&nbsp; Notifiche</a>
-                              <a class="nav-link" href="Cart.html"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
-                              <a class="nav-link" href="Categorie.html"> &nbsp; Categorie</a>
-                              <a class="nav-link" href="Artisti.html"> &nbsp; Artisti</a>
-                              <a class="nav-link" href="HomePage2.html#chisiamo"> &nbsp; Chi Siamo</a>
-                        </li>
-                      </ul>
-                      <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-light" type="submit">Search</button>
-                      </form>
-                    </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: white;">Menù</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="HomePage2.html"><i class="fa fa-home"></i>&nbsp; Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="Utente.html"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
+                        <a class="nav-link" href="login.html">&emsp;&emsp; Login</a>
+                        <a class="nav-link" href="Registrazione.html">&emsp;&emsp; Registrazione</a>
+                        <a class="nav-link" href="Notifiche.html"><i class="fa fa-bell"></i>&nbsp; Notifiche</a>
+                        <a class="nav-link" href="Cart.html"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
+                        <a class="nav-link" href="Categorie.html"> &nbsp; Categorie</a>
+                        <a class="nav-link" href="Artisti.html"> &nbsp; Artisti</a>
+                        <a class="nav-link" href="HomePage2.html#chisiamo"> &nbsp; Chi Siamo</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-light" type="submit">Search</button>
+                    </form>
                   </div>
                 </div>
-              </nav>
-            </div>   
-        </div>
-
-
-<!-- 
-        <div class="row">
-            <div class="col-12">
-              <div id="image">
-                <img src="Immagini/quadri-astratt-ble-c291.jpg" class="d-block w-100" alt="..." >
-            </div>
-            </div>   
-        </div>
--->
-
-
-<section class="text-center" style="background-image: url(../Immagini/quadri-astratt-ble-c291.jpg); height: 400px; padding: 0px; margin:0px" >
-  <div class="slider-ctn">
-    <h2 class="title">PITTURA</h2>
-    <h2 class="subtitle">Le migliori repliche dei quadri più famosi.</h2>
-    <div class="button">
-        <a href="Quadri.html">Esplora<i class="icon icon-ico-arrow-new-right"></i></a>
-    </div>
-</div>
-</section>
-
-        <div class="row">
-            <div class="col-12">
-              <div id="carosello">
-                <h1 style="padding-bottom: 30px; padding-left: 90px; padding-top: 50px;"><br>Nuovi Arrivi</h1>
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"  style="margin-left: 10%;margin-right: 10%;">
-                  
-                    <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                      <?php $first = true; ?>
-                        <?php foreach($templateParams["4Quadri"] as $quadro): ?>
-                          <?php if($first == true): 
-                            $first = false;
-                            ?>
-                              
-                              
-                              <div class="carousel-item-active">
-                                <?php else: ?>
-                          
-                              <div class="carousel-item">
-                            <?php endif; ?>
-                            <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="...">
-
-                        </div>
-
-                        <?php endforeach; ?>  
-                    </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
               </div>
-            </div>   
+            </nav>
+          </div>   
         </div>
-</header>
 
-<main>
+
+        <section class="text-center" style="background-image: url(../Immagini/quadri-astratt-ble-c291.jpg); height: 400px; padding: 0px; margin:0px" >
+          <div class="slider-ctn">
+            <h2 class="title">PITTURA</h2>
+            <h2 class="subtitle">Le migliori repliche dei quadri più famosi.</h2>
+            <div class="button">
+              <a href="Quadri.html">Esplora<i class="icon icon-ico-arrow-new-right"></i></a>
+            </div>
+          </div>
+        </section>
+
+        <div class="row">
+          <div class="col-12">
+            <div id="carosello">
+              <h1 style="padding-bottom: 30px; padding-left: 90px; padding-top: 50px;"><br>Nuovi Arrivi</h1>
+              <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"  style="margin-left: 10%;margin-right: 10%;">
+                  
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <?php $first = true; ?>
+                    <?php foreach($templateParams["4Quadri"] as $quadro): ?>
+                      <?php if($first == true): 
+                        $first = false;
+                      ?>
+                                              
+                        <div class="carousel-item-active">
+                      <?php else: ?>
+                          
+                        <div class="carousel-item">
+                      <?php endif; ?>
+                      <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="...">
+
+                      </div>
+
+                    <?php endforeach; ?>  
+              </div>
+
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>   
+      </div>
+    </header>
+
+  <main>
 
   <!-- Marketing messaging and featurettes
   ================================================== -->
@@ -145,78 +133,72 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
 
-        <?php foreach($templateParams["3Artisti"] as $artista): ?>
+      <?php foreach($templateParams["3Artisti"] as $artista): ?>
     
-            <div class="col-4">
-                <a href="HomePage2.html"><img src="<?php echo UPLOAD_DIR.$artista["immagine"]; ?>" class="d-block w-100" style="border-radius: 200px 200px 200px 200px" alt="..."></a>
-                <a href="HomePage2.html"><h2 class="text-center" style="padding-top: 15px;"><?php echo $artista["cognome"]; ?></h2></a>
-            </div>
+        <div class="col-4">
+          <a href="HomePage2.html"><img src="<?php echo UPLOAD_DIR.$artista["immagine"]; ?>" class="d-block w-100" style="border-radius: 200px 200px 200px 200px" alt="..."></a>
+          <a href="HomePage2.html"><h2 class="text-center" style="padding-top: 15px;"><?php echo $artista["cognome"]; ?></h2></a>
+        </div>
 
-        <?php endforeach; ?>
+      <?php endforeach; ?>
 
       <div class="col-9"></div>
         <div class="col-2" style="margin-top: 25px;">
-            <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="Artisti.html">Mostra tutti</a></button>
+          <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="Artisti.html">Mostra tutti</a></button>
         </div>
-
-    </div><!-- /.row -->
-
+      </div><!-- /.row -->
 
     <!-- START THE FEATURETTES -->
-
     <hr class="featurette-divider">
 
     <h1>I nostri quadri</h1>
 
     <?php $right = true; $num = 0; 
     
-    foreach($templateParams["4Quadri"] as $quadro): 
-      $num +=1;?>
+      foreach($templateParams["4Quadri"] as $quadro): 
+        $num +=1;?>
     
-    <?php if($right == true):
-      $right = false;
-    ?>
+        <?php if($right == true):
+          $right = false;
+        ?>
 
-    <div class="row featurette">
-      <div class="col-5">
-        <a href="HomePage2.html"><h2 class="featurette-heading"><?php echo $quadro["titolo"] ?></h2></a>
-        <p class="lead"><?php echo $quadro["artista"] ?></p>
-      </div>
-      <div class="col-7">
-        <a href="HomePage2.html"> <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="..."></a>
-      </div>
-    </div>
+          <div class="row featurette">
+            <div class="col-5">
+              <a href="HomePage2.html"><h2 class="featurette-heading"><?php echo $quadro["titolo"] ?></h2></a>
+              <p class="lead"><?php echo $quadro["artista"] ?></p>
+            </div>
+        
+            <div class="col-7">
+              <a href="HomePage2.html"> <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="..."></a>
+            </div>
+          </div>
 
-
-    <?php else:
-      $right = true; ?>
-      <div class="row featurette">
+        <?php else:
+          $right = true; ?>
+          <div class="row featurette">
       
-      <div class="col-7">
-        <a href="HomePage2.html"> <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="..."></a>
-      </div>
+            <div class="col-7">
+              <a href="HomePage2.html"> <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="..."></a>
+            </div>
 
-      <div class="col-5">
-        <a href="HomePage2.html"><h2 class="featurette-heading"><?php echo $quadro["titolo"] ?></h2></a>
-        <p class="lead"><?php echo $quadro["artista"] ?></p>
-      </div>
-    </div>
+            <div class="col-5">
+              <a href="HomePage2.html"><h2 class="featurette-heading"><?php echo $quadro["titolo"] ?></h2></a>
+              <p class="lead"><?php echo $quadro["artista"] ?></p>
+            </div>
+          </div>
 
-    <?php endif; ?>
-    <?php if($num != 4):?>
-      <hr class="featurette-divider">
-      <?php endif; ?>
-    <?php endforeach; ?>
+        <?php endif; ?>
+        <?php if($num != 4):?>
+          <hr class="featurette-divider">
+        <?php endif; ?>
+      <?php endforeach; ?>
 
-    
-    
     <div class="row">
       <div class="col-9"></div>
-        <div class="col-2">
+      <div class="col-2">
             <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="archivio-quadri.php">Mostra tutti</a></button>
-        </div>
-    </div>
       </div>
+    </div>
 
 
     <hr class="featurette-divider">
@@ -225,23 +207,19 @@
 
     <?php foreach($templateParams["3Categorie"] as $categoria): ?>
     
-        <div class="row">
-            <div class="col-12">
-                <a href="HomePage2.html"><img src="<?php echo UPLOAD_DIR.$categoria["immagine"]; ?>" alt="" class="rounded mx-auto d-block";  style=" margin: 20px; max-height: 300px; max-width:90%;"> </a>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <a href="HomePage2.html"><img src="<?php echo UPLOAD_DIR.$categoria["immagine"]; ?>" alt="" class="rounded mx-auto d-block";  style=" margin: 20px; max-height: 300px; max-width:90%;"> </a>
         </div>
+      </div>
 
-<?php endforeach; ?>
-<div class="row"><div class="col-9"></div>
-        <div class="col-2">
-            <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="Categorie.html">Mostra tutte</a></button>
-        </div>
-</div>
-  
-</div>
+    <?php endforeach; ?>
 
-</div>
-
+    <div class="row"><div class="col-9"></div>
+      <div class="col-2">
+        <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="Categorie.html">Mostra tutte</a></button>
+      </div>
+    </div>
 
     <!-- /END THE FEATURETTES -->
 
@@ -308,7 +286,6 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
       
   </body>
 </html>
