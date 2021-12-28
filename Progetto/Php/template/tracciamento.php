@@ -30,27 +30,30 @@
   <a href="./archivio-Ordini.php" style="text-align: center;">Torna agli Ordini</a>
      
 </header>
-    
+
+<main>
+
 <div class="container-fluid my-5 d-sm-flex justify-content-center">
+    <?php foreach($templateParams["ordtracciamento"] as $ordinedaTr):?>
     <div class="card px-2">
         <div class="card-header bg-white">
             <div class="row justify-content-between">
                 <div class="col">
-                    <p class="text-muted"> Numero Ordine: <span class="font-weight-bold text-dark">1222528743</span></p>
+                    <p class="text-muted"> Numero Ordine: <span class="font-weight-bold text-dark"><?php echo $ordinedaTr["codQuadroOrdinato"]?></span></p>
                 </div>
                 <div class="flex-col my-auto">
-                    <p class="text-muted"> Ordinato il: <span class="font-weight-bold text-dark">9 dicembre 2021</span> </p>
+                    <p class="text-muted"> Ordinato il: <span class="font-weight-bold text-dark"><?php echo $ordinedaTr["dataOrdine"]?></span> </p>
                 </div>
             </div>
         </div>
         <div class="card-body">
             <div class="media flex-column flex-sm-row">
                 <div class="media-body ">
-                    <h5 class="bold">Guernica</h5>
-                    <p class="text-muted"> Qt: 1</p>
+                    <h5 class="bold"><?php echo $ordinedaTr["titolo"]?></h5>
+                    <p class="text-muted"> Qt: <?php echo $ordinedaTr["quantita"]?></p>
                     <h4 class="mt-3 mb-4 bold"> 220<span class="mt-5">&#8364;</span> </h4>
-                    <p class="text-muted">Consegna Prevista: <span class="Today">Oggi, 13:00</span></p> <button type="button" class="btn btn-outline-primary d-flex">Posizione Attuale: Cesena</button>
-                </div><img class="align-self-center img-fluid" src="Immagini/guernica.jpg" width="180 " height="180" style="margin-left: 10px;">
+                    <p class="text-muted">Consegna Prevista: <span class="Today"><?php echo $ordinedaTr["dataConsegna"]?></span></p> 
+                </div><img class="align-self-center img-fluid" src="<?php echo UPLOAD_DIR.$ordinedaTr["immagine"]?>" width="180 " height="180" style="margin-left: 10px;">
             </div>
         </div>
         <div class="row px-3">
@@ -70,49 +73,11 @@
             </div>
         </div>
     </div>
+    <?php endforeach; ?>
 </div>
 
 
-<div class="container-fluid my-5 d-sm-flex justify-content-center">
-    <div class="card px-2">
-        <div class="card-header bg-white">
-            <div class="row justify-content-between">
-                <div class="col">
-                    <p class="text-muted"> Numero Ordine: <span class="font-weight-bold text-dark">1222528744</span></p>
-                </div>
-                <div class="flex-col my-auto">
-                    <p class="text-muted"> Ordinato il: <span class="font-weight-bold text-dark">13 dicembre 2021</span> </p>
-                </div>
-            </div>
-        </div>
-        <div class="card-body">
-            <div class="media flex-column flex-sm-row">
-                <div class="media-body ">
-                    <h5 class="bold">Notte Stellata</h5>
-                    <p class="text-muted"> Qt: 1</p>
-                    <h4 class="mt-3 mb-4 bold"> 300<span class="mt-5">&#8364;</span> </h4>
-                    <p class="text-muted">Consegna Prevista: <span class="Today">Venerdì, 9:00</span></p> <button type="button" class="btn btn-outline-primary d-flex">Posizione Attuale: Dublino</button>
-                </div><img class="align-self-center img-fluid" src="Immagini/R (1).jpg" width="180 " height="180" style="margin-left: 10px;">
-            </div>
-        </div>
-        <div class="row px-3">
-            <div class="col">
-                <ul id="progressbar">
-                    <li class="step0 active " id="step1">ORDINATO</li>
-                    <li class="step0 text-muted text-center" id="step2">IN SPEDIZIONE</li>
-                    <li class="step0 text-muted text-right" id="step3">CONSEGNATO</li>
-                </ul>
-            </div>
-        </div>
-        <div class="card-footer bg-white px-sm-3 pt-sm-4 px-0">
-            <div class="row text-center ">
-                <div class="col my-auto mx-0 px-0 ">
-                    <h5>Cancella</h5>
-                </div>  
-            </div>
-        </div>
-    </div>
-</div>
+
   
 
 </div>

@@ -2,7 +2,7 @@
 require_once 'bootstrap.php';
 
 //Base Template
-$templateParams["correnteSpecifica"] = $dbh->getQuadritByCategoria("Espressionismo");
+$templateParams["ordtracciamento"] = $dbh->getOrders();
 
 //var_dump($templateParams);
 require 'template/tracciamento.php';

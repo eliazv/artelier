@@ -120,8 +120,7 @@ class DatabaseHelper{
     }
 
     public function getOrders(){
-        $query = "SELECT quadro_ordinato.titolo, quadro_ordinato.quantita, quadro.immagine, quadro.prezzo FROM quadro_ordinato, quadro WHERE quadro_ordinato.titolo = quadro.titolo 
-        AND quadro_ordinato.arrivato = 0";
+        $query = "SELECT quadro_ordinato.codQuadroOrdinato, quadro_ordinato.titolo, quadro_ordinato.quantita, quadro.immagine, quadro.prezzo, ordine.dataOrdine, ordine.dataConsegna FROM quadro_ordinato, quadro, carrello, compone, ordine WHERE quadro_ordinato.titolo = quadro.titolo AND quadro.titolo = compone.titolo AND compone.codCarrello = carrello.codCarrello AND carrello.codCarrello = ordine.codCarrello AND quadro_ordinato.arrivato = 0";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
