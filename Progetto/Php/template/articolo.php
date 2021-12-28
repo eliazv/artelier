@@ -76,10 +76,8 @@
   <div class="col-lg-6">
     <br>
     <?php $first = true; ?>
-    <?php foreach($templateParams["quadro"] as $quadro): ?>
-      <?php if($first == true): 
-        $first = false;
-      ?>
+    <?php foreach($templateParams["quadroSpecifico"] as $quadro): ?>
+
     <img src="../Immagini/<?php echo $quadro["immagine"] ?>" class="d-block w-100" style="border-radius:5% ;" alt="...">
 
   </div>
@@ -112,7 +110,7 @@
             </tbody>
           </table>
         </div>
-        <?php endif; ?>
+      
         <?php endforeach; ?>
 
         <hr>

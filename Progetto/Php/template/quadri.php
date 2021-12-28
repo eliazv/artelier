@@ -77,7 +77,7 @@
                       <div class="about text-left px-3">
                           <h4><?php echo $quadro["titolo"]; ?> </h4> <span class="text-muted"><?php echo $quadro["artista"]; ?> </span>
                           <h3><?php echo $quadro["prezzo"]; ?> </h3>
-                        </div> <a href="Quadro.html"><span class="dot"><span class="inner-dot"><i class="fa fa-plus"></i></span></span></a>                  </div>
+                        </div> <a href="./archivio-articolo.php?titoloq=<?php echo $quadro["titolo"];?>"><span class="dot"><span class="inner-dot"><i class="fa fa-plus"></i></span></span></a>                  </div>
               </div>
             <?php endforeach; ?>
           </div>

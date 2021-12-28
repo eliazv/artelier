@@ -3,8 +3,8 @@ require_once 'bootstrap.php';
 
 //Base Template
 //$templateParams["titolo"] = "ArtElier - Articolo";
-$templateParams["quadro"] = $dbh->getQuadroByTitolo("Guernica");
+$templateParams["quadroSpecifico"] = $dbh->getQuadroByTitolo($_GET["titoloq"]);
 
-//var_dump($templateParams);
+//var_dump($_GET);
 require 'template/articolo.php';
 ?>
