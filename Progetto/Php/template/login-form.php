@@ -11,7 +11,7 @@
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="Css/login.css" >
+<link rel="stylesheet" href="../Css/login.css" >
 
     <style>
       .bd-placeholder-img {
@@ -37,7 +37,7 @@
     
 <main class="form-signin">
   <form action="#" method="POST">
-    <img src="Immagini/logonerocut.png" alt="" width="300px">
+    <img src="../Immagini/logonerocut.png" alt="" width="300px">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
     <?php if(isset($templateParams["errorelogin"])): ?>

@@ -27,7 +27,7 @@
               <nav class="navbar navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
 
-                  <a href="HomePage2.html"><img src="Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
+                  <a href="HomePage2.html"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
 
                   <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
