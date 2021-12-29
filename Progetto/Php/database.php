@@ -136,5 +136,13 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    
+    public function insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $nomeCorrArt, $descrizione){
+        $query= "INSERT INTO quadro(titolo, immagine, dimensione, artista, prezzo, nomeCorrArt, descrizione) VALUES (?,?,?,?,?,?)";
+        $stmt = $this->db->prepare($query);
+        //$stmt->bind_param('ii', $values, $index);
+        $stmt->execute();
+    }
 }
 ?>

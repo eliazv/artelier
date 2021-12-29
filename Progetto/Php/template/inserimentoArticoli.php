@@ -76,30 +76,39 @@
               <form class="row g-3">
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">Titolo:</label>
-                  <input type="email" class="form-control" id="inputNome">
+                  <input type="text" class="form-control" id="titolo" name="titolo">
                 </div>
                 <div class="col-md-6">
                   <label for="inputPassword4" class="form-label">Artista:</label>
-                  <input type="password" class="form-control" id="inputCognome">
+                  <input type="text" class="form-control" id="artista" name="artista">
                 </div>
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">Dimensione:</label>
-                  <input type="email" class="form-control" id="inputEmail4">
+                  <input type="text" class="form-control" id="dimensione" name="dimensione">
                 </div>
                 <div class="col-md-6">
                   <label for="inputPassword4" class="form-label">Prezzo:</label>
-                  <input type="password" class="form-control" id="inputPassword">
+                  <input type="text" class="form-control" id="prezzo" name="prezzo">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputAddress" class="form-label">Seleziona Immagine:</label>
+                  <label for="inputPassword4" class="form-label">Corrente Artistica:</label>
+                  <input type="text" class="form-control" id="corrente" name="corrente">
                 </div>
                 <div class="col-md-6">
-                  <input type="file" id="avatar" name="avatar" accept="image/png, image/jpg, image/jpeg">
+                  <label for="inputPassword4" class="form-label">Descrizione:</label>
+                  <input type="text" class="form-control" id="descrizione" name="descrizione">
+                </div>
+                <div class="col-md-6">
+                  <label for="text" class="form-label">Seleziona Immagine:</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="file" id="immagine" name="immagine" accept="image/png, image/jpg, image/jpeg">
+                  <input type="text" class="form-control" id="immagineT" name="immagineT">
                 </div>
                 <div class="col-md-6"> </div>
                 <div class="col-md-6">
                   <br>
-                  <button type="submit" class="btn btn-primary">Inserisci</button>
+                  <button type="submit" name="btnInserisci" class="btn btn-primary">Inserisci</button>
                 </div>
                                   
                 </div>
