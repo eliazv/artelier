@@ -44,7 +44,7 @@
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="Utente.html"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
-                        <a class="nav-link" href="login.html">&emsp;&emsp; Login</a>
+                        <a class="nav-link" href="./login.php">&emsp;&emsp; Login</a>
                         <a class="nav-link" href="Registrazione.html">&emsp;&emsp; Registrazione</a>
                         <a class="nav-link" href="Notifiche.html"><i class="fa fa-bell"></i>&nbsp; Notifiche</a>
                         <a class="nav-link" href="Cart.html"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
@@ -130,6 +130,7 @@
   <div class="container marketing">
 
     <h1 id="artisti" style="padding-bottom: 30px;">I nostri Artisti</h1>
+    <?php var_dump($_SESSION["email"]);?>
     <!-- Three columns of text below the carousel -->
     <div class="row">
 
@@ -256,7 +257,7 @@
                 <ul class="card-text">
                     <a href="Utente.html"><li>Account</li></a>
                     <a href="Cart.html"><li>Carrello</li></a>
-                    <a href=""><li>Logout</li></a>              
+                    <a href="./logout.php"><li>Logout</li></a>              
                 </ul>
             </div>
         </div>
