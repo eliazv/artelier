@@ -18,8 +18,10 @@ if (isset($_POST['btnInserisci'])) {
                         $descrizione = $_POST['descrizione'];
                         $immagine = $_POST['immagineT'];
 
-                        $templateParams["inserimentoQuadro"] = $dbh->insertQuadro($titolo, $immagine, $dimensione, $artista,
-                                                    $prezzo, $corrente, $descrizione);
+                        
+                               
+                        $dbh->insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $corrente, $descrizione);
+                       
                     }
                // }
 

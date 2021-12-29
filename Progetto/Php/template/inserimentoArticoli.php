@@ -66,14 +66,15 @@
     </header>
 
     <main>
-
+    
         <div class="row">
+        
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <h1><br><br>Inserisci Articolo</h1><br>
             
             <h4 class="mb-3">
-              <form class="row g-3">
+              <form action="./archivio-inserimentoArt.php" method="post" class="row g-3">
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">Titolo:</label>
                   <input type="text" class="form-control" id="titolo" name="titolo">
@@ -114,7 +115,7 @@
                 </div>
               </form>
           </div>
-        
+      
     </main>
 
 
