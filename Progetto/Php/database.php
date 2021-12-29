@@ -137,6 +137,16 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getSpecificCategory($category){
+        $query = "SELECT * FROM correnteartistica WHERE nomeCorrArt = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$category);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     
     public function insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $nomeCorrArt, $descrizione){
         $query= "INSERT INTO quadro(titolo, immagine, dimensione, artista, prezzo, nomeCorrArt, descrizione) VALUES (?,?,?,?,?,?)";
@@ -144,5 +154,7 @@ class DatabaseHelper{
         //$stmt->bind_param('ii', $values, $index);
         $stmt->execute();
     }
+
+    
 }
 ?>

@@ -68,8 +68,15 @@
 
 
         <div class="container" style="margin-top: 100px;">
-          <h1 style="margin-bottom: 15px;">Espressionismo</h1>
-          <p></p>
+        <?php $first = true; ?>
+        <?php foreach($templateParams["informazioniCategoria"] as $categoriaSp): ?>
+          <?php if($first == true): 
+               $first = false;
+          ?>
+               <h1 style="margin-bottom: 15px;"><?php echo $categoriaSp["nomeCorrArt"] ?></h1>
+               <p><?php echo $categoriaSp["descrizione"] ?></p>
+          <?php endif; ?>
+          <?php endforeach; ?>
           <div class="row d-flex justify-content-center g-1">
           <?php foreach($templateParams["correnteSpecifica"] as $categoriaS): ?>  
             <div class="col-lg-4">

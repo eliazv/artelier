@@ -27,7 +27,7 @@
                 <nav class="navbar navbar-dark bg-dark fixed-top">
                   <div class="container-fluid">
   
-                    <a href="HomePage2.html"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
+                    <a href="./Home2.php"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
   
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                       <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@
                       <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                           <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="HomePage2.html"><i class="fa fa-home"></i>&nbsp; Home</a>
+                            <a class="nav-link active" aria-current="page" href="./Home2.php"><i class="fa fa-home"></i>&nbsp; Home</a>
                           </li>
                           <li class="nav-item">
                                 <a class="nav-link" href="Utente.html"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
@@ -71,7 +71,7 @@
   
 <?php foreach($templateParams["correnteartistica"] as $categoria): ?>
   <div class="col-lg-4">
-    <a href="./archivio-CategoriaSpecifica.php"><img src="<?php echo UPLOAD_DIR.$categoria["immagine"]; ?>" alt="" class="rounded mx-auto d-block";  style=" margin: 10px; max-height: 300px; max-width:98%; "></a>
+    <a href="./archivio-CategoriaSpecifica.php?nomec=<?php echo $categoria["nomeCorrArt"]; ?>"><img src="<?php echo UPLOAD_DIR.$categoria["immagine"]; ?>" id="<?php echo $categoria["nomeCorrArt"];?>" alt="" class="rounded mx-auto d-block";  style=" margin: 10px; max-height: 300px; max-width:98%; "></a>
   </div>
   <?php endforeach; ?>
 </div>
