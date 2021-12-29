@@ -155,6 +155,13 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function insertUser($email, $password, $nome, $cognome, $indirizzo, $paese, $cap){
+        $query= "INSERT INTO utente(email, passwordd, nome, cognome, indirizzo, paese, cap) VALUES (?,?,?,?,?,?,?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssssssi', $email, $password, $nome, $cognome, $indirizzo, $paese, $cap);
+        $stmt->execute();
+    }
+
     public function checkLogin($email, $password){
         $query = "SELECT email, cognome FROM utente WHERE email = ? AND passwordd = ?";
         $stmt = $this->db->prepare($query);

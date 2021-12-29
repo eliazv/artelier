@@ -45,7 +45,7 @@
                       <li class="nav-item">
                         <a class="nav-link" href="Utente.html"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
                         <a class="nav-link" href="./login.php">&emsp;&emsp; Login</a>
-                        <a class="nav-link" href="Registrazione.html">&emsp;&emsp; Registrazione</a>
+                        <a class="nav-link" href="./registrazione.php">&emsp;&emsp; Registrazione</a>
                         <a class="nav-link" href="Notifiche.html"><i class="fa fa-bell"></i>&nbsp; Notifiche</a>
                         <a class="nav-link" href="Cart.html"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
                         <a class="nav-link" href="Categorie.html"> &nbsp; Categorie</a>
