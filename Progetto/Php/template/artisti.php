@@ -78,7 +78,7 @@
               <h2 class="text-center" style="padding-top: 15px;"><?php echo $artista["nome"]; echo " "; echo $artista["cognome"]; ?></h2>
               <p class="text-center">Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
 
-              <p class="text-center"><a class="btn btn-secondary" href="#">Mostra Opere &raquo;</a></p>
+              <p class="text-center"><a class="btn btn-secondary" href="./archivio-artistaSpecifico.php?artistaA=<?php echo $artista["cognome"];?>">Mostra Opere &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-1"></div> 
 

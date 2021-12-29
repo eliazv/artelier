@@ -68,7 +68,7 @@
 
 
         <div class="container" style="margin-top: 100px;">
-          <h1 style="margin-bottom: 15px;">Van Gogh</h1>
+          <h1 style="margin-bottom: 15px;"><?php echo($_GET["artistaA"])?></h1>
           <p></p>
           <div class="row d-flex justify-content-center g-1">
           <?php foreach($templateParams["artistaSpecifico"] as $qArtista): ?>  
