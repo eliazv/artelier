@@ -70,9 +70,9 @@ class DatabaseHelper{
 
     //TUTTE LE INFO DEL QUADRO DAL TITOLO (quadro.html)
     public function getQuadroByTitolo($id){
-        $query = "SELECT titolo, immagine, dimensione, artista, prezzo, nomeCorrArt, descrizione FROM quadro WHERE titolo=?";
+        $query = "SELECT * FROM quadro WHERE titolo=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$id);
+        $stmt->bind_param('s',$id);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -82,7 +82,7 @@ class DatabaseHelper{
     public function getQuadritByCategoria($categoryName){
         $query = "SELECT titolo, immagine, dimensione, artista, prezzo, nomeCorrArt FROM quadro WHERE nomeCorrArt = ?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$categoryName);
+        $stmt->bind_param('s',$categoryName);
         $stmt->execute();
         $result = $stmt->get_result();
 

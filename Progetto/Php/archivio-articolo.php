@@ -5,6 +5,6 @@ require_once 'bootstrap.php';
 //$templateParams["titolo"] = "ArtElier - Articolo";
 $templateParams["quadroSpecifico"] = $dbh->getQuadroByTitolo($_GET["titoloq"]);
 
-//var_dump($_GET);
+var_dump($_GET);
 require 'template/articolo.php';
 ?>

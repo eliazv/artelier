@@ -75,21 +75,26 @@
   <div class="row">
   <div class="col-lg-6">
     <br>
-    <?php $first = true; ?>
-    <?php foreach($templateParams["quadroSpecifico"] as $quadro): ?>
+    
+    <?php $first = true; 
+    //var_dump($_GET);
+    //var_dump($templateParams["quadroSpecifico"]);
+    ?>
+    
+    <?php foreach($templateParams["quadroSpecifico"] as $quadroq): ?>
 
-    <img src="../Immagini/<?php echo $quadro["immagine"] ?>" class="d-block w-100" style="border-radius:5% ;" alt="...">
+    <img src="../Immagini/<?php echo $quadroq["immagine"] ?>" class="d-block w-100" style="border-radius:5% ;" alt="...">
 
   </div>
     <div class="col-lg-6">
     
 
-        <h2><br><?php echo $quadro["titolo"] ?></h2>
-        <p class="mb-2 text-muted small"><?php echo $quadro["artista"] ?></p>
+        <h2><br><?php echo $quadroq["titolo"] ?></h2>
+        <p class="mb-2 text-muted small"><?php echo $quadroq["artista"] ?></p>
   
-        <p><span class="mr-1">$<?php echo $quadro["prezzo"] ?></span></p>
+        <p><span class="mr-1">$<?php echo $quadroq["prezzo"] ?></span></p>
 
-        <p class="pt-1"><?php echo $quadro["descrizione"] ?></p>
+        <p class="pt-1"><?php echo $quadroq["descrizione"] ?></p>
 
     
         <div class="table-responsive">
@@ -97,11 +102,11 @@
             <tbody>
               <tr>
                 <th class="pl-0 w-25" scope="row">Corrente: </th>
-                <td><?php echo $quadro["nomeCorrArt"] ?></td>
+                <td><?php echo $quadroq["nomeCorrArt"] ?></td>
               </tr>
               <tr>
                 <th class="pl-0 w-25" scope="row">Dimensioni: </th>
-                <td><?php echo $quadro["dimensione"] ?></td>
+                <td><?php echo $quadroq["dimensione"] ?></td>
               </tr>
               <tr>
                 <th class="pl-0 w-25" scope="row">Spedizione:</th>
