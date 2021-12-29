@@ -19,49 +19,49 @@
   </head>
   <body>
     
-<header>
-    <div class="container-fluid">
+  <header>
+      <div class="container-fluid" style="padding: 0px;">
         <div class="row">
-            <div class="col-12">
+          <div class="col-12">
 
-              <nav class="navbar navbar-dark bg-dark fixed-top">
-                <div class="container-fluid">
+            <nav class="navbar navbar-dark bg-dark fixed-top">
+              <div class="container-fluid">
 
-                  <a href="HomePage2.html"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
+                <a href="./home2.php"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
 
-                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                      <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: white;">Menù</h5>
-                      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="HomePage2.html"><i class="fa fa-home"></i>&nbsp; Home</a>
-                        </li>
-                        <li class="nav-item">
-                              <a class="nav-link" href="Utente.html"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
-                              <a class="nav-link" href="login.html">&emsp;&emsp; Login</a>
-                              <a class="nav-link" href="Registrazione.html">&emsp;&emsp; Registrazione</a>
-                              <a class="nav-link" href="Notifiche.html"><i class="fa fa-bell"></i>&nbsp; Notifiche</a>
-                              <a class="nav-link" href="Cart.html"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
-                              <a class="nav-link" href="HomePage2.html#categorie"> &nbsp; Categorie</a>
-                              <a class="nav-link" href="HomePage2.html#artisti"> &nbsp; Artisti</a>
-                              <a class="nav-link" href="#"> &nbsp; Chi Siamo</a>
-                        </li>
-                      </ul>
-                      <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-light" type="submit">Search</button>
-                      </form>
-                    </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: white;">Menù</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="HomePage2.html"><i class="fa fa-home"></i>&nbsp; Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="Utente.html"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
+                        <a class="nav-link" href="./login.php">&emsp;&emsp; Login</a>
+                        <a class="nav-link" href="./registrazione.php">&emsp;&emsp; Registrazione</a>
+                        <a class="nav-link" href="./archivio-notifiche.php"><i class="fa fa-bell"></i>&nbsp; Notifiche</a>
+                        <a class="nav-link" href="./archivio-carrello.php"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
+                        <a class="nav-link" href="./archivio-categorie.php"> &nbsp; Categorie</a>
+                        <a class="nav-link" href="./archivio-artisti.php"> &nbsp; Artisti</a>
+                        <a class="nav-link" href="./home2.php#chisiamo"> &nbsp; Chi Siamo</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-light" type="submit">Search</button>
+                    </form>
                   </div>
                 </div>
-              </nav>
-            </div>   
+              </div>
+            </nav>
+          </div>   
         </div>
 </header>
 
@@ -88,7 +88,6 @@
   </div><!-- /.container -->
 
 
-  <!-- FOOTER -->
   <div id="chisiamo" class="container-fluid mt-5" style="padding: 0px; text-align: center;">
     <div class="card" style="width: 100%;">
         <div class="row mb-4 ">
@@ -105,10 +104,10 @@
             <div class="col-md-3">
                 <h5 class="heading" style="margin-top: 15px;">Pagine</h5>
                 <ul>
-                  <a href="HomePage2.html"><li>Home</li></a>
-                  <a href="Quadri.html"><li>Quadri</li></a>
-                  <a href="Artisti.html"><li>Artisti</li></a>
-                  <a href="Categorie.html"><li>Categorie</li></a>
+                  <a href="./home2.php"><li>Home</li></a>
+                  <a href="./archivio-quadri.php"><li>Quadri</li></a>
+                  <a href="./archivio-artisti.php"><li>Artisti</li></a>
+                  <a href="./archivio-Categorie.php"><li>Categorie</li></a>
                 </ul>
             </div>
             
@@ -116,8 +115,8 @@
                 <h5 class="heading" style="margin-top: 15px;">Utente</h5>
                 <ul class="card-text">
                     <a href="Utente.html"><li>Account</li></a>
-                    <a href="Cart.html"><li>Carrello</li></a>
-                    <a href=""><li>Logout</li></a>              
+                    <a href="./archivio-carrello.php"><li>Carrello</li></a>
+                    <a href="./logout.php"><li>Logout</li></a>              
                 </ul>
             </div>
         </div>
@@ -130,19 +129,17 @@
         </div>
         <div class="divider mb-4"> </div>
         <div class="row" style="font-size:10px;">
-            <div class="col-md-6 col-sm-6 col-xs-6">
-                
+          <div class="col-md-6 col-sm-6 col-xs-6"></div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="pull-right mr-4 d-flex policy">
+              <div>Terms of Use</div>
+              <div>Privacy Policy</div>
+              <div>Cookie Policy</div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="pull-right mr-4 d-flex policy">
-                    <div>Terms of Use</div>
-                    <div>Privacy Policy</div>
-                    <div>Cookie Policy</div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 </main>
 
 

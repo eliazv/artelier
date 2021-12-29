@@ -27,7 +27,7 @@
             <nav class="navbar navbar-dark bg-dark fixed-top">
               <div class="container-fluid">
 
-                <a href="HomePage2.html"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
+                <a href="./home2.php"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                   <span class="navbar-toggler-icon"></span>
@@ -43,14 +43,23 @@
                         <a class="nav-link active" aria-current="page" href="HomePage2.html"><i class="fa fa-home"></i>&nbsp; Home</a>
                       </li>
                       <li class="nav-item">
+                      <?php if(isUserLoggedIn()): ?>
                         <a class="nav-link" href="Utente.html"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
+                        <a class="nav-link" href="./archivio-notifiche.php"><i class="fa fa-bell"></i>&nbsp; Notifiche</a>
+                        <a class="nav-link" href="./archivio-carrello.php"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
+                        <a class="nav-link" href="./archivio-categorie.php"> &nbsp; Categorie</a>
+                        <a class="nav-link" href="./archivio-artisti.php"> &nbsp; Artisti</a>
+                        <a class="nav-link" href="./home2.php#chisiamo"> &nbsp; Chi Siamo</a>
+                        <a class="nav-link" href="./logout.php"> &nbsp; Logout</a>
+
+                      <?php else:?>
                         <a class="nav-link" href="./login.php">&emsp;&emsp; Login</a>
                         <a class="nav-link" href="./registrazione.php">&emsp;&emsp; Registrazione</a>
-                        <a class="nav-link" href="Notifiche.html"><i class="fa fa-bell"></i>&nbsp; Notifiche</a>
-                        <a class="nav-link" href="Cart.html"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
-                        <a class="nav-link" href="Categorie.html"> &nbsp; Categorie</a>
-                        <a class="nav-link" href="Artisti.html"> &nbsp; Artisti</a>
-                        <a class="nav-link" href="HomePage2.html#chisiamo"> &nbsp; Chi Siamo</a>
+                        <a class="nav-link" href="./archivio-categorie.php"> &nbsp; Categorie</a>
+                        <a class="nav-link" href="./archivio-artisti.php"> &nbsp; Artisti</a>
+                        <a class="nav-link" href="./home2.php#chisiamo"> &nbsp; Chi Siamo</a>
+                      <?php endif?>
+                        
                       </li>
                     </ul>
                     <form class="d-flex">
@@ -70,7 +79,7 @@
             <h2 class="title">PITTURA</h2>
             <h2 class="subtitle">Le migliori repliche dei quadri più famosi.</h2>
             <div class="button">
-              <a href="Quadri.html">Esplora<i class="icon icon-ico-arrow-new-right"></i></a>
+              <a href="./archivio-quadri.php">Esplora<i class="icon icon-ico-arrow-new-right"></i></a>
             </div>
           </div>
         </section>
@@ -145,7 +154,7 @@
 
       <div class="col-9"></div>
         <div class="col-2" style="margin-top: 25px;">
-          <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="Artisti.html">Mostra tutti</a></button>
+          <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="./archivio-artisti.php">Mostra tutti</a></button>
         </div>
       </div><!-- /.row -->
 
@@ -218,7 +227,7 @@
 
     <div class="row"><div class="col-9"></div>
       <div class="col-2">
-        <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="Categorie.html">Mostra tutte</a></button>
+        <button type="button" class="btn btn-outline-secondary"><a class="text-reset" href="./archivio-Categorie.php">Mostra tutte</a></button>
       </div>
     </div>
 
@@ -245,19 +254,24 @@
             <div class="col-md-3">
                 <h5 class="heading" style="margin-top: 15px;">Pagine</h5>
                 <ul>
-                  <a href="HomePage2.html"><li>Home</li></a>
-                  <a href="Quadri.html"><li>Quadri</li></a>
-                  <a href="Artisti.html"><li>Artisti</li></a>
-                  <a href="Categorie.html"><li>Categorie</li></a>
+                  <a href="./home2.php"><li>Home</li></a>
+                  <a href="./archivio-quadri.php"><li>Quadri</li></a>
+                  <a href="./archivio-artisti.php"><li>Artisti</li></a>
+                  <a href="./archivio-Categorie.php"><li>Categorie</li></a>
                 </ul>
             </div>
             
             <div class="col-md-3">
                 <h5 class="heading" style="margin-top: 15px;">Utente</h5>
                 <ul class="card-text">
+                <?php if(isUserLoggedIn()): ?>
                     <a href="Utente.html"><li>Account</li></a>
-                    <a href="Cart.html"><li>Carrello</li></a>
-                    <a href="./logout.php"><li>Logout</li></a>              
+                    <a href="./archivio-carrello.php"><li>Carrello</li></a>
+                    <a href="./logout.php"><li>Logout</li></a>   
+                    <?php else: ?> 
+                      <a href="./login.php"><li>Login</li></a>
+                      <a href="./registrazione.php"><li>Registrazione</li></a>
+                    <?php endif; ?> 
                 </ul>
             </div>
         </div>
@@ -270,19 +284,17 @@
         </div>
         <div class="divider mb-4"> </div>
         <div class="row" style="font-size:10px;">
-            <div class="col-md-6 col-sm-6 col-xs-6">
-                
+          <div class="col-md-6 col-sm-6 col-xs-6"></div>
+          <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="pull-right mr-4 d-flex policy">
+              <div>Terms of Use</div>
+              <div>Privacy Policy</div>
+              <div>Cookie Policy</div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-6">
-                <div class="pull-right mr-4 d-flex policy">
-                    <div>Terms of Use</div>
-                    <div>Privacy Policy</div>
-                    <div>Cookie Policy</div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 </main>
 
 
