@@ -107,7 +107,7 @@
                           
                         <div class="carousel-item">
                       <?php endif; ?>
-                      <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="...">
+                      <a href="./archivio-articolo.php?titoloq=<?php echo $quadro["titolo"];?>"><img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="..."></a>
 
                       </div>
 
@@ -174,12 +174,12 @@
 
           <div class="row featurette">
             <div class="col-5">
-              <a href="HomePage2.html"><h2 class="featurette-heading"><?php echo $quadro["titolo"] ?></h2></a>
+            <a href="./archivio-articolo.php?titoloq=<?php echo $quadro["titolo"];?>"><h2 class="featurette-heading"><?php echo $quadro["titolo"] ?></h2></a>
               <p class="lead"><?php echo $quadro["artista"] ?></p>
             </div>
         
             <div class="col-7">
-              <a href="HomePage2.html"> <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="..."></a>
+            <a href="./archivio-articolo.php?titoloq=<?php echo $quadro["titolo"];?>"><img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="..."></a>
             </div>
           </div>
 
@@ -188,11 +188,11 @@
           <div class="row featurette">
       
             <div class="col-7">
-              <a href="HomePage2.html"> <img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="..."></a>
+            <a href="./archivio-articolo.php?titoloq=<?php echo $quadro["titolo"];?>"><img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="..."></a>
             </div>
 
             <div class="col-5">
-              <a href="HomePage2.html"><h2 class="featurette-heading"><?php echo $quadro["titolo"] ?></h2></a>
+            <a href="./archivio-articolo.php?titoloq=<?php echo $quadro["titolo"];?>"><h2 class="featurette-heading"><?php echo $quadro["titolo"] ?></h2></a>
               <p class="lead"><?php echo $quadro["artista"] ?></p>
             </div>
           </div>
@@ -219,7 +219,7 @@
     
       <div class="row">
         <div class="col-12">
-          <a href="HomePage2.html"><img src="<?php echo UPLOAD_DIR.$categoria["immagine"]; ?>" alt="" class="rounded mx-auto d-block";  style=" margin: 20px; max-height: 300px; max-width:90%;"> </a>
+        <a href="./archivio-CategoriaSpecifica.php?nomec=<?php echo $categoria["nomeCorrArt"]; ?>"><img src="<?php echo UPLOAD_DIR.$categoria["immagine"]; ?>" alt="" class="rounded mx-auto d-block";  style=" margin: 20px; max-height: 300px; max-width:90%;"> </a>
         </div>
       </div>
 
