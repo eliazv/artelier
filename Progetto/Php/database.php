@@ -100,10 +100,10 @@ class DatabaseHelper{
     }
 
     //tutti i quadri di un carrello specifico
-    public function getCompone($codCarrello){
-        $query = "SELECT titolo, quantita FROM compone WHERE codCarrello = ?";
+    public function getCarrello($email){
+        $query = "SELECT titolo, quantita FROM carrello WHERE email = ?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i',$codCarrello);
+        $stmt->bind_param('s',$email);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -111,8 +111,10 @@ class DatabaseHelper{
     }
 
        //TUTTE LE NOTIFICHE
-       public function getNotifiche(){
-        $stmt = $this->db->prepare("SELECT * FROM notifica");
+       public function getNotifiche($email){
+        $query ="SELECT * FROM notifica WHERE email=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$email);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -155,10 +157,24 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function insertInCarrello($email, $titolo, $quantita){
+        $query= "INSERT INTO carrello(email, titolo, quantita) VALUES (?,?,?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssi', $email, $titolo, $quantita);
+        $stmt->execute();
+    }
+
     public function insertUser($email, $password, $nome, $cognome, $indirizzo, $paese, $cap){
         $query= "INSERT INTO utente(email, passwordd, nome, cognome, indirizzo, paese, cap) VALUES (?,?,?,?,?,?,?)";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ssssssi', $email, $password, $nome, $cognome, $indirizzo, $paese, $cap);
+        $stmt->execute();
+    }
+
+    public function insertNotifica($titolo, $testo, $dataeora, $visualizzato, $email){
+        $query= "INSERT INTO notifica(titolo, testo, dataeora, visualizzato, email) VALUES (?,?,?,?,?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sssis', $titolo, $testo, $dataeora, $visualizzato, $email);
         $stmt->execute();
     }
 

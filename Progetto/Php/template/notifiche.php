@@ -70,7 +70,8 @@
 
 
 <!--scorrere dall'ultima notifica alla prima, non così!!-->
-<?php foreach($templateParams["notifica"] as $notifica): 
+
+<?php foreach(array_reverse($templateParams["notifica"]) as $notifica): 
     $visualizzato="alert alert-secondary";
     if($notifica["visualizzato"]==0):
         $visualizzato="alert alert-primary";

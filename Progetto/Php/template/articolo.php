@@ -119,6 +119,7 @@
         <?php endforeach; ?>
 
         <hr>
+        <form action="./archivio-articolo.php" method="post">
         <div class="table-responsive mb-2">
           <table class="table table-sm table-borderless">
             <tbody>
@@ -131,7 +132,7 @@
                   <div class="def-number-input number-input safari_only mb-0">
                     <!--<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                       class="minus"></button>-->
-                    <input class="quantity" min="0" name="quantity" value="1" type="number">
+                    <input class="quantity" id="quantita" name="quantita" min="1" name="quantity" value="1" type="number">
                     <!--<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                       class="plus"></button>-->
                   </div>
@@ -156,10 +157,15 @@
             </tbody>
           </table>
         </div>
-        <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Compra ora!</button>
-        <button type="button" class="btn btn-light btn-md mr-1 mb-2" style="background-color:rgb(228, 228, 2)"><i
+        <button type="button" name="btnBuyNow" class="btn btn-primary btn-md mr-1 mb-2">Compra ora!</button>
+        <button type="button" name="btnAggCarrello" class="btn btn-light btn-md mr-1 mb-2" style="background-color:rgb(228, 228, 2)"><i
             class="fa fa-shopping-cart "></i> &nbsp;Aggiungi al carrello</button>
+        </form>
       </div>
+      <?php var_dump($_SESSION);
+            var_dump($_POST);
+            var_dump($templateParams["quadroSpecifico"][0]["titolo"]);?>
+
   </div>
 </div>
 

@@ -70,15 +70,15 @@
                         <h2>Carrello</h2>
                     </div>
 
-                    <?php $indx=0; $somma=0;?>
-                    <?php foreach($templateParams["compone"] as $compone): ?>
+                    <?php $somma=0;?>
+                    <?php foreach($templateParams["carrello"] as $carrello): ?>
                       
-                      <?php $templateParams["quadro"] = $dbh->getQuadroByTitolo($compone["titolo"]);  ?>
+                      <?php $templateParams["quadro"] = $dbh->getQuadroByTitolo($carrello["titolo"]);  ?>
 
                     <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                        <div class="mr-1"><img class="rounded" src="../Immagini/<?php echo $templateParams["quadro"][$indx]["immagine"] ?>" width="150"></div>
+                        <div class="mr-1"><img class="rounded" src="../Immagini/<?php echo $templateParams["quadro"][0]["immagine"] ?>" width="150"></div>
                         <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">
-                            <?php echo $compone["titolo"] ?>
+                            <?php echo $carrello["titolo"] ?>
                         </span>
                        
                             <div class="d-flex flex-row product-desc">
@@ -86,19 +86,18 @@
                               
                             </div>
                             <div class="d-flex flex-row product-desc">
-                              <h6 class="text-grey mt-1 mr-1 ml-1">&emsp;-&nbsp;<?php echo $compone["quantita"] ?>&nbsp;+ </h6>
+                              <h6 class="text-grey mt-1 mr-1 ml-1">&emsp;-&nbsp;<?php echo $carrello["quantita"] ?>&nbsp;+ </h6>
                               
                             </div>
                         </div>
                         <div>
-                            <?php $totPaziale=($templateParams["quadro"][$indx]["prezzo"] * $compone["quantita"]);?>
-                            <h6 class="text-grey">&nbsp;&nbsp;&nbsp;€<?php echo $totPaziale ?> &nbsp;</h6> <!--*php echo $compone["quantita"]-->
+                            <?php $totPaziale=(($templateParams["quadro"][0]["prezzo"]) * ($carrello["quantita"]));?>
+                            <h6 class="text-grey">&nbsp;&nbsp;&nbsp;€<?php echo $totPaziale ?> &nbsp;</h6> 
                         </div>
                         <div class="d-flex align-items-center"><i class="fa fa-trash-o" style="color: red;"></i></div>
                     </div>
                     <?php 
-                      $somma = $somma + $totPaziale;
-                      $indx++; ?>
+                      $somma = $somma + $totPaziale;?>
                     <?php endforeach; ?>
 
 <br><br>

@@ -10,20 +10,23 @@ if (isset($_POST['btnInserisci'])) {
                     //(! empty($_POST['prezzo'])) && (! empty($_POST['immagineT'])) && (! empty($_POST['corrente'])) &&
                    // (! empty($_POST['descrizione']))){
 
-                        $titolo = $_POST['titolo'];
-                        $artista = $_POST['artista'];
-                        $dimensione = $_POST['dimensione'];
-                        $prezzo = $_POST['prezzo'];
-                        $corrente = $_POST['corrente'];
-                        $descrizione = $_POST['descrizione'];
-                        $immagine = $_POST['immagineT'];
+                    $titolo = $_POST['titolo'];
+                    $artista = $_POST['artista'];
+                    $dimensione = $_POST['dimensione'];
+                    $prezzo = $_POST['prezzo'];
+                    $corrente = $_POST['corrente'];
+                    $descrizione = $_POST['descrizione'];
+                    $immagine = $_POST['immagineT'];
 
-                        
-                               
-                        $dbh->insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $corrente, $descrizione);
-                       
-                    }
-               // }
+                    
+                           
+                    $dbh->insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $corrente, $descrizione);
+
+                    $dbh->insertNotifica("Nuovo Articolo disponibile", "abbiamo aggiunto al nostro catalogo un nuovo articolo, dacci un'occhiata",
+                    date("Y-m-d H:i:s"), 0, "elia@ciao.com");
+                   
+    }
+ // }
 
 
 

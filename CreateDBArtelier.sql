@@ -26,24 +26,6 @@ CREATE TABLE CorrenteArtistica(
     descrizione varchar(1000)
 );
 
-CREATE TABLE Carrello(
-    codCarrello int PRIMARY KEY AUTO_INCREMENT,
-    email varchar(50), 
-    FOREIGN KEY(email) REFERENCES Utente(email)
-);
-
-CREATE TABLE Ordine(
-    codOrdine int PRIMARY KEY AUTO_INCREMENT,
-    dataOrdine date,
-    dataSpedizione date,
-    dataConsegna dateTime,
-    stato boolean,
-    codCarrello int ,
-    codPagamento int,
-    FOREIGN KEY(codCarrello) REFERENCES Carrello (codCarrello),
-    FOREIGN KEY(codPagamento) REFERENCES Pagamento(codPagamento)
-);
-
 CREATE TABLE Quadro(
     titolo varchar(50) PRIMARY KEY,
     immagine varchar(500),
@@ -56,6 +38,29 @@ CREATE TABLE Quadro(
     FOREIGN KEY(nomeCorrArt) REFERENCES CorrenteArtistica(nomeCorrArt)
 );
 
+CREATE TABLE Carrello(
+	codCarrello int  PRIMARY KEY  AUTO_INCREMENT,
+    email varchar(50), 
+	titolo varchar(50),
+    quantita int,
+    FOREIGN KEY(email) REFERENCES Utente(email),
+	FOREIGN KEY(titolo) REFERENCES Quadro(titolo)
+);
+
+
+CREATE TABLE Ordine(
+    codOrdine int PRIMARY KEY AUTO_INCREMENT,
+    dataOrdine date,
+    dataSpedizione date,
+    dataConsegna dateTime,
+    stato boolean,
+    email varchar(50),
+    codPagamento int,
+    FOREIGN KEY(email) REFERENCES Utente(email),
+    FOREIGN KEY(codPagamento) REFERENCES Pagamento(codPagamento)
+);
+
+
 CREATE TABLE Quadro_Ordinato(
     codQuadroOrdinato int PRIMARY KEY AUTO_INCREMENT,
     quantita int,
@@ -64,18 +69,10 @@ CREATE TABLE Quadro_Ordinato(
     FOREIGN KEY(titolo) REFERENCES Quadro(titolo)
 );
 
-CREATE TABLE Compone(
-    codCarrello int,
-    titolo varchar(50),
-    quantita int,
-    PRIMARY KEY (codCarrello, titolo),
-    FOREIGN KEY(codCarrello) REFERENCES Carrello(codCarrello),
-    FOREIGN KEY(titolo) REFERENCES Quadro(titolo)
-);
 
 CREATE TABLE Notifica(
     codNotifica int PRIMARY KEY AUTO_INCREMENT,
-    titolo varchar(20),
+    titolo varchar(40),
     testo varchar(500),
     dataeora datetime,
     visualizzato boolean,
