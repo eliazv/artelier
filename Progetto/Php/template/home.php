@@ -146,8 +146,8 @@
       <?php foreach($templateParams["3Artisti"] as $artista): ?>
     
         <div class="col-4">
-          <a href="HomePage2.html"><img src="<?php echo UPLOAD_DIR.$artista["immagine"]; ?>" class="d-block w-100" style="border-radius: 200px 200px 200px 200px" alt="..."></a>
-          <a href="HomePage2.html"><h2 class="text-center" style="padding-top: 15px;"><?php echo $artista["cognome"]; ?></h2></a>
+          <a href="./archivio-artistaSpecifico.php?artistaA=<?php echo $artista["cognome"];?>"><img src="<?php echo UPLOAD_DIR.$artista["immagine"]; ?>" class="d-block w-100" style="border-radius: 200px 200px 200px 200px" alt="..."></a>
+          <a href="./archivio-artistaSpecifico.php?artistaA=<?php echo $artista["cognome"];?>"><h2 class="text-center" style="padding-top: 15px;"><?php echo $artista["cognome"]; ?></h2></a>
         </div>
 
       <?php endforeach; ?>
