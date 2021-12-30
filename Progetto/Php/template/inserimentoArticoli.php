@@ -108,17 +108,101 @@
                   <label for="inputPassword4" class="form-label">Descrizione:</label>
                   <input type="text" class="form-control" id="descrizione" name="descrizione">
                 </div>
+                <div class="col-md-3"> </div>
                 <div class="col-md-6">
-                  <label for="text" class="form-label">Seleziona Immagine:</label>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Scegli File</label>
+                    <input class="form-control" type="file" accept="image/png, image/jpg, image/jpeg" id="immagineT" name="immagineT">
+                  </div>              
                 </div>
-                <div class="col-md-6">
-                  <input type="file" id="immagine" name="immagine" accept="image/png, image/jpg, image/jpeg">
-                  <input type="text" class="form-control" id="immagineT" name="immagineT">
-                </div>
-                <div class="col-md-6"> </div>
+                
+                <div class="col-md-3"> </div>
+                <div class="col-md-3"> </div>
+
+
                 <div class="col-md-6">
                   <br>
                   <button type="submit" name="btnInserisci" class="btn btn-primary">Inserisci</button>
+                </div>
+                                  
+                </div>
+              </form>
+          </div>
+
+          <hr>
+
+          <div class="row">
+        
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <h1><br><br>Inserisci Artista</h1><br>
+            
+            <h4 class="mb-3">
+              <form action="./archivio-inserimentoArt.php" method="post" class="row g-3">
+                <div class="col-md-6">
+                  <label for="cognome" class="form-label">Cognome:</label>
+                  <input type="text" class="form-control" id="cognome" name="nome">
+                </div>
+                <div class="col-md-6">
+                  <label for="nome" class="form-label">Nome:</label>
+                  <input type="text" class="form-control" id="nome" name="nome">
+                </div>
+                <div class="col-md-6">
+                  <label for="descrizione" class="form-label">Descrizione:</label>
+                  <input type="text" class="form-control" id="descrizione" name="descrizione">
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Scegli Immagine</label>
+                    <input class="form-control" type="file" accept="image/png, image/jpg, image/jpeg" id="immagineT" name="immagineT">
+                  </div>              
+                </div>
+                
+                <div class="col-md-3"> </div>
+
+
+                <div class="col-md-6">
+                  <br>
+                  <button type="submit" name="btnInserisciArtista" class="btn btn-primary">Inserisci</button>
+                </div>
+                </form>           
+                </div>
+          <hr>
+          <div class="row">
+        
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <h1><br><br>Inserisci Categoria</h1><br>
+            
+            <h4 class="mb-3">
+              <form action="./archivio-inserimentoArt.php" method="post" class="row g-3">
+                
+                <div class="col-md-6">
+                  <label for="nome" class="form-label">Nome:</label>
+                  <input type="text" class="form-control" id="nome" name="nome">
+                </div>
+                <div class="col-md-6">
+                  <label for="descrizione" class="form-label">Descrizione:</label>
+                  <input type="text" class="form-control" id="descrizione" name="descrizione">
+                </div>
+                
+                <div class="col-md-3"> </div>
+
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Scegli Immagine</label>
+                    <input class="form-control" type="file" accept="image/png, image/jpg, image/jpeg" id="immagineT" name="immagineT">
+                  </div>              
+                </div>
+                
+                <div class="col-md-3"> </div>
+                <div class="col-md-3"> </div>
+
+
+                <div class="col-md-6">
+                  <br>
+                  <button type="submit" name="btnInserisciCategoria" class="btn btn-primary">Inserisci</button>
                 </div>
                                   
                 </div>
