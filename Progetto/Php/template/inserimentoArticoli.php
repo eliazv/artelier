@@ -43,14 +43,23 @@
                         <a class="nav-link active" aria-current="page" href="HomePage2.html"><i class="fa fa-home"></i>&nbsp; Home</a>
                       </li>
                       <li class="nav-item">
+                      <?php if(isUserLoggedIn()): ?>
                         <a class="nav-link" href="Utente.html"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
-                        <a class="nav-link" href="./login.php">&emsp;&emsp; Login</a>
-                        <a class="nav-link" href="./registrazione.php">&emsp;&emsp; Registrazione</a>
                         <a class="nav-link" href="./archivio-notifiche.php"><i class="fa fa-bell"></i>&nbsp; Notifiche</a>
                         <a class="nav-link" href="./archivio-carrello.php"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
                         <a class="nav-link" href="./archivio-categorie.php"> &nbsp; Categorie</a>
                         <a class="nav-link" href="./archivio-artisti.php"> &nbsp; Artisti</a>
                         <a class="nav-link" href="./home2.php#chisiamo"> &nbsp; Chi Siamo</a>
+                        <a class="nav-link" href="./logout.php"> &nbsp; Logout</a>
+
+                      <?php else:?>
+                        <a class="nav-link" href="./login.php">&emsp;&emsp; Login</a>
+                        <a class="nav-link" href="./registrazione.php">&emsp;&emsp; Registrazione</a>
+                        <a class="nav-link" href="./archivio-categorie.php"> &nbsp; Categorie</a>
+                        <a class="nav-link" href="./archivio-artisti.php"> &nbsp; Artisti</a>
+                        <a class="nav-link" href="./home2.php#chisiamo"> &nbsp; Chi Siamo</a>
+                      <?php endif?>
+                        
                       </li>
                     </ul>
                     <form class="d-flex">
@@ -119,7 +128,9 @@
     </main>
 
 
-    <div id="chisiamo" class="container-fluid mt-5" style="padding: 0px; text-align: center;">
+    <!-- FOOTER -->
+
+  <div id="chisiamo" class="container-fluid mt-5" style="padding: 0px; text-align: center;">
     <div class="card" style="width: 100%;">
         <div class="row mb-4 ">
             <div class="col-md-4 ">
@@ -145,9 +156,14 @@
             <div class="col-md-3">
                 <h5 class="heading" style="margin-top: 15px;">Utente</h5>
                 <ul class="card-text">
+                <?php if(isUserLoggedIn()): ?>
                     <a href="Utente.html"><li>Account</li></a>
                     <a href="./archivio-carrello.php"><li>Carrello</li></a>
-                    <a href="./logout.php"><li>Logout</li></a>              
+                    <a href="./logout.php"><li>Logout</li></a>   
+                    <?php else: ?> 
+                      <a href="./login.php"><li>Login</li></a>
+                      <a href="./registrazione.php"><li>Registrazione</li></a>
+                    <?php endif; ?> 
                 </ul>
             </div>
         </div>
