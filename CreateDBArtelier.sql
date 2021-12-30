@@ -38,13 +38,21 @@ CREATE TABLE Quadro(
     FOREIGN KEY(nomeCorrArt) REFERENCES CorrenteArtistica(nomeCorrArt)
 );
 
+CREATE TABLE Quadro_Ordinato(
+    titoloQuaOrd varchar(50) PRIMARY KEY,
+    quantita int,
+    titoloq varchar(50),
+    arrivato boolean,
+    FOREIGN KEY(titoloq) REFERENCES Quadro(titolo)
+);
+
 CREATE TABLE Carrello(
 	codCarrello int  PRIMARY KEY  AUTO_INCREMENT,
     email varchar(50), 
 	titolo varchar(50),
     quantita int,
     FOREIGN KEY(email) REFERENCES Utente(email),
-	FOREIGN KEY(titolo) REFERENCES Quadro(titolo)
+	FOREIGN KEY(titolo) REFERENCES Quadro_Ordinato(titoloQuaOrd)
 );
 
 
@@ -59,16 +67,6 @@ CREATE TABLE Ordine(
     FOREIGN KEY(email) REFERENCES Utente(email),
     FOREIGN KEY(codPagamento) REFERENCES Pagamento(codPagamento)
 );
-
-
-CREATE TABLE Quadro_Ordinato(
-    codQuadroOrdinato int PRIMARY KEY AUTO_INCREMENT,
-    quantita int,
-    titolo varchar(50),
-    arrivato boolean,
-    FOREIGN KEY(titolo) REFERENCES Quadro(titolo)
-);
-
 
 CREATE TABLE Notifica(
     codNotifica int PRIMARY KEY AUTO_INCREMENT,
