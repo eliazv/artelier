@@ -80,7 +80,7 @@
         
           <div class="col-md-1"></div>
           <div class="col-md-10">
-            <h1><br><br>Inserisci Articolo</h1><br>
+            <h1><br><br>Inserisci Quadro</h1><br>
             
             <h4 class="mb-3">
               <form action="./archivio-inserimentoArt.php" method="post" class="row g-3">
@@ -122,7 +122,7 @@
 
                 <div class="col-md-6">
                   <br>
-                  <button type="submit" name="btnInserisci" class="btn btn-primary">Inserisci</button>
+                  <button type="submit" name="btnInserisciQuadro" class="btn btn-primary">Inserisci</button>
                 </div>
                                   
                 </div>

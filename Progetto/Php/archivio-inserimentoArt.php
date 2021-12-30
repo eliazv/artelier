@@ -5,7 +5,7 @@ require_once 'bootstrap.php';
 //$templateParams["titolo"] = "ArtElier - Articolo";
 //$templateParams["quadro"] = $dbh->getQuadroByTitolo("Guernica");
 
-if (isset($_POST['btnInserisci'])) {
+if (isset($_POST['btnInserisciQuadro'])) {
     //if( (! empty($_POST['titolo'])) &&  (! empty($_POST['artista'])) &&  (! empty($_POST['dimensione'])) && 
                     //(! empty($_POST['prezzo'])) && (! empty($_POST['immagineT'])) && (! empty($_POST['corrente'])) &&
                    // (! empty($_POST['descrizione']))){
@@ -26,7 +26,34 @@ if (isset($_POST['btnInserisci'])) {
                     date("Y-m-d H:i:s"), 0, "elia@ciao.com");
                    
     }
- // }
+
+    if (isset($_POST['btnInserisciArtista'])) {
+        //if( (! empty($_POST['titolo'])) &&  (! empty($_POST['artista'])) &&  (! empty($_POST['dimensione'])) && 
+                        //(! empty($_POST['prezzo'])) && (! empty($_POST['immagineT'])) && (! empty($_POST['corrente'])) &&
+                       // (! empty($_POST['descrizione']))){
+    
+                        $cognome = $_POST['cognome'];
+                        $nome = $_POST['nome'];
+                        $descrizione = $_POST['descrizione'];
+                        $immagine = $_POST['immagineT'];
+    
+                        
+                               
+                        $dbh->insertArtista($cognome, $nome, $descrizione, $immagine);                       
+        }
+
+
+        if (isset($_POST['btnInserisciCategoria'])) {
+            //if( (! empty($_POST['titolo'])) &&  (! empty($_POST['artista'])) &&  (! empty($_POST['dimensione'])) && 
+                            //(! empty($_POST['prezzo'])) && (! empty($_POST['immagineT'])) && (! empty($_POST['corrente'])) &&
+                           // (! empty($_POST['descrizione']))){
+        
+                            $nome = $_POST['nome'];
+                            $descrizione = $_POST['descrizione'];
+                            $immagine = $_POST['immagineT'];
+                
+                            $dbh->insertCategoria($cognome, $nome, $descrizione, $immagine);                       
+            }
 
 
 

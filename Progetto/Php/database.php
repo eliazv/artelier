@@ -159,6 +159,20 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function insertArtista($cognome, $nome, $descrizione, $immagine){
+        $query= "INSERT INTO artista(cognome, nome, descrizione, immagine) VALUES (?,?,?,?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ssss', $cognome, $nome, $descrizione, $immagine);
+        $stmt->execute();
+    }
+
+    public function insertCategoria($nome, $descrizione, $immagine){
+        $query= "INSERT INTO artista(nome, descrizione, immagine) VALUES (?,?,?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sss', $nome, $descrizione, $immagine);
+        $stmt->execute();
+    }
+
     public function insertInCarrello($email, $titolo, $quantita){
         $query= "INSERT INTO carrello(email, titolo, quantita) VALUES (?,?,?)";
         $stmt = $this->db->prepare($query);
