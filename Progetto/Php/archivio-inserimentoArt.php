@@ -34,12 +34,13 @@ if (isset($_POST['btnInserisciQuadro'])) {
     
                         $cognome = $_POST['cognome'];
                         $nome = $_POST['nome'];
-                        $descrizione = $_POST['descrizione'];
                         $immagine = $_POST['immagineT'];
+                        $descrizione = $_POST['descrizione'];
+                        
     
                         
                                
-                        $dbh->insertArtista($cognome, $nome, $descrizione, $immagine);                       
+                        $dbh->insertArtista($cognome, $nome, $immagine, $descrizione);                       
         }
 
 
@@ -49,10 +50,11 @@ if (isset($_POST['btnInserisciQuadro'])) {
                            // (! empty($_POST['descrizione']))){
         
                             $nome = $_POST['nome'];
-                            $descrizione = $_POST['descrizione'];
                             $immagine = $_POST['immagineT'];
+                            $descrizione = $_POST['descrizione'];
+                            
                 
-                            $dbh->insertCategoria($cognome, $nome, $descrizione, $immagine);                       
+                            $dbh->insertCategoria($nome, $immagine,$descrizione );                       
             }
 
 

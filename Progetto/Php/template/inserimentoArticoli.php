@@ -141,7 +141,7 @@
               <form action="./archivio-inserimentoArt.php" method="post" class="row g-3">
                 <div class="col-md-6">
                   <label for="cognome" class="form-label">Cognome:</label>
-                  <input type="text" class="form-control" id="cognome" name="nome">
+                  <input type="text" class="form-control" id="cognome" name="cognome">
                 </div>
                 <div class="col-md-6">
                   <label for="nome" class="form-label">Nome:</label>

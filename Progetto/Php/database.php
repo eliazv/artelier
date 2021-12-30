@@ -159,17 +159,17 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
-    public function insertArtista($cognome, $nome, $descrizione, $immagine){
-        $query= "INSERT INTO artista(cognome, nome, descrizione, immagine) VALUES (?,?,?,?)";
+    public function insertArtista($cognome, $nome, $immagine, $descrizione){
+        $query= "INSERT INTO artista(cognome, nome, immagine, descrizione) VALUES (?,?,?,?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssss', $cognome, $nome, $descrizione, $immagine);
+        $stmt->bind_param('ssss', $cognome, $nome, $immagine, $descrizione);
         $stmt->execute();
     }
 
-    public function insertCategoria($nome, $descrizione, $immagine){
-        $query= "INSERT INTO artista(nome, descrizione, immagine) VALUES (?,?,?)";
+    public function insertCategoria($nome, $immagine, $descrizione){
+        $query= "INSERT INTO correnteartistica(nomeCorrArt, immagine, descrizione) VALUES (?,?,?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('sss', $nome, $descrizione, $immagine);
+        $stmt->bind_param('sss', $nome, $immagine, $descrizione);
         $stmt->execute();
     }
 
