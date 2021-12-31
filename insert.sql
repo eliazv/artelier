@@ -27,17 +27,78 @@ Insert into artista()
 values ("Da Vinci", "Leonardo", "leodavinci.jpg", 
 "Leo � molto bravo");
 
+Insert into artista()
+values ("Kandinsky", "Vassilly", "kandisky.jpg", 
+"Kandisky molto bravo");
+
+Insert into artista()
+values ("Friedrich", "Caspar David", "friedrich.jpg", 
+"Friedrich molto bravo");
+
+Insert into artista()
+values ("Fussli", "Johann Heinrich", "fussli.jpg", 
+"Fussli molto bravo");
+
+Insert into artista()
+values ("Turner", "William", "turner.jpg", 
+"Turner molto bravo");
+
+Insert into artista()
+values ("Géricault", "Théodore", "gericault.jpg", 
+"Gericault molto bravo");
+
+Insert into artista()
+values ("Delacroix", "Eugène", "delacroix.jpg", 
+"delacroix molto bravo");
+
+Insert into artista()
+values ("Magritte", "Renè", "magritte.jpg", 
+"magritte molto bravo");
+
+Insert into artista()
+values ("Cezanne", "Paul", "cezanne.jpg", 
+"cezanne molto bravo");
+
+Insert into artista()
+values ("Mirò", "Joan", "miro.jpg", 
+"mirò molto bravo");
+
+Insert into artista()
+values ("Renoir", "Pierre-Auguste", "renoir.jpg", 
+"Renoir molto bravo");
+
+Insert into artista()
+values ("Monet", "Claude", "monet.jpg", 
+"Monet molto bravo");
 
 
+Insert into artista()
+values ("Boccioni", "Umberto", "boccioni.jpg", 
+"boccioni molto bravo");
 
 insert into CorrenteArtistica()
 values ("Cubismo", "cubismo.jpg", "Cubismo e' il termine col quale si e' soliti rappresentare una corrente artistica e culturale ben riconoscibile, distinta e fondante rispetto a molte altre correnti e movimenti che si sarebbero successivamente sviluppate. Tuttavia il cubismo non è un movimento capeggiato da un fondatore e non ha una direzione unitaria.");
 
 insert into CorrenteArtistica()
-values ("Espressionismo", "espressionismo.jpg", "Espressionismo bella corrente");
+values ("Espressionismo", "espressionismo.png", "Espressionismo bella corrente");
 
 insert into CorrenteArtistica()
 values ("Futurismo", "futurismo.jpg", "Futurismo bella corrente");
+
+insert into CorrenteArtistica()
+values ("Astrattismo", "astrattismo.png", "Astrattismo bella corrente");
+
+insert into CorrenteArtistica()
+values ("Realismo", "realismo.png", "Realismo bella corrente");
+
+insert into CorrenteArtistica()
+values ("Surrealismo", "surrealismo.png", "Surrealismo bella corrente");
+
+insert into CorrenteArtistica()
+values ("Impressionismo", "impressionismo.png", "Impressionismo bella corrente");
+
+insert into CorrenteArtistica()
+values ("Romanticismo", "romanticismo.png", "Romanticismo bella corrente");
 
 
 Insert into quadro()
@@ -54,6 +115,40 @@ values ("La persistenza della memoria","tempo.jpg", "200x100", "Dali'", "Cubismo
 
 Insert into quadro()
 values ("La dama con l'ermellino","damaermellino.jpg", "200x100", "Da Vinci", "Cubismo", "279.99", "bel quadro");
+
+insert into quadro()
+values ("Composition 8","composition8.jpg", "300x200", "Kandinsky", "Astrattismo", "279.99", "bel quadro");
+
+insert into quadro()
+values ("I giocatori di carte","igiocatoridicarte.jpg", "60x50", "Cezanne", "Impressionismo", "90.99", "bel quadro");
+
+insert into quadro()
+values ("Il carnevale di Arlecchino","ilcarnevalediarlecchino.jpg", "70x90", "Mirò", "Surrealismo", "149.99", "bel quadro");
+
+insert into quadro()
+values ("La colazione dei canottieri","ilpranzodeicanottieri.jpg", "130x170", "Renoir", "Impressionismo", "179.99", "bel quadro");
+
+insert into quadro()
+values ("Impressione, levar del sole","impressionelevardelsole.jpg", "50x60", "Monet", "Impressionismo", "249.99", "bel quadro");
+
+insert into quadro()
+values ("Incubo","incubo.jpg", "100x130", "Fussli", "Romanticismo", "129.99", "bel quadro");
+
+insert into quadro()
+values ("La risata","larisata.jpg", "110x150", "Boccioni", "Futurismo", "159.99", "bel quadro");
+
+insert into quadro()
+values ("La zattera della medusa","lazatteradellamedusa.jpg", "500x720", "Gericault", "Romanticismo", "479.99", "bel quadro");
+
+insert into quadro()
+values ("La morte di Sardanapalo","mortedisandanapalo.jpg", "400x500", "Delacroix", "Romanticismo", "379.99", "bel quadro");
+
+insert into quadro()
+values ("Tempesta di neve","tempestadineve.jpg", "90x120", "Turner", "Romanticismo", "129.99", "bel quadro");
+
+insert into quadro()
+values ("Viandante sul mare di nebbia","viandantesumaredinebbia.jpg", "90x70", "Friedrich", "Romanticismo", "379.99", "bel quadro");
+
 
 
 insert into notifica(titolo, testo, dataeora, visualizzato, email)
