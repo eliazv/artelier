@@ -4,6 +4,7 @@ require_once 'bootstrap.php';
 //Base Template
 //$templateParams["titolo"] = "ArtElier - Articolo";
 //$templateParams["quadro"] = $dbh->getQuadroByTitolo("Guernica");
+//$templateParams['utente'] = $_SESSION['email'];
 
 if (isset($_POST['btnInserisciQuadro'])) {
     //if( (! empty($_POST['titolo'])) &&  (! empty($_POST['artista'])) &&  (! empty($_POST['dimensione'])) && 
@@ -16,14 +17,12 @@ if (isset($_POST['btnInserisciQuadro'])) {
                     $prezzo = $_POST['prezzo'];
                     $corrente = $_POST['corrente'];
                     $descrizione = $_POST['descrizione'];
-                    $immagine = $_POST['immagineT'];
-
-                    
+                    $immagine = $_POST['immagineT'];                   
                            
                     $dbh->insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $corrente, $descrizione);
 
-                    $dbh->insertNotifica("Nuovo Articolo disponibile", "abbiamo aggiunto al nostro catalogo un nuovo articolo, dacci un'occhiata",
-                    date("Y-m-d H:i:s"), 0, "elia@ciao.com");
+                    $dbh->insertNotifica("Quadro inserito", "abbiamo aggiunto al nostro catalogo il nuovo articolo ". $titolo,
+                    date("Y-m-d H:i:s"), 0, $_SESSION['email']);
                    
     }
 
@@ -40,7 +39,10 @@ if (isset($_POST['btnInserisciQuadro'])) {
     
                         
                                
-                        $dbh->insertArtista($cognome, $nome, $immagine, $descrizione);                       
+                        $dbh->insertArtista($cognome, $nome, $immagine, $descrizione);   
+                        
+                        $dbh->insertNotifica("Artista inserito", "abbiamo aggiunto al nostro catalogo il nuovo artista ".$cognome . " ". "$nome",
+                        date("Y-m-d H:i:s"), 0, $_SESSION['email']);
         }
 
 
@@ -54,7 +56,9 @@ if (isset($_POST['btnInserisciQuadro'])) {
                             $descrizione = $_POST['descrizione'];
                             
                 
-                            $dbh->insertCategoria($nome, $immagine,$descrizione );                       
+                            $dbh->insertCategoria($nome, $immagine,$descrizione );       
+                            $dbh->insertNotifica("Categoria inserita", "abbiamo aggiunto al nostro catalogo la nuova categoria ".$nome,
+                            date("Y-m-d H:i:s"), 0, $_SESSION['email']);                
             }
 
 

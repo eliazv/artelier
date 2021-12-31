@@ -203,6 +203,16 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }    
+
+    public function countNotifiche($email){
+        $query ="SELECT COUNT(*) AS num FROM notifica WHERE email=? AND visualizzato = 0";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     
 }
 ?>

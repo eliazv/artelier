@@ -47,7 +47,7 @@
                       <li class="nav-item">
                       <?php if(isUserLoggedIn()): ?>
                         <a class="nav-link" href="Utente.html"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
-                        <a class="nav-link" href="./archivio-notifiche.php"><i class="fa fa-bell"></i>&nbsp; Notifiche</a>
+                        <a class="nav-link" href="./archivio-notifiche.php"><i class="fa fa-bell"></i>&nbsp; Notifiche <span class="badge bg-danger"> <?php echo $templateParams["notifiche"][0]["num"]?></span> </a>
                         <a class="nav-link" href="./archivio-carrello.php"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
                         <a class="nav-link" href="./archivio-categorie.php"> &nbsp; Categorie</a>
                         <a class="nav-link" href="./archivio-artisti.php"> &nbsp; Artisti</a>
