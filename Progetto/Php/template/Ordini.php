@@ -40,10 +40,10 @@
                   <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="HomePage2.html"><i class="fa fa-home"></i>&nbsp; Home</a>
+                        <a class="nav-link active" aria-current="page" href="./home2.php"><i class="fa fa-home"></i>&nbsp; Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="Utente.html"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
+                        <a class="nav-link" href="./utente2.php"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
                         <a class="nav-link" href="./login.php">&emsp;&emsp; Login</a>
                         <a class="nav-link" href="./registrazione.php">&emsp;&emsp; Registrazione</a>
                         <a class="nav-link" href="./archivio-notifiche.php"><i class="fa fa-bell"></i>&nbsp; Notifiche <span class="badge bg-danger"> <?php echo $templateParams["notifiche"][0]["num"]?></span> </a>
@@ -66,7 +66,11 @@
 
 
         <div class="container mt-5 mb-5">
-            
+            <?php if($_SESSION["email"] == NULL):
+              
+            ?>
+              <h3>DEVI EFFETTUARE IL LOGIN PER VISUALIZZARE GLI ORDINI</h3>
+            <?php else: ?>
             <div class="d-flex justify-content-center row">
                 <div class="col-md-8">
                     <div class="p-2">
@@ -114,7 +118,7 @@
                     <?php endforeach; ?>  
                 </div>
             </div>
-            
+            <?php endif;?>
         </div>
 
 
@@ -125,7 +129,7 @@
             <div class="col-md-4 ">
                 <div class="footer-text">
                     
-                        <a href="HomePage2.html"> <img src="../Immagini/logobiancocut.png" alt="" style="max-height: 50px; margin-bottom: 10px;"></a>
+                        <a href="./home2.php"> <img src="../Immagini/logobiancocut.png" alt="" style="max-height: 50px; margin-bottom: 10px;"></a>
                     
                     <p class="card-text">Artelier è un progetto universitario con l'obiettivo di simulare il funzionamento di un negozio online che mette a disposizione riproduzioni di quadri famosi.<br> 
                       E' sviluppato dagli studenti: Elia Zavatta, Pietro Lelli e Giovanni Maffi dell'Università di Bologna per la materia Tecnologie Web.</p>
@@ -145,7 +149,7 @@
             <div class="col-md-3">
                 <h5 class="heading" style="margin-top: 15px;">Utente</h5>
                 <ul class="card-text">
-                    <a href="Utente.html"><li>Account</li></a>
+                    <a href="./Utente.php"><li>Account</li></a>
                     <a href="./archivio-carrello.php"><li>Carrello</li></a>
                     <a href="./logout.php"><li>Logout</li></a>              
                 </ul>
