@@ -153,19 +153,28 @@ insert into quadro()
 values ("Viandante sul mare di nebbia","viandantesumaredinebbia.jpg", "90x70", "Friedrich", "Romanticismo", "379.99", "bel quadro");
 
 
-
 insert into notifica(titolo, testo, dataeora, visualizzato, email)
 values ("Per te", "consigli quadri pkwfwlfwn", '2021-12-20 18:00:00', false , "elia@ciao.com");
-
 
 insert into notifica(titolo, testo, dataeora, visualizzato, email)
 values ("Ordine Confermato", "Abbiamo confermato il tuo ordine, il pacco verr� spedito a breve", '2021-12-20 19:00:00', true , "elia@ciao.com");
 
-insert into quadro_ordinato(titoloQuaOrd, titoloq, arrivato)
-values ("Guernica", "Guernica", 0);
 
-insert into quadro_ordinato(titoloQuaOrd, titoloq, arrivato)
-values ("Notte stellata", "Notte stellata", 1);
+
+insert into pagamento(codPagamento, importo)
+values (1, 799.97);
+
+
+insert into ordine(codOrdine, email, dataOrdine, dataConsegna,arrivato, codPagamento)
+values (1,"elia@ciao.com",'2021-12-20 18:00:00','2021-12-22 18:00:00',1,1);
+
+
+insert into quadro_ordinato(codOrdine, titoloQuaOrd, quantita)
+values (1,"Guernica",1);
+
+insert into quadro_ordinato(codOrdine, titoloQuaOrd, quantita )
+values (1,"Notte stellata", 2);
+
 
 insert into Carrello(email, titolo, quantita)
 values("elia@ciao.com", "Guernica", 2);
