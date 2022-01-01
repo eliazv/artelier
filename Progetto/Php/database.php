@@ -223,6 +223,55 @@ class DatabaseHelper{
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function updateIndirizzo($email, $indirizzo){
+        $query ="UPDATE utente SET indirizzo=? WHERE email=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss', $indirizzo, $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function updateCittà($email, $città){
+        $query ="UPDATE utente SET città=? WHERE email=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss', $città, $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function updatePaese($email, $paese){
+        $query ="UPDATE utente SET paese=? WHERE email=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss', $paese, $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     
+    public function updateCap($email, $cap){
+        $query ="UPDATE utente SET cap=? WHERE email=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('is', $cap, $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function updatePassword($email, $password){
+        $query ="UPDATE utente SET paswordd=? WHERE email=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss', $password, $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>

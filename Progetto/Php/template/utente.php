@@ -1,3 +1,5 @@
+utente
+
 <!doctype html>
 <html lang="it">
   <head>
@@ -90,52 +92,43 @@
         <?php else:?>
         <a class="mb-3" href="./archivio-Ordini.php" style="color: black; text-decoration: none;" >• I tuoi Ordini</a><br>
         <?php endif?>
-        <?php endforeach?>
 
         <hr>
         <h4 class="mb-3">Modifica i tuoi Dati<br></a><br>
           <form class="row g-3">
+            
             <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Nome</label>
-              <input type="email" class="form-control" id="inputNome">
+              <label for="inputPassword4" class="form-label">Vecchia Password</label>
+              <input type="password" class="form-control" id="inputPassword" name="vecchiaPassword">
             </div>
             <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Cognome</label>
-              <input type="password" class="form-control" id="inputCognome">
+              <label for="inputPassword4" class="form-label">Nuova Password</label>
+              <input type="password" class="form-control" id="inputPassword" name="nuovaPassword">
             </div>
             <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Password</label>
-              <input type="password" class="form-control" id="inputPassword">
-            </div>
-            <div class="col-12">
               <label for="inputAddress" class="form-label">Indirizzo</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Via Gramsci 781">
+              <input type="text" class="form-control" id="inputAddress" name="indirizzo" placeholder="<?php echo $utente["indirizzo"]?>">
             </div>
             <div class="col-md-6">
               <label for="inputCity" class="form-label">Città</label>
-              <input type="text" class="form-control" id="inputCity">
+              <input type="text" class="form-control" id="inputCity" name="città"placeholder="<?php echo $utente["città"]?>">
             </div>
             <div class="col-md-4">
-              <label for="inputState" class="form-label">Nazione</label>
-              <select id="inputState" class="form-select">
-                <option selected>Scegli...</option>
-                <option>Italia</option>
-              </select>
+            <label for="inputCity" class="form-label">Nazione</label>
+              <input type="text" class="form-control" id="inputNazione" name="nazione" placeholder="<?php echo $utente["paese"]?>">
             </div>
             <div class="col-md-2">
               <label for="inputCap" class="form-label">CAP</label>
-              <input type="text" class="form-control" id="inputZip">
+              <input type="text" class="form-control" id="inputZip" name="cap" placeholder="<?php echo $utente["cap"]?>">
             </div>
             <div class="col-12">
             </div>
             <div class="col-12">
-              <button type="submit" class="btn btn-primary">Modifica</button>
+            <button type="submit" class="btn btn-primary" name="btnModifica">Modifica</button>
             </div>
           </form>
+          <?php endforeach?>
+
       </div>
     </div>
   </main>
