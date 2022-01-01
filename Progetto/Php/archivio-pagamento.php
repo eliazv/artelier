@@ -3,10 +3,13 @@ require_once 'bootstrap.php';
 
 
 //Base Template
-$templateParams["titolo"] = "ArtElier - Checkout";
+$templateParams["titolo"] = "ArtElier - Pagamento";
 $templateParams["carrello"] = $dbh->getCarrello($_SESSION["email"]); //prendi email utente loggato 
-$templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
+
+//svuota carrello e fai l'ordine
+
+
 
 //var_dump($_GET);
-require 'template/articolo.php';
+require 'template/pagamento.php';
 ?>

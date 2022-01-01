@@ -15,6 +15,7 @@ CREATE TABLE Utente(
     passwordd varchar(50),
     nome varchar(50),
     cognome varchar(50),
+    venditore boolean,
     indirizzo varchar(150),
     paese varchar(50),
     cap int

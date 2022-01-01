@@ -81,8 +81,17 @@
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <h1>Il tuo Profilo</h1>
+
+        <?php foreach($templateParams["utente"] as $utente): ?>
+        <?php if($utente["venditore"] ): ?>
+
         <a class="mb-3" href="./archivio-Ordini.php" style="color: black; text-decoration: none;" >• I tuoi Ordini</a><br>
         <a class="mb-3" href="./archivio-inserimentoArt.php"  style="color: black; text-decoration: none;" >• Inserisci Articoli</a><br>
+        <?php else:?>
+        <a class="mb-3" href="./archivio-Ordini.php" style="color: black; text-decoration: none;" >• I tuoi Ordini</a><br>
+        <?php endif?>
+        <?php endforeach?>
+
         <hr>
         <h4 class="mb-3">Modifica i tuoi Dati<br></a><br>
           <form class="row g-3">
