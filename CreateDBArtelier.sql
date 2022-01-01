@@ -17,6 +17,7 @@ CREATE TABLE Utente(
     cognome varchar(50),
     venditore boolean,
     indirizzo varchar(150),
+	citta VARCHAR(50),
     paese varchar(50),
     cap int
 );
