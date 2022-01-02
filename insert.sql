@@ -160,13 +160,8 @@ insert into notifica(titolo, testo, dataeora, visualizzato, email)
 values ("Ordine Confermato", "Abbiamo confermato il tuo ordine, il pacco verr� spedito a breve", '2021-12-20 19:00:00', true , "elia@ciao.com");
 
 
-
-insert into pagamento(codPagamento, importo)
-values (1, 799.97);
-
-
-insert into ordine(codOrdine, email, dataOrdine, dataConsegna,arrivato, codPagamento)
-values (1,"elia@ciao.com",'2021-12-20 18:00:00','2021-12-22 18:00:00',1,1);
+insert into ordine(codOrdine, email, dataOrdine, dataConsegna, arrivato, importo)
+values (1,"elia@ciao.com",'2021-12-20 18:00:00','2021-12-22 18:00:00',1,799.99);
 
 
 insert into quadro_ordinato(codOrdine, titoloQuaOrd, quantita)

@@ -1,7 +1,3 @@
-CREATE TABLE Pagamento(
-    codPagamento int PRIMARY KEY AUTO_INCREMENT,
-    importo float(7,2)
-);
 
 CREATE TABLE Artista(
     cognome varchar(50) PRIMARY KEY,
@@ -46,9 +42,8 @@ CREATE TABLE Ordine(
     dataOrdine datetime,
     dataConsegna datetime,
 	arrivato boolean,
-    codPagamento int,
-    FOREIGN KEY(email) REFERENCES Utente(email),
-    FOREIGN KEY(codPagamento) REFERENCES Pagamento(codPagamento)
+    importo float(7,2),
+    FOREIGN KEY(email) REFERENCES Utente(email)
 );
 
 CREATE TABLE Quadro_Ordinato(
