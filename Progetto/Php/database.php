@@ -273,5 +273,35 @@ class DatabaseHelper{
 
         return $stmt->execute();
     }
+
+    public function deleteCart($email){
+        $qery ="DELETE FROM carrello WHERE email = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+    }
+
+    public function insertOrder($email, $dataOrdine, $dataConsegna, $arrivato){
+        $query= "INSERT INTO ordine(email, dataOrdine, dataConsegna, arrivato) VALUES (?,?,?,?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sssi', $email, $dataOrdine, $dataConsegna, $arrivato);
+        $stmt->execute();
+    }
+
+    public function insertOrderedPainting($codOrdine, $titoloQuaOrd, $quantita){
+        $query= "INSERT INTO quadro_ordinato(codOrdine, titoloQuaOrd, quantita) VALUES (?,?,?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('isi', $codOrdine, $titoloQuaOrd, $quantita);
+        $stmt->execute();
+    }
+
+    public function getLastOrder($email){
+        $stmt = $this->db->prepare("SELECT codOrdine FROM ordine WHERE email = ? ORDER BY codOrdine DESC LIMIT 1");
+        $stmt->bind_param('s',$email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>
