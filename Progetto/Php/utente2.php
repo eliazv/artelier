@@ -10,25 +10,24 @@ $templateParams["utente"] = $dbh->getUtente($_SESSION['email']);
 
 if (isset($_POST['btnModifica'])) {
     
-    $password = $_POST['vecchiaPassword'];
+    $vecchiaPassword = $_POST['vecchiaPassword'];
     $nuovaPassword = $_POST['nuovaPassword'];
     $indirizzo = $_POST['indirizzo'];
     $paese = $_POST['paese'];
     $cap = $_POST['cap'];
 
-    var_dump($password);
-    if($indirizzo!=$templateParams["utente"][0]["indirizzo"]){
+    if($indirizzo!=""){
         $dbh->updateIndirizzo($_SESSION['email'], $indirizzo);
     }
-    if($paese!=NULL){
+    if($paese!=""){
         $dbh->updatePaese($_SESSION['email'], $paese);
     }
 
-    if($cap!=NULL){
+    if($cap!=""){
         $dbh->updateCap($_SESSION['email'], $cap);
     }
-    if($password!=NULL && $nuovaPassword!=NULL ){
-        if($templateParams["utente"][0]["passwordd"] == $password){
+    if($vecchiaPassword!="" && $nuovaPassword!=""){
+        if($templateParams["utente"][0]["passwordd"] == $vecchiaPassword){
             $dbh->updatePassword($_SESSION['email'], $nuovaPassword);
         }
         else{

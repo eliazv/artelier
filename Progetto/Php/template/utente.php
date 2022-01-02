@@ -95,7 +95,7 @@ utente
 
         <hr>
         <h4 class="mb-3">Modifica i tuoi Dati<br></a><br>
-          <form class="row g-3">
+          <form class="row g-3"  action="./utente2.php" method="POST">
             
             <div class="col-md-6">
               <label for="inputPassword4" class="form-label">Vecchia Password</label>
@@ -103,7 +103,7 @@ utente
             </div>
             <div class="col-md-6">
               <label for="inputPassword4" class="form-label">Nuova Password</label>
-              <input type="password" class="form-control" id="inputPassword" name="nuovaPassword">
+              <input type="password" class="form-control" id="inputPassword2" name="nuovaPassword">
             </div>
             <div class="col-md-6">
               <label for="inputAddress" class="form-label">Indirizzo</label>
@@ -115,7 +115,7 @@ utente
             </div>
             <div class="col-md-4">
             <label for="inputCity" class="form-label">Nazione</label>
-              <input type="text" class="form-control" id="inputNazione" name="nazione" placeholder="<?php echo $utente["paese"]?>">
+              <input type="text" class="form-control" id="inputNazione" name="paese" placeholder="<?php echo $utente["paese"]?>">
             </div>
             <div class="col-md-2">
               <label for="inputCap" class="form-label">CAP</label>
