@@ -111,7 +111,7 @@ utente
             </div>
             <div class="col-md-6">
               <label for="inputCity" class="form-label">Città</label>
-              <input type="text" class="form-control" id="inputCity" name="citta"placeholder="<?php echo $utente["citta"]?>">
+              <input type="text" class="form-control" id="inputCity" name="città"placeholder="<?php echo $utente["città"]?>">
             </div>
             <div class="col-md-4">
             <label for="inputCity" class="form-label">Nazione</label>
@@ -129,9 +129,7 @@ utente
             </div>
           </form>
           <?php endforeach;
-           var_dump($templateParams["utente"][0]["passwordd"]);
-           var_dump($vecchiaPassword);
-           var_dump($nuovaPassword);
+
           ?>
 
       </div>

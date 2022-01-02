@@ -13,7 +13,7 @@ if (isset($_POST['btnModifica'])) {
     $vecchiaPassword = $_POST['vecchiaPassword'];
     $nuovaPassword = $_POST['nuovaPassword'];
     $indirizzo = $_POST['indirizzo'];
-    $citta = $_POST['citta'];
+    $città = $_POST['città'];
     $paese = $_POST['paese'];
     $cap = $_POST['cap'];
 
@@ -28,7 +28,7 @@ if (isset($_POST['btnModifica'])) {
         date("Y-m-d H:i:s"), 0, $_SESSION['email']);
     }
     if($citta!=""){
-        $dbh->updateCitta($_SESSION['email'], $citta);
+        $dbh->updateCitta($_SESSION['email'], $città);
         $dbh->insertNotifica("Modifica città", "Hai modificato le tue credenziali.",
         date("Y-m-d H:i:s"), 0, $_SESSION['email']);
     }
