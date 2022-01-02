@@ -71,6 +71,7 @@
             ?>
               <h3>DEVI EFFETTUARE IL LOGIN PER VISUALIZZARE GLI ORDINI</h3>
             <?php else: ?>
+            
             <div class="d-flex justify-content-center row">
                 <div class="col-md-8">
                     <div class="p-2">
@@ -89,7 +90,7 @@
                       <div>
                           <h6 class="text-grey mt-1 mr-1 ml-1">$<?php echo $ordine["prezzo"]?></h6>
                       </div>
-                      <div class="d-flex align-items-center"><a href="archivio-Tracciamento.php"><button class="btn btn-sm btn-outline-secondary">traccia</button></a>&nbsp;<span aria-hidden="true">&times;</span>
+                      <div class="d-flex align-items-center"><a href="archivio-Tracciamento.php"><button class="btn btn-sm btn-outline-secondary">traccia</button></a>&nbsp;<button class="btn btn-sm btn-outline-secondary">&times;</button>
                       </div>
 
                     </div>

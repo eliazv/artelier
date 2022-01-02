@@ -132,7 +132,7 @@ class DatabaseHelper{
     }
 
     public function getOrders($email){
-        $query = "SELECT quadro_ordinato.titoloQuaOrd, carrello.quantita, quadro.immagine, quadro.prezzo, ordine.dataOrdine, ordine.dataConsegna FROM quadro_ordinato, quadro, utente, carrello, ordine WHERE quadro_ordinato.titoloq = quadro.titolo AND quadro_ordinato.titoloQuaOrd = carrello.titolo AND carrello.email = utente.email AND utente.email = ordine.email AND quadro_ordinato.arrivato = 0 AND utente.email = ?";
+        $query ="SELECT quadro_ordinato.titoloQuaOrd, quadro_ordinato.CodQuadroOrdinato, quadro_ordinato.quantita, quadro.immagine, quadro.prezzo, ordine.dataOrdine, ordine.dataConsegna FROM quadro_ordinato, quadro, utente, ordine WHERE quadro_ordinato.titoloQuaOrd = quadro.titolo AND quadro_ordinato.codOrdine = ordine.codOrdine AND ordine.email = utente.email AND ordine.arrivato = 0 AND utente.email = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s',$email);
         $stmt->execute();
@@ -142,7 +142,7 @@ class DatabaseHelper{
     }
 
     public function getDeliveredOrders($email){
-        $query ="SELECT quadro_ordinato.titoloQuaOrd, carrello.quantita, quadro.immagine, quadro.prezzo, ordine.dataOrdine, ordine.dataConsegna FROM quadro_ordinato, quadro, utente, carrello, ordine WHERE quadro_ordinato.titoloq = quadro.titolo AND quadro_ordinato.titoloQuaOrd = carrello.titolo AND carrello.email = utente.email AND utente.email = ordine.email AND quadro_ordinato.arrivato = 1 AND utente.email = ?";
+        $query ="SELECT quadro_ordinato.titoloQuaOrd, quadro_ordinato.CodQuadroOrdinato, quadro_ordinato.quantita, quadro.immagine, quadro.prezzo, ordine.dataOrdine, ordine.dataConsegna FROM quadro_ordinato, quadro, utente, ordine WHERE quadro_ordinato.titoloQuaOrd = quadro.titolo AND quadro_ordinato.codOrdine = ordine.codOrdine AND ordine.email = utente.email AND ordine.arrivato = 1 AND utente.email = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s',$email);
         $stmt->execute();

@@ -39,7 +39,7 @@
         <div class="card-header bg-white">
             <div class="row justify-content-between">
                 <div class="col">
-                    <p class="text-muted"> Numero Ordine: <span class="font-weight-bold text-dark"><?php echo $ordinedaTr["codQuadroOrdinato"]?></span></p>
+                    <p class="text-muted"> Numero Ordine: <span class="font-weight-bold text-dark"><?php echo $ordinedaTr["CodQuadroOrdinato"]?></span></p>
                 </div>
                 <div class="flex-col my-auto">
                     <p class="text-muted"> Ordinato il: <span class="font-weight-bold text-dark"><?php echo $ordinedaTr["dataOrdine"]?></span> </p>
@@ -49,7 +49,7 @@
         <div class="card-body">
             <div class="media flex-column flex-sm-row">
                 <div class="media-body ">
-                    <h5 class="bold"><?php echo $ordinedaTr["titolo"]?></h5>
+                    <h5 class="bold"><?php echo $ordinedaTr["titoloQuaOrd"]?></h5>
                     <p class="text-muted"> Qt: <?php echo $ordinedaTr["quantita"]?></p>
                     <h4 class="mt-3 mb-4 bold"> 220<span class="mt-5">&#8364;</span> </h4>
                     <p class="text-muted">Consegna Prevista: <span class="Today"><?php echo $ordinedaTr["dataConsegna"]?></span></p> 
@@ -65,13 +65,7 @@
                 </ul>
             </div>
         </div>
-        <div class="card-footer bg-white px-sm-3 pt-sm-4 px-0">
-            <div class="row text-center ">
-                <div class="col my-auto mx-0 px-0 ">
-                    <h5>Cancella</h5>
-                </div>  
-            </div>
-        </div>
+       
     </div>
     <?php endforeach; ?>
 </div>
