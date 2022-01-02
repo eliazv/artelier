@@ -190,10 +190,10 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
-    public function insertUser($email, $password, $nome, $cognome, $indirizzo, $paese, $cap){
-        $query= "INSERT INTO utente(email, passwordd, nome, cognome, indirizzo, paese, cap) VALUES (?,?,?,?,?,?,?)";
+    public function insertUser($email, $password, $nome, $cognome, $venditore, $indirizzo, $città, $paese, $cap){
+        $query= "INSERT INTO utente(email, passwordd, nome, cognome, venditore, indirizzo, città, paese, cap) VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssssssi', $email, $password, $nome, $cognome, $indirizzo, $paese, $cap);
+        $stmt->bind_param('ssssisssi', $email, $password, $nome, $cognome, $venditore, $indirizzo, $città, $paese, $cap);
         $stmt->execute();
     }
 

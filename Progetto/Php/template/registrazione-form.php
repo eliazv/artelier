@@ -101,9 +101,13 @@
               <label for="password" class="form-label">Password:</label>
               <input type="password" class="form-control" id="password" name="password">
             </div>
-            <div class="col-12">
+            <div class="col-md-6">
               <label for="indirizzo" class="form-label">Indirizzo:</label>
-              <input type="text" class="form-control" id="indirizzo" name="indirizzo" placeholder="Via Gramsci 781">
+              <input type="text" class="form-control" id="indirizzo" name="indirizzo" placeholder="Esempio: Via Gramsci 781">
+            </div>
+            <div class="col-md-6">
+              <label for="città" class="form-label">Città:</label>
+              <input type="città" class="form-control" id="città" name="città">
             </div>
             <div class="col-md-4">
             <label for="indirizzo" class="form-label">Paese:</label>

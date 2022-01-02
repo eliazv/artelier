@@ -13,15 +13,16 @@ require_once 'bootstrap.php';
                         $nome = $_POST['nome'];
                         $cognome = $_POST['cognome'];
                         $email = $_POST["email"];
+                        $venditore = 0;
                         $password = $_POST['password'];
-                        
+                        $città = $_POST['città'];
                         $indirizzo = $_POST['indirizzo'];
                         $paese = $_POST['paese'];
                         $cap = $_POST['cap'];
 
                         
                                
-                        $dbh->insertUser($email, $password, $nome, $cognome, $indirizzo, $paese, $cap);
+                        $dbh->insertUser($email, $password, $nome, $cognome, $venditore, $indirizzo, $città, $paese, $cap);
                        
                     
                     }
