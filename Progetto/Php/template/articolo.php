@@ -128,7 +128,7 @@
         <?php endforeach; ?>
 
         <hr>
-        <form action="./archivio-articolo.php" method="post">
+        <form  action="./archivio-articolo.php" method="POST"> <!--action="./archivio-articolo.php"-->
         <div class="table-responsive mb-2">
           <table class="table table-sm table-borderless">
             <tbody>
@@ -141,11 +141,15 @@
                   <div class="def-number-input number-input safari_only mb-0">
                     <!--<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                       class="minus"></button>-->
-                    <input class="quantity" id="quantita" name="quantita" min="1" name="quantity" value="1" type="number">
+                    <input class="quantity" id="quantita" name="quantita" min="1" value="1" type="number">
                     <!--<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                       class="plus"></button>-->
+                   
+
                   </div>
                 </td>
+                <input type="text" class="form-control" id="inputCity" name="titolo">
+                <!--
                 <td>
                   <div class="mt-1">
                     <div class="form-check form-check-inline pl-0">
@@ -161,14 +165,14 @@
                     </div>
 
                   </div>
-                </td>
+                </td>-->
               </tr>
             </tbody>
           </table>
         </div>
-        <button type="button" name="btnBuyNow" class="btn btn-primary btn-md mr-1 mb-2">Compra ora!</button>
-        <button type="button" name="btnAggCarrello" class="btn btn-light btn-md mr-1 mb-2" style="background-color:rgb(228, 228, 2)"><i
-            class="fa fa-shopping-cart "></i> &nbsp;Aggiungi al carrello</button>
+        <button type="submit" name="btnBuyNow" class="btn btn-primary btn-md mr-1 mb-2">Compra ora!</button>
+        <button type="submit" name="btnAggCarrello" class="btn btn-light btn-md mr-1 mb-2" style="background-color:rgb(228, 228, 2)"> 
+        <i class="fa fa-shopping-cart "></i> &nbsp;Aggiungi al carrello </button>
         </form>
       </div>
       <?php var_dump($_SESSION);
