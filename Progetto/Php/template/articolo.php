@@ -77,8 +77,31 @@
     </div>
 </header>
 
-<h2 style="padding-top: 80px; padding-left: 40px;">Dettagli Articolo</h2>
 
+
+
+<h2 style="padding-top: 80px; padding-left: 40px;">Dettagli Articolo</h2>
+<!-- Flexbox container for aligning the toasts -->
+<div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
+
+  <!-- Then put toasts within -->
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
+</div>
+<?php if($templateParams["paginaPrec"] == "aggiunta-carrello.php"):?>
+  <?php echo "aggiunto al carrello"?>
+  <script>toast.show();</script>
+
+<?php endif;?>
 
 <div class="container">
   <div class="row">
@@ -175,10 +198,7 @@
         <?php endforeach; ?>
       </form>
       </div>
-      <?php var_dump($_SESSION);
-            var_dump($_POST);
-            var_dump($templateParams["quadroSpecifico"][0]["titolo"]);?>
-
+      
   </div>
 </div>
 

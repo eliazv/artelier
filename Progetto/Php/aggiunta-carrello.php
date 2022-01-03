@@ -15,7 +15,9 @@ $titolo = $templateParams["quadroSpecifico"][0]["titolo"];
 $templateParams["quantitaPrecedente"]= $dbh->getQuadroInCarrello($email, $titolo);
 //(gia presente) -> aumenta quantita
 //se gia presente aumenta quantità
+
 $qprecedente=$templateParams["quantitaPrecedente"][0]["quantita"];
+
 
 if($qprecedente != NULL || $qprecedente != 0){
     $qprecedente = $qprecedente + $quantita;
@@ -37,7 +39,7 @@ var_dump($titolo);
 
 var_dump($qprecedente);
 var_dump($templateParams["quantitaPrecedente"][0]["quantita"]);
-header("location: archivio-articolo.php?titoloq=$titolo");  //    PERCORSO POTREBBE VARIARE  
+header("location: archivio-articolo.php?titoloq=$titolo&paginaPrec=aggiunta-carrello.php");  //    PERCORSO POTREBBE VARIARE  
    
     
 ?>

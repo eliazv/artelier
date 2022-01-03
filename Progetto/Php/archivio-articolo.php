@@ -6,30 +6,7 @@ require_once 'bootstrap.php';
 $templateParams["quadroSpecifico"] = $dbh->getQuadroByTitolo($_GET["titoloq"]);
 $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
 
+$templateParams["paginaPrec"]= $_GET["paginaPrec"];
 
-
-
-$email = $_SESSION["email"];
-  
-$quantita = $_POST['quantita'];
-       
-$titolo = $templateParams["quadroSpecifico"][0]["titolo"];
-/*
-if (isset($_POST["btnAggCarrello"])) {
-    $titolo2 = $_POST['titolo'];
-    //if(gia presente) -> aumenta quantita
-
-    $dbh->insertInCarrello($email, $titolo2, $quantita);
-   
-}
-//$dbh->insertInCarrello("elia@ciao.com","Incubo",1);
-
-
-if (isset($_POST["btnBuyNow"])) {
-
-    $dbh->insertInCarrello("elia@ciao.com","Incubo",1);//$email, $titolo, $quantita);
-   
-}
-*/
 require 'template/articolo.php';
 ?>
