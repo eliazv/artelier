@@ -63,6 +63,10 @@ values ("Cezanne", "Paul", "cezanne.jpg",
 "cezanne molto bravo");
 
 Insert into artista()
+values ("Botticelli", "Sandro", "botticelli.jpg", 
+"botticelli molto bravo");
+
+Insert into artista()
 values ("Mirò", "Joan", "miro.jpg", 
 "mirò molto bravo");
 
@@ -78,6 +82,22 @@ values ("Monet", "Claude", "monet.jpg",
 Insert into artista()
 values ("Boccioni", "Umberto", "boccioni.jpg", 
 "boccioni molto bravo");
+
+Insert into artista()
+values ("Vecellio", "Tiziano", "vecellio.jpg", 
+"vecellio molto bravo");
+
+Insert into artista()
+values ("Manet", "Edouard", "manet.jpg", 
+"manet molto bravo");
+
+Insert into artista()
+values ("Klee", "Paul", "klee.jpg", 
+"klee molto bravo");
+
+Insert into artista()
+values ("Carrà", "Carlo", "carra.jpeg", 
+"carrà molto bravo");
 
 insert into CorrenteArtistica()
 values ("Cubismo", "cubismo.jpg", "Cubismo e' il termine col quale si e' soliti rappresentare una corrente artistica e culturale ben riconoscibile, distinta e fondante rispetto a molte altre correnti e movimenti che si sarebbero successivamente sviluppate. Tuttavia il cubismo non è un movimento capeggiato da un fondatore e non ha una direzione unitaria.");
@@ -103,21 +123,24 @@ values ("Impressionismo", "impressionismo.png", "Impressionismo bella corrente")
 insert into CorrenteArtistica()
 values ("Romanticismo", "romanticismo.png", "Romanticismo bella corrente");
 
+insert into CorrenteArtistica()
+values ("Rinascimento", "rinascimento.png", "Rinascimento");
+
 
 Insert into quadro()
 values ("Guernica","guernica.jpg", "200x100", "Picasso", "Cubismo", "299.99", "Il 26 aprile 1937, gli aerei tedeschi, in appoggio alle truppe del generale Franco contro il governo legittimo repubblicano di Spagna, rasero al suolo, con un bombardamento terroristico, la cittadina basca di Guernica.");
 
 Insert into quadro()
-values ("L'urlo","Urlo.jpg", "200x100", "Munch", "Cubismo", "199.99", "urletto pazzo");
+values ("L'urlo","Urlo.jpg", "200x100", "Munch", "Espressionismo", "199.99", "urletto pazzo");
 
 Insert into quadro()
-values ("Notte stellata","Nottestellata.jpg", "200x100", "Van Gogh", "Cubismo", "199.99", "bel quadro");
+values ("Notte stellata","Nottestellata.jpg", "200x100", "Van Gogh", "Espressionismo", "199.99", "bel quadro");
 
 Insert into quadro()
-values ("La persistenza della memoria","tempo.jpg", "200x100", "Dali'", "Cubismo", "179.99", "bel quadro");
+values ("La persistenza della memoria","tempo.jpg", "200x100", "Dali'", "Surrealismo", "179.99", "bel quadro");
 
 Insert into quadro()
-values ("La dama con l'ermellino","damaermellino.jpg", "200x100", "Da Vinci", "Cubismo", "279.99", "bel quadro");
+values ("La dama con l'ermellino","damaermellino.jpg", "200x100", "Da Vinci", "Rinascimento", "279.99", "bel quadro");
 
 insert into quadro()
 values ("Composition 8","composition8.jpg", "300x200", "Kandinsky", "Astrattismo", "279.99", "bel quadro");
@@ -152,9 +175,68 @@ values ("Tempesta di neve","tempestadineve.jpg", "90x120", "Turner", "Romanticis
 insert into quadro()
 values ("Viandante sul mare di nebbia","viandantesumaredinebbia.jpg", "90x70", "Friedrich", "Romanticismo", "379.99", "bel quadro");
 
+insert into quadro()
+values ("La nascita di Venere","nascitadivenere.jpeg", "170x280", "Botticelli", "Rinascimento", "489.99", "bel quadro");
+
+insert into quadro()
+values ("L'ultima cena","ultimacena.jpeg", "460x880", "Da Vinci", "Rinascimento", "489.99", "bel quadro");
+
+insert into quadro()
+values ("L'Annunciazione","annunciazione.jpg", "98x220", "Da Vinci", "Rinascimento", "279.99", "bel quadro");
+
+
+insert into quadro()
+values ("La Venede di Urbino","venerediurbino.jpg", "120x165", "Vecellio", "Rinascimento", "219.99", "bel quadro");
+
+
+insert into quadro()
+values ("I papaveri","ipapaveri.jpg", "50x65", "Monet", "Impressionismo", "89.99", "bel quadro");
+
+insert into quadro()
+values ("Olympia","olympia.jpg", "130x190", "Manet", "Impressionismo", "149.99", "bel quadro");
+
+insert into quadro()
+values ("Ninfee","ninfee.jpg", "50x65", "Monet", "Impressionismo", "89.99", "bel quadro");
+
+Insert into quadro()
+values ("Les demoiselles d'Avignon","demoiselles.jpg", "245x235", "Picasso", "Cubismo", "249.99", "Il 26 aprile 1937, gli aerei tedeschi, in appoggio alle truppe del generale Franco contro il governo legittimo repubblicano di Spagna, rasero al suolo, con un bombardamento terroristico, la cittadina basca di Guernica.");
+
+Insert into quadro()
+values ("Cesto di mele","cestodimele.jpg", "65x80", "Cezanne", "Cubismo", "89.99", "Il 26 aprile 1937, gli aerei tedeschi, in appoggio alle truppe del generale Franco contro il governo legittimo repubblicano di Spagna, rasero al suolo, con un bombardamento terroristico, la cittadina basca di Guernica.");
+
+Insert into quadro()
+values ("La camera blu","camerablu.jpg", "50x62", "Picasso", "Cubismo", "89.99", "Il 26 aprile 1937, gli aerei tedeschi, in appoggio alle truppe del generale Franco contro il governo legittimo repubblicano di Spagna, rasero al suolo, con un bombardamento terroristico, la cittadina basca di Guernica.");
+
+Insert into quadro()
+values ("Sera sul viale Karl Yohan","serasulviale.jpg", "85x121", "Munch", "Espressionismo", "139.99", "bel quadro");
+
+Insert into quadro()
+values ("Castello e sole","castelloesole.jpg", "50x60", "Klee", "Espressionismo", "139.99", "bel quadro");
+
+Insert into quadro()
+values ("Las Meninas","lasmeninas.jpg", "195x260", "Picasso", "Cubismo", "339.99", "bel quadro");
+
+Insert into quadro()
+values ("Ciò che mi ha detto il tram", "tram.jpg", "80x90", "Carrà", "Futurismo", "139.99", "bel quadro");
+
+Insert into quadro()
+values ("Volumi orizzontali", "volumiorizzontali.jpg", "95x95", "Boccioni", "Futurismo", "139.99", "bel quadro");
+
+insert into quadro()
+values ("Gli amanti","gliamanti.jpg", "55x73", "Magritte", "Surrealismo", "89.99", "bel quadro");
+
+insert into quadro()
+values ("Il figlio dell'uomo","figliodelluomo.jpg", "116x89", "Magritte", "Surrealismo", "89.99", "bel quadro");
+
+insert into quadro()
+values ("Cigni che riflettono elefanti","cigni.jpg", "51x77", "Magritte", "Surrealismo", "89.99", "bel quadro");
+
+insert into quadro()
+values ("Il falso specchio","falsospecchio.jpg", "54x81", "Magritte", "Surrealismo", "79.99", "bel quadro");
+
 
 insert into notifica(titolo, testo, dataeora, visualizzato, email)
-values ("Per te", "consigli quadri pkwfwlfwn", '2021-12-20 18:00:00', false , "elia@ciao.com");
+values ("Per te", "consigli quadri", '2021-12-20 18:00:00', false , "elia@ciao.com");
 
 insert into notifica(titolo, testo, dataeora, visualizzato, email)
 values ("Ordine Confermato", "Abbiamo confermato il tuo ordine, il pacco verr� spedito a breve", '2021-12-20 19:00:00', true , "elia@ciao.com");

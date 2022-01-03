@@ -40,11 +40,11 @@
                   <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="HomePage2.html"><i class="fa fa-home"></i>&nbsp; Home</a>
+                        <a class="nav-link active" aria-current="page" href="./home2.php"><i class="fa fa-home"></i>&nbsp; Home</a>
                       </li>
                       <li class="nav-item">
                       <?php if(isUserLoggedIn()): ?>
-                        <a class="nav-link" href="Utente.html"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
+                        <a class="nav-link" href="./utente2.php"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
                         <a class="nav-link" href="./archivio-notifiche.php"><i class="fa fa-bell"></i>&nbsp; Notifiche <span class="badge bg-danger"> <?php echo $templateParams["notifiche"][0]["num"]?></span> </a>
                         <a class="nav-link" href="./archivio-carrello.php"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
                         <a class="nav-link" href="./archivio-categorie.php"> &nbsp; Categorie</a>
@@ -87,7 +87,7 @@
                       <div class="about text-left px-3">
                           <h4><?php echo $qArtista["titolo"] ?></h4> <span class="text-muted"><?php echo $qArtista["artista"] ?></span>
                           <h3><?php echo $qArtista["prezzo"] ?></h3>
-                      </div> <a href="Articolo.html"><span class="dot"><span class="inner-dot"><i class="fa fa-plus"></i></span></span></a>                  
+                          </div> <a href="./archivio-artistaSpecifico.php?artistaA=<?php echo $artista["cognome"];?>"><span class="dot"><span class="inner-dot"><i class="fa fa-plus"></i></span></span></a>                  </div>
                   </div>
               </div>
               <?php endforeach; ?>
@@ -128,7 +128,7 @@
                 <h5 class="heading" style="margin-top: 15px;">Utente</h5>
                 <ul class="card-text">
                 <?php if(isUserLoggedIn()): ?>
-                    <a href="Utente.html"><li>Account</li></a>
+                    <a href="./utente2.php"><li>Account</li></a>
                     <a href="./archivio-carrello.php"><li>Carrello</li></a>
                     <a href="./logout.php"><li>Logout</li></a>   
                     <?php else: ?> 

@@ -40,7 +40,7 @@
                   <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="HomePage2.html"><i class="fa fa-home"></i>&nbsp; Home</a>
+                        <a class="nav-link active" aria-current="page" href="./home2.php"><i class="fa fa-home"></i>&nbsp; Home</a>
                       </li>
                       <li class="nav-item">
                       <?php if(isUserLoggedIn()): ?>
@@ -72,6 +72,7 @@
             </nav>
           </div>   
         </div>
+        </header>
 
 
         <section class="text-center" style="background-image: url(../Immagini/quadri-astratt-ble-c291.jpg); height: 400px; padding: 0px; margin:0px" >
@@ -83,11 +84,12 @@
             </div>
           </div>
         </section>
+        <div class="container marketing">
 
         <div class="row">
           <div class="col-12">
             <div id="carosello">
-              <h1 style="padding-bottom: 30px; padding-left: 90px; padding-top: 50px;"><br>Nuovi Arrivi</h1>
+              <h1 style="padding-bottom: 30px; padding-top: 50px;"><br>Nuovi Arrivi</h1>
               <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"  style="margin-left: 10%;margin-right: 10%;">
                   
                 <div class="carousel-indicators">
@@ -126,7 +128,6 @@
           </div>
         </div>   
       </div>
-    </header>
 
   <main>
 
@@ -136,10 +137,8 @@
 
   <hr class="featurette-divider">
   
-  <div class="container marketing">
 
     <h1 id="artisti" style="padding-bottom: 30px;">I nostri Artisti</h1>
-    <?php var_dump($_SESSION["email"]);?>
     <!-- Three columns of text below the carousel -->
     <div class="row">
 
@@ -265,7 +264,7 @@
                 <h5 class="heading" style="margin-top: 15px;">Utente</h5>
                 <ul class="card-text">
                 <?php if(isUserLoggedIn()): ?>
-                    <a href="Utente.html"><li>Account</li></a>
+                    <a href="./utente2.php"><li>Account</li></a>
                     <a href="./archivio-carrello.php"><li>Carrello</li></a>
                     <a href="./logout.php"><li>Logout</li></a>   
                     <?php else: ?> 
