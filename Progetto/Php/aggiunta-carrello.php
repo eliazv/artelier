@@ -13,13 +13,14 @@ $titolo = $templateParams["quadroSpecifico"][0]["titolo"];
 
 
     //if(gia presente) -> aumenta quantita
-    if (isset($_POST["btnAggCarrello"])) {
-        $dbh->insertInCarrello($email, $titolo, 1);
-    }
+   // if (isset($_POST["btnAggCarrello"])) {
+        $dbh->insertInCarrello($email, $titolo, $quantità);
+    //}
     //require "archivio-quadri.php"//da modificare
     var_dump($email);
 
     var_dump($quantità);
     var_dump($titolo);
 
+    header("location: archivio-articolo.php?titoloq=$titolo");
 ?>
