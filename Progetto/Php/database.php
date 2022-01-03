@@ -110,6 +110,26 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getQuadroInCarrello($email, $titolo){
+        $query = "SELECT quantita FROM carrello WHERE email = ? AND titolo=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss',$email, $titolo);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function updateQuantitaInCarrello($email, $titolo, $quantita){
+        $query ="UPDATE carrello SET quantita=? WHERE email=? AND titolo=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('iss',$quantita, $email, $titolo);
+        $stmt->execute();
+        //$result = $stmt->get_result();
+
+        //return $stmt->execute();
+    }
+
     public function getUtente($email){
         $query = "SELECT * FROM utente WHERE email = ?";
         $stmt = $this->db->prepare($query);
@@ -183,10 +203,10 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
-    public function insertInCarrello($email, $titolo, $quantità){
+    public function insertInCarrello($email, $titolo, $quantita){
         $query= "INSERT INTO carrello(email, titolo, quantita) VALUES (?,?,?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssi', $email, $titolo, $quantità);
+        $stmt->bind_param('ssi', $email, $titolo, $quantita);
         $stmt->execute();
     }
 
@@ -275,7 +295,7 @@ class DatabaseHelper{
     }
 
     public function deleteCart($email){
-        $qery ="DELETE FROM carrello WHERE email = ?";
+        $query ="DELETE FROM carrello WHERE email = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s', $email);
         $stmt->execute();

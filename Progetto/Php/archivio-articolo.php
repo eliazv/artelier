@@ -6,6 +6,14 @@ require_once 'bootstrap.php';
 $templateParams["quadroSpecifico"] = $dbh->getQuadroByTitolo($_GET["titoloq"]);
 $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
 
+
+
+
+$email = $_SESSION["email"];
+  
+$quantita = $_POST['quantita'];
+       
+$titolo = $templateParams["quadroSpecifico"][0]["titolo"];
 /*
 if (isset($_POST["btnAggCarrello"])) {
     $titolo2 = $_POST['titolo'];

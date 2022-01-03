@@ -141,7 +141,7 @@
                   <div class="def-number-input number-input safari_only mb-0">
                     <!--<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                       class="minus"></button>-->
-                    <input class="quantity" id="quantità" name="quantità" min="1" value="1" type="number">
+                    <input class="quantity" id="quantita" name="quantita" min="1" value="1" type="number">
                     <!--<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                       class="plus"></button>-->
                    

@@ -111,7 +111,7 @@ utente
             </div>
             <div class="col-md-6">
               <label for="inputCity" class="form-label">Città</label>
-              <input type="text" class="form-control" id="inputCity" name="città"placeholder="<?php echo $utente["città"]?>">
+              <input type="text" class="form-control" id="inputCity" name="città"placeholder="<?php echo $utente["citta"]?>">
             </div>
             <div class="col-md-4">
             <label for="inputCity" class="form-label">Nazione</label>

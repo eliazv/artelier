@@ -61,7 +61,7 @@ CREATE TABLE Carrello(
 	titolo varchar(50),
     quantita int,
     FOREIGN KEY(email) REFERENCES Utente(email),
-	FOREIGN KEY(titolo) REFERENCES Quadro_Ordinato(titoloQuaOrd)
+	FOREIGN KEY(titolo) REFERENCES Quadro(titolo)
 );
 
 CREATE TABLE Notifica(
