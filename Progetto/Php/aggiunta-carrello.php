@@ -37,7 +37,7 @@ var_dump($titolo);
 
 var_dump($qprecedente);
 var_dump($templateParams["quantitaPrecedente"][0]["quantita"]);
-header("location: /artelier/Php/archivio-carrello.php");  //    PERCORSO POTREBBE VARIARE  
+header("location: archivio-articolo.php?titoloq=$titolo");  //    PERCORSO POTREBBE VARIARE  
    
     
 ?>
