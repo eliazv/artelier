@@ -32,9 +32,9 @@
 </header>
 
 <main>
-
+<?php foreach($templateParams["ordtracciamento"] as $ordinedaTr):?>
 <div class="container-fluid my-5 d-sm-flex justify-content-center">
-    <?php foreach($templateParams["ordtracciamento"] as $ordinedaTr):?>
+    
     <div class="card px-2">
         <div class="card-header bg-white">
             <div class="row justify-content-between">
@@ -67,9 +67,9 @@
         </div>
        
     </div>
-    <?php endforeach; ?>
+    
 </div>
-
+<?php endforeach; ?>
 
 
   

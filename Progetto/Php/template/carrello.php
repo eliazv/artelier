@@ -111,7 +111,7 @@
 
 <br><br>
                     <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text" class="form-control border-0 gift-card" placeholder="Totale:"><h6>€<?php echo $somma?></h6></div> 
-                    <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><a href="Checkout.html"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button" style="position: absolute; right: 20%;">Procedi all'ordine</button></a></div>
+                    <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><a href="./archivio-checkout.php"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button" style="position: absolute; right: 20%;">Procedi all'ordine</button></a></div>
                 </div>
             </div>
         </div>

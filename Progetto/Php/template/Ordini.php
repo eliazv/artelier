@@ -90,7 +90,7 @@
                       <div>
                           <h6 class="text-grey mt-1 mr-1 ml-1">$<?php echo $ordine["prezzo"]?></h6>
                       </div>
-                      <div class="d-flex align-items-center"><a href="archivio-Tracciamento.php"><button class="btn btn-sm btn-outline-secondary">traccia</button></a>&nbsp;<button class="btn btn-sm btn-outline-secondary">&times;</button>
+                      <div class="d-flex align-items-center"><a href="archivio-Tracciamento.php"><button class="btn btn-sm btn-outline-secondary">traccia</button></a>&nbsp;
                       </div>
 
                     </div>

@@ -192,7 +192,7 @@
             <input type="checkbox" class="form-check-input" id="save-info">
             <label class="form-check-label" for="save-info">Salva informazioni per la prossima volta</label>
           </div>
-          <button type="button" class="w-100 btn btn-primary btn-lg"><a class="text-reset" href="archivio-pagamento.php">Continua al Pagamento</a></button>
+          <a class="text-reset" href="./archivio-pagamento.php"><button type="button" class="w-100 btn btn-primary btn-lg">Continua al Pagamento</button></a>
         </form>
       </div>
     </div>

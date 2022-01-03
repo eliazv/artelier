@@ -45,13 +45,13 @@
                             </div>
                         </form>
                     </div>
+                    <form action="./archivio-pagamento.php" method="POST">
                     <div class="panel-footer">
-                        <form action="./archivio-pagamento.php" method="POST"></form>
                         <div class="row">
-                            <div class="col-xs-12"> <button name="btnConfPaym" class="btn btn-success btn-lg btn-block">Confirm Payment</button> </div>
+                            <div class="col-xs-12">  <button name="btnConfPaym" class="btn btn-success btn-lg btn-block">Confirm Payment</button> </div>
                         </div>
-                        </form>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
