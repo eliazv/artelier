@@ -14,7 +14,7 @@ $email = $_SESSION["email"];
 $quantita = $_POST['quantita'];
        
 $titolo = $templateParams["quadroSpecifico"][0]["titolo"];
-
+/*
 if (isset($_POST["btnAggCarrello"])) {
     $titolo2 = $_POST['titolo'];
     //if(gia presente) -> aumenta quantita
@@ -30,6 +30,6 @@ if (isset($_POST["btnBuyNow"])) {
     $dbh->insertInCarrello("elia@ciao.com","Incubo",1);//$email, $titolo, $quantita);
    
 }
-
+*/
 require 'template/articolo.php';
 ?>

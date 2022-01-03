@@ -183,10 +183,10 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
-    public function insertInCarrello($email, $titolo, $quantita){
+    public function insertInCarrello($email, $titolo, $quantità){
         $query= "INSERT INTO carrello(email, titolo, quantita) VALUES (?,?,?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssi', $email, $titolo, $quantita);
+        $stmt->bind_param('ssi', $email, $titolo, $quantità);
         $stmt->execute();
     }
 
