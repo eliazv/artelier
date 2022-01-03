@@ -301,10 +301,10 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
-    public function insertOrder($email, $dataOrdine, $dataConsegna, $arrivato){
-        $query= "INSERT INTO ordine(email, dataOrdine, dataConsegna, arrivato) VALUES (?,?,?,?)";
+    public function insertOrder($email, $dataOrdine, $dataConsegna, $arrivato, $importo){
+        $query= "INSERT INTO ordine(email, dataOrdine, dataConsegna, arrivato, importo) VALUES (?,?,?,?,?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('sssi', $email, $dataOrdine, $dataConsegna, $arrivato);
+        $stmt->bind_param('sssid', $email, $dataOrdine, $dataConsegna, $arrivato, $importo);
         $stmt->execute();
     }
 

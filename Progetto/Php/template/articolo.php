@@ -77,41 +77,15 @@
     </div>
 </header>
 
-
-
-
 <h2 style="padding-top: 80px; padding-left: 40px;">Dettagli Articolo</h2>
-<!-- Flexbox container for aligning the toasts -->
-<div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
 
-  <!-- Then put toasts within -->
-  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <img src="..." class="rounded me-2" alt="...">
-      <strong class="me-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body">
-      Hello, world! This is a toast message.
-    </div>
-  </div>
-</div>
-<?php if($templateParams["paginaPrec"] == "aggiunta-carrello.php"):?>
-  <?php echo "aggiunto al carrello"?>
-  <script>toast.show();</script>
-
-<?php endif;?>
 
 <div class="container">
   <div class="row">
   <div class="col-lg-6">
     <br>
     
-    <?php $first = true; 
-    //var_dump($_GET);
-    //var_dump($templateParams["quadroSpecifico"]);
-    ?>
+    <?php $first = true;?>
     
     <?php foreach($templateParams["quadroSpecifico"] as $quadroq): ?>
 
@@ -157,7 +131,6 @@
             <tbody>
               <tr>
                 <td class="pl-0 pb-0 w-25">Quantità:</td>
-                <td class="pb-0">Spedizione:</td>
               </tr>
               <tr>
                 <td class="pl-0">
@@ -192,13 +165,22 @@
             </tbody>
           </table>
         </div>
+        <?php if(isUserLoggedIn()): ?>
+
         <button type="submit" name="btnBuyNow" class="btn btn-primary btn-md mr-1 mb-2">Compra ora!</button>
+
         <button type="submit" name="btnAggCarrello" class="btn btn-light btn-md mr-1 mb-2" style="background-color:rgb(228, 228, 2)"> 
         <i class="fa fa-shopping-cart "></i> &nbsp;Aggiungi al carrello</button>
+
+        <?php else:?>
+
+        <?php endif?>
+        
         <?php endforeach; ?>
       </form>
       </div>
-      
+
+
   </div>
 </div>
 
