@@ -96,7 +96,8 @@
                               
                             </div>
                             <div class="d-flex flex-row product-desc">
-                              <h6 class="text-grey mt-1 mr-1 ml-1">&emsp;-&nbsp;<?php echo $carrello["quantita"] ?>&nbsp;+ </h6>
+                              <h6 class="text-grey mt-1 mr-1 ml-1"><a href="./modifica-carrello.php?bin=0&titoloq=<?php echo $carrello["titolo"]; ?>&quantitaq=-1">-&nbsp;</a>
+                              <?php echo $carrello["quantita"] ?><a href="./modifica-carrello.php?bin=0&titoloq=<?php echo $carrello["titolo"]; ?>&quantitaq=1">&nbsp;+</a> </h6>
                               
                             </div>
                         </div>
@@ -104,7 +105,7 @@
                             <?php $totPaziale=(($templateParams["quadro"][0]["prezzo"]) * ($carrello["quantita"]));?>
                             <h6 class="text-grey">&nbsp;&nbsp;&nbsp;€<?php echo $totPaziale ?> &nbsp;</h6> 
                         </div>
-                        <div class="d-flex align-items-center"><a href="./archivio-carrello.php?titoloq=<?php echo $carrello["titolo"]; ?>"><i class="fa fa-trash-o" style="color: red;"></i></a></div>
+                        <div class="d-flex align-items-center"><a href="./modifica-carrello.php?bin=1&titoloq=<?php echo $carrello["titolo"]; ?>"><i class="fa fa-trash-o" style="color: red;"></i></a></div>
                     </div>
                     <?php 
                       $somma = $somma + $totPaziale;?>
@@ -114,9 +115,12 @@
                     <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text" class="form-control border-0 gift-card" placeholder="Totale:"><h6>€<?php echo $somma?></h6></div> 
                     <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><a href="./archivio-checkout.php"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button" style="position: absolute; right: 20%;">Procedi all'ordine</button></a></div>
                 </div>
+            
             </div>
         </div>
 <!-- FOOTER -->
+
+
 
 <div id="chisiamo" class="container-fluid mt-5" style="padding: 0px; text-align: center;">
     <div class="card" style="width: 100%;">
