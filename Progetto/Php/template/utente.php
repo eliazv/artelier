@@ -17,7 +17,7 @@ utente
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="../Css/Utente.css" rel="stylesheet">
+    <link href="../Css/HomePage2.css" rel="stylesheet">
   </head>
   <body>
     
@@ -81,7 +81,7 @@ utente
 
     <div class="row">
     <div class="col-1"> </div>
-
+      
       <div class="col-md-10">
         <h1>Il tuo Profilo</h1>
 
@@ -95,7 +95,7 @@ utente
         <?php endif?>
 
         <hr>
-        <h4 class="mb-3">Modifica i tuoi Dati<br></a><br>
+        <h4 class="mb-3">Modifica i tuoi Dati<br><br>
           <form class="row g-3"  action="./utente2.php" method="POST">
             
             <div class="col-md-6">
@@ -111,8 +111,8 @@ utente
               <input type="text" class="form-control" id="inputAddress" name="indirizzo" placeholder="<?php echo $utente["indirizzo"]?>">
             </div>
             <div class="col-md-6">
-              <label for="inputCity" class="form-label">Città</label>
-              <input type="text" class="form-control" id="inputCity" name="città"placeholder="<?php echo $utente["citta"]?>">
+              <label for="inputCity" class="form-label">citta</label>
+              <input type="text" class="form-control" id="inputCity" name="citta" placeholder="<?php echo $utente["citta"]?>">
             </div>
             <div class="col-md-4">
             <label for="inputCity" class="form-label">Nazione</label>
@@ -132,7 +132,6 @@ utente
           <?php endforeach;
 
           ?>
-
       </div>
     </div>
   </main>

@@ -88,7 +88,7 @@
                           <h6 class="text-grey mt-1 mr-1 ml-1">&nbsp;QT:<?php echo $ordine["quantita"]?>&nbsp;</h6>
                       </div>
                       <div>
-                          <h6 class="text-grey mt-1 mr-1 ml-1">$<?php echo $ordine["prezzo"]?></h6>
+                          <h6 class="text-grey mt-1 mr-1 ml-1">$<?php echo $ordine["prezzo"] * $ordine["quantita"]?></h6>
                       </div>
                       <div class="d-flex align-items-center"><a href="archivio-Tracciamento.php"><button class="btn btn-sm btn-outline-secondary">traccia</button></a>&nbsp;
                       </div>
@@ -110,10 +110,10 @@
                             </div>
                         </div>
                         <div>
-                            <h6 class="text-grey mt-1 mr-1 ml-1">&nbsp;QT: <?php echo $ordineArrivato["quantita"] ?>&nbsp;</h6>
+                            <h6 class="text-grey mt-1 mr-1 ml-1">&nbsp;QT: <?php echo $ordineArrivato["quantita"]?>&nbsp;</h6>
                         </div>
                         <div>
-                            <h6 class="text-grey">$<?php echo $ordineArrivato["prezzo"] ?></h6>
+                            <h6 class="text-grey">$<?php echo $ordineArrivato["prezzo"] * $ordineArrivato["quantita"]?></h6>
                         </div>
                     </div>
                     <?php endforeach; ?>  

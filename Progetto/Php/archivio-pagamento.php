@@ -10,12 +10,14 @@ $totprezzocarrello= $_GET["somma"];
 
 //compra intero carrello
 if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
-     $dbh->insertOrder($_SESSION["email"], date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), 0,$totprezzocarrello);   //non va importo
+     $dataConsegna = date("Y-m-d H:i:s");
+     $totPaziale=(($templateParams["quadro"][0]["prezzo"]) * ($carrello["quantita"]))
+     $dbh->insertOrder($_SESSION["email"], date("Y-m-d H:i:s"), date("Y-m-d 10:00:00", strtotime($dataConsegna. ' + 7 days')), 0,$totprezzocarrello);   //non va importo
      $templateParams["lastorder"] = $dbh->getLastOrder($_SESSION["email"]);
 
      $lastOrder = $templateParams["lastorder"][0]["codOrdine"];
 
-     foreach($templateParams["carrello"] as $carrello){        
+     foreach($templateParams["carrello"] as $carrello){
           $dbh->insertOrderedPainting($lastOrder, $carrello["titolo"], $carrello["quantita"]);     
      }
 
@@ -27,7 +29,8 @@ if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
 //Compra ora
 if(isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] != NULL ){
      $prezzotot=$_SESSION["bnprezzo"] * $_SESSION["bnquantita"];
-     $dbh->insertOrder($_SESSION["email"], date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), 0, $prezzotot);
+     $dataConsegna = date("Y-m-d H:i:s");
+     $dbh->insertOrder($_SESSION["email"], date("Y-m-d H:i:s"), date("Y-m-d 10:00:00", strtotime($dataConsegna. ' + 7 days')), 0, $prezzotot);
 
      $templateParams["lastorder"] = $dbh->getLastOrder($_SESSION["email"]);
 

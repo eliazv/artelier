@@ -78,8 +78,9 @@
                     <div class="p-2">
                         <h2>Carrello</h2>
                     </div>
-
+                    
                     <?php $somma=0;?>
+                    <form action="./archivio-carrello.php" method="POST">
                     <?php foreach($templateParams["carrello"] as $carrello): ?>
                       
                       <?php $templateParams["quadro"] = $dbh->getQuadroByTitolo($carrello["titolo"]);  ?>
@@ -103,12 +104,12 @@
                             <?php $totPaziale=(($templateParams["quadro"][0]["prezzo"]) * ($carrello["quantita"]));?>
                             <h6 class="text-grey">&nbsp;&nbsp;&nbsp;€<?php echo $totPaziale ?> &nbsp;</h6> 
                         </div>
-                        <div class="d-flex align-items-center"><i class="fa fa-trash-o" style="color: red;"></i></div>
+                        <div class="d-flex align-items-center"><a href="./archivio-carrello.php?titoloq=<?php echo $carrello["titolo"]; ?>"><i class="fa fa-trash-o" style="color: red;"></i></a></div>
                     </div>
                     <?php 
                       $somma = $somma + $totPaziale;?>
                     <?php endforeach; ?>
-
+                    </form>
 <br><br>
                     <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text" class="form-control border-0 gift-card" placeholder="Totale:"><h6>€<?php echo $somma?></h6></div> 
                     <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><a href="./archivio-checkout.php"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button" style="position: absolute; right: 20%;">Procedi all'ordine</button></a></div>

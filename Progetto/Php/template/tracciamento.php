@@ -51,7 +51,7 @@
                 <div class="media-body ">
                     <h5 class="bold"><?php echo $ordinedaTr["titoloQuaOrd"]?></h5>
                     <p class="text-muted"> Qt: <?php echo $ordinedaTr["quantita"]?></p>
-                    <h4 class="mt-3 mb-4 bold"> 220<span class="mt-5">&#8364;</span> </h4>
+                    <h4 class="mt-3 mb-4 bold"> <?php echo $ordinedaTr["prezzo"] * $ordinedaTr["quantita"] ?><span class="mt-5">&#8364;</span> </h4>
                     <p class="text-muted">Consegna Prevista: <span class="Today"><?php echo $ordinedaTr["dataConsegna"]?></span></p> 
                 </div><img class="align-self-center img-fluid" src="<?php echo UPLOAD_DIR.$ordinedaTr["immagine"]?>" width="180 " height="180" style="margin-left: 10px;">
             </div>
