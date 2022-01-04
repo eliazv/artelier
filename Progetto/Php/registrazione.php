@@ -14,7 +14,10 @@ require_once 'bootstrap.php';
                         $cognome = $_POST['cognome'];
                         $email = $_POST["email"];
                         $venditore = 0;
-                        $password = $_POST['password'];
+                        
+                        //$hash = hash('sha256',  $_POST['password']);
+                        $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
                         $città = $_POST['città'];
                         $indirizzo = $_POST['indirizzo'];
                         $paese = $_POST['paese'];
@@ -22,7 +25,7 @@ require_once 'bootstrap.php';
 
                         
                                
-                        $dbh->insertUser($email, $password, $nome, $cognome, $venditore, $indirizzo, $città, $paese, $cap);
+                        $dbh->insertUser($email, $hash, $nome, $cognome, $venditore, $indirizzo, $città, $paese, $cap);
                        
                     
                     }

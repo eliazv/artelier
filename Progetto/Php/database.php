@@ -211,7 +211,7 @@ class DatabaseHelper{
     }
 
     public function insertUser($email, $password, $nome, $cognome, $venditore, $indirizzo, $città, $paese, $cap){
-        $query= "INSERT INTO utente(email, passwordd, nome, cognome, venditore, indirizzo, città, paese, cap) VALUES (?,?,?,?,?,?,?,?,?)";
+        $query= "INSERT INTO utente(email, passwordd, nome, cognome, venditore, indirizzo, citta, paese, cap) VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ssssisssi', $email, $password, $nome, $cognome, $venditore, $indirizzo, $città, $paese, $cap);
         $stmt->execute();

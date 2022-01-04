@@ -8,7 +8,7 @@ CREATE TABLE Artista(
 
 CREATE TABLE Utente(
     email varchar(50) PRIMARY KEY,
-    passwordd varchar(50),
+    passwordd varchar(250),
     nome varchar(50),
     cognome varchar(50),
     venditore boolean,
