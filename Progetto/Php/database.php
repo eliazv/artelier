@@ -211,7 +211,7 @@ class DatabaseHelper{
     }
 
     public function insertUser($email, $password, $nome, $cognome, $venditore, $indirizzo, $città, $paese, $cap){
-        $query= "INSERT INTO utente(email, passwordd, nome, cognome, venditore, indirizzo, città, paese, cap) VALUES (?,?,?,?,?,?,?,?,?)";
+        $query= "INSERT INTO utente(email, passwordd, nome, cognome, venditore, indirizzo, citta, paese, cap) VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ssssisssi', $email, $password, $nome, $cognome, $venditore, $indirizzo, $città, $paese, $cap);
         $stmt->execute();
@@ -301,10 +301,17 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
-    public function insertOrder($email, $dataOrdine, $dataConsegna, $arrivato){
-        $query= "INSERT INTO ordine(email, dataOrdine, dataConsegna, arrivato) VALUES (?,?,?,?)";
+    public function deletePaintingInCart($email, $titolo){
+        $query ="DELETE FROM carrello WHERE email = ? AND titolo = ?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('sssi', $email, $dataOrdine, $dataConsegna, $arrivato);
+        $stmt->bind_param('ss', $email, $titolo);
+        $stmt->execute();
+    }
+
+    public function insertOrder($email, $dataOrdine, $dataConsegna, $arrivato, $importo){
+        $query= "INSERT INTO ordine(email, dataOrdine, dataConsegna, arrivato, importo) VALUES (?,?,?,?,?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('sssid', $email, $dataOrdine, $dataConsegna, $arrivato, $importo);
         $stmt->execute();
     }
 
