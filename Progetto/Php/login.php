@@ -18,7 +18,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 if(isUserLoggedIn()){
     $templateParams["titolo"] = "ArtElier";
     $templateParams["nome"] = "home2.php";
-    require 'home2.php';
+    header("location: home2.php");  
 }
 else{
     $templateParams["titolo"] = "ArtElier - Login";

@@ -1,14 +1,14 @@
 Insert into utente()
-values ("elia@ciao.com", "ciao", "elia", "zavatta",1, "via verdi 1", "Gambettola", "Italia", 47035);
+values ("elia@ciao.com", "$2y$10$UWeMYyFZt7W0TMFxmD/3rutjY9U0i/L8XY4fsAbkQQnabWANu49P6", "elia", "zavatta",1, "via verdi 1", "Gambettola", "Italia", 47035);
 
 Insert into utente()
-values ("pietro@ciao.com", "ciao", "pietro", "lelli",1, "via verdi 2","Gambettola", "Italia", 47035);
+values ("pietro@ciao.com", "$2y$10$UWeMYyFZt7W0TMFxmD/3rutjY9U0i/L8XY4fsAbkQQnabWANu49P6", "pietro", "lelli",1, "via verdi 2","Gambettola", "Italia", 47035);
 
 Insert into utente()
-values ("giovanni@ciao.com", "ciao", "giovanni", "maffi",1, "via rossi 12","Linaro", "Italia", 47065);
+values ("giovanni@ciao.com", "$2y$10$UWeMYyFZt7W0TMFxmD/3rutjY9U0i/L8XY4fsAbkQQnabWANu49P6", "giovanni", "maffi",1, "via rossi 12","Linaro", "Italia", 47065);
 
 Insert into utente()
-values ("marco@ciao.com", "ciao", "marco", "rossi", 0, "via neri 23","Cesena", "Italia", 47085);
+values ("marco@ciao.com", "$2y$10$UWeMYyFZt7W0TMFxmD/3rutjY9U0i/L8XY4fsAbkQQnabWANu49P6", "marco", "rossi", 0, "via neri 23","Cesena", "Italia", 47085);
 
 Insert into artista()
 values ("Picasso", "Pablo", "picasso.jpg", 
