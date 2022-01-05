@@ -25,9 +25,13 @@ require_once 'bootstrap.php';
 
                         
                                
-                        $dbh->insertUser($email, $hash, $nome, $cognome, $venditore, $indirizzo, $città, $paese, $cap);
-                       
-                    
+                        $dbh->insertUser($email, $hash, $nome, $cognome, $venditore, $indirizzo, $città, $paese, $cap); 
+                        
+                        if($dbh->getUtente($email) != NULL){
+                            require 'inviaMail.php';
+                        }
+                            
+                        
                     }
 
 
