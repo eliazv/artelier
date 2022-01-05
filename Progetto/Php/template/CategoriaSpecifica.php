@@ -94,7 +94,7 @@
                       <div class="about text-left px-3">
                           <h4><?php echo $categoriaS["titolo"] ?></h4> <span class="text-muted"><?php echo $categoriaS["artista"] ?></span>
                           <h3><?php echo $categoriaS["prezzo"] ?></h3>
-                      </div> <a href=""><span class="dot"><span class="inner-dot"><i class="fa fa-plus"></i></span></span></a>                  
+                      </div> <a href="./archivio-articolo.php?titoloq=<?php echo $categoriaS["titolo"] ?>"><span class="dot"><span class="inner-dot"><i class="fa fa-plus"></i></span></span></a>                  
                   </div>
               </div>
               <?php endforeach; ?>

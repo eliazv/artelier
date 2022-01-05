@@ -87,9 +87,8 @@
                       <div class="about text-left px-3">
                           <h4><?php echo $qArtista["titolo"] ?></h4> <span class="text-muted"><?php echo $qArtista["artista"] ?></span>
                           <h3><?php echo $qArtista["prezzo"] ?></h3>
-                          </div> <a href="./archivio-artistaSpecifico.php?artistaA=<?php echo $artista["cognome"];?>"><span class="dot"><span class="inner-dot"><i class="fa fa-plus"></i></span></span></a>                  </div>
+                      </div> <a href="./archivio-articolo.php?titoloq=<?php echo $qArtista["titolo"] ?>"><span class="dot"><span class="inner-dot"><i class="fa fa-plus"></i></span></span></a>                  </div>
                   </div>
-              </div>
               <?php endforeach; ?>
 
           </div>

@@ -126,6 +126,8 @@
 
         <hr>
         <form  action="./aggiunta-carrello.php?titoloq=<?php echo $quadroq["titolo"] ?>" method="POST"> <!--action="./archivio-articolo.php"-->
+       
+        <?php if(isUserLoggedIn()): ?>
         <div class="table-responsive mb-2">
           <table class="table table-sm table-borderless">
             <tbody>
@@ -165,7 +167,7 @@
             </tbody>
           </table>
         </div>
-        <?php if(isUserLoggedIn()): ?>
+        
 
         <button type="submit" name="btnBuyNow" class="btn btn-primary btn-md mr-1 mb-2">Compra ora!</button>
 
