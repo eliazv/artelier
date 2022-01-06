@@ -244,6 +244,16 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function updateNotifica($codNotifica, $email){
+        $query ="UPDATE notifica SET visualizzato=1 WHERE email=? AND codNotifica=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si', $email, $codNotifica);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $stmt->execute();
+    }
+
     public function updateIndirizzo($email, $indirizzo){
         $query ="UPDATE utente SET indirizzo=? WHERE email=?";
         $stmt = $this->db->prepare($query);

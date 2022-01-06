@@ -22,6 +22,9 @@ if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
      }
 
      $dbh->deleteCart($_SESSION["email"]);
+
+     mail("zavattaelia@gmail.com","Ordine confermato","Il tuo ordine è stato confermato");//non funziona 
+     
      header("location: ./archivio-ordini.php");   
 
 }
