@@ -8,6 +8,10 @@ body {
     color: #5a5a5a;
   }
 
+.product-details{
+  min-width: 200px;
+}
+
 i{
   color: aliceblue;
   float: left;

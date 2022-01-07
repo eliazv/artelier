@@ -1,27 +1,15 @@
 <?php
 require_once 'bootstrap.php';
 
-// definisco mittente e destinatario della mail
-$nome_mittente = "Mio Nome";
-$mail_mittente = "mittente@sito.com";
-$mail_destinatario = "pietro.lelli10@gmail.com";
+$to_email = "pietro.lelli10@gmail.com";
+$subject = "Simple Email Test via PHP";
+$body = "Hi, This is test email send by PHP Script";
+$headers = "From: artelier2k21@gmail.com";
 
-// definisco il subject ed il body della mail
-$mail_oggetto = "Messaggio di prova";
-$mail_corpo = "Questo è un messaggio di prova per testare la mia applicazione";
-
-// aggiusto un po' le intestazioni della mail
-// E' in questa sezione che deve essere definito il mittente (From)
-// ed altri eventuali valori come Cc, Bcc, ReplyTo e X-Mailer
-$mail_headers = "From: " .  $nome_mittente . " <" .  $mail_mittente . ">\r\n";
-$mail_headers .= "Reply-To: " .  $mail_mittente . "\r\n";
-$mail_headers .= "X-Mailer: PHP/" . phpversion();
-
-if (mail($mail_destinatario, $mail_oggetto, $mail_corpo, $mail_headers))
-  echo "Messaggio inviato con successo a " . $mail_destinatario;
-else
-  echo "Errore. Nessun messaggio inviato.";
-
-//header("location: home2.php");  
+if (mail($to_email, $subject, $body, $headers)) {
+    echo "Email successfully sent to $to_email...";
+} else {
+    echo "Email sending failed...";
+}
 
 ?>

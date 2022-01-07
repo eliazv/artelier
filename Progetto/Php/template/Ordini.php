@@ -43,14 +43,23 @@
                         <a class="nav-link active" aria-current="page" href="./home2.php"><i class="fa fa-home"></i>&nbsp; Home</a>
                       </li>
                       <li class="nav-item">
+                      <?php if(isUserLoggedIn()): ?>
                         <a class="nav-link" href="./utente2.php"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
-                        <a class="nav-link" href="./login.php">&emsp;&emsp; Login</a>
-                        <a class="nav-link" href="./registrazione.php">&emsp;&emsp; Registrazione</a>
                         <a class="nav-link" href="./archivio-notifiche.php"><i class="fa fa-bell"></i>&nbsp; Notifiche <span class="badge bg-danger"> <?php echo $templateParams["notifiche"][0]["num"]?></span> </a>
                         <a class="nav-link" href="./archivio-carrello.php"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
                         <a class="nav-link" href="./archivio-categorie.php"> &nbsp; Categorie</a>
                         <a class="nav-link" href="./archivio-artisti.php"> &nbsp; Artisti</a>
                         <a class="nav-link" href="./home2.php#chisiamo"> &nbsp; Chi Siamo</a>
+                        <a class="nav-link" href="./logout.php"> &nbsp; Logout</a>
+
+                      <?php else:?>
+                        <a class="nav-link" href="./login.php">&emsp;&emsp; Login</a>
+                        <a class="nav-link" href="./registrazione.php">&emsp;&emsp; Registrazione</a>
+                        <a class="nav-link" href="./archivio-categorie.php"> &nbsp; Categorie</a>
+                        <a class="nav-link" href="./archivio-artisti.php"> &nbsp; Artisti</a>
+                        <a class="nav-link" href="./home2.php#chisiamo"> &nbsp; Chi Siamo</a>
+                      <?php endif?>
+                        
                       </li>
                     </ul>
                     <form class="d-flex">

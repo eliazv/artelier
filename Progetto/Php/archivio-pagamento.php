@@ -23,6 +23,9 @@ if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
 
      $dbh->deleteCart($_SESSION["email"]);
 
+     $dbh->insertNotifica("Acquisto completato", "Puoi tracciare il tuo ordine dalla tua pagina personale, nella sezione I tuoi ordini. ",
+     date("Y-m-d H:i:s"), 0, $_SESSION['email']);
+
      mail("zavattaelia@gmail.com","Ordine confermato","Il tuo ordine è stato confermato");//non funziona 
      
      header("location: ./archivio-ordini.php");   
@@ -47,6 +50,9 @@ if(isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] != NULL ){
      $_SESSION["bnprezzo"]=NULL;
 
 
+     $dbh->insertNotifica("Acquisto completato", "Puoi tracciare il tuo ordine dalla tua pagina personale, nella sezione I tuoi ordini. ",
+     date("Y-m-d H:i:s"), 0, $_SESSION['email']);
+     
      header("location: ./archivio-ordini.php");   
   
 }
