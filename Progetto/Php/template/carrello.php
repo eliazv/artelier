@@ -113,7 +113,14 @@
                     </form>
 <br><br>
                     <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text" class="form-control border-0 gift-card" placeholder="Totale:"><h6>€<?php echo $somma?></h6></div> 
-                    <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><a href="./archivio-checkout.php"><button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button" style="position: absolute; right: 20%;">Procedi all'ordine</button></a></div>
+                    
+                    <div class="row">
+                      <div class="col-4"></div>
+                      
+                      <div class="col-4"><a href="./archivio-quadri.php"><button class="btn btn-primary btn-block pay-button" type="button">Continua lo shopping</button></a></div>
+                      <div class="col-4"><a href="./archivio-checkout.php"><button class="btn btn-warning btn-block pay-button" type="button">Procedi all'ordine</button></a></div>
+                    </div>
+                    
                 </div>
             
             </div>
