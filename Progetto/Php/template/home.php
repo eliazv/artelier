@@ -96,25 +96,36 @@
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+
                 </div>
                 <div class="carousel-inner">
-                  <?php $first = true; ?>
-                    <?php foreach($templateParams["4Quadri"] as $quadro): ?>
-                      <?php if($first == true): 
-                        $first = false;
-                      ?>
-                                              
-                        <div class="carousel-item-active">
-                      <?php else: ?>
-                          
-                        <div class="carousel-item">
-                      <?php endif; ?>
-                      <a href="./archivio-articolo.php?titoloq=<?php echo $quadro["titolo"];?>"><img src="<?php echo UPLOAD_DIR.$quadro["immagine"]; ?>" class="d-block w-100" alt="..."></a>
 
-                      </div>
+                <div class="carousel-item-active">
+                  
+                      <img src="<?php echo UPLOAD_DIR.$templateParams["4Quadri"][0]["immagine"]; ?>" class="d-block w-100" alt="...">
 
-                    <?php endforeach; ?>  
-              </div>
+                  </div>
+
+                  <div class="carousel-item">
+                  
+                      <img src="<?php echo UPLOAD_DIR.$templateParams["4Quadri"][1]["immagine"]; ?>" class="d-block w-100" alt="...">
+
+                  </div>
+
+                  <div class="carousel-item">
+                  
+                     <img src="<?php echo UPLOAD_DIR.$templateParams["4Quadri"][2]["immagine"]; ?>" class="d-block w-100" alt="...">
+
+                  </div>
+
+                  <div class="carousel-item">
+                  
+                      <img src="<?php echo UPLOAD_DIR.$templateParams["4Quadri"][3]["immagine"]; ?>" class="d-block w-100" alt="...">
+
+                  </div>
+
+                </div>
 
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
