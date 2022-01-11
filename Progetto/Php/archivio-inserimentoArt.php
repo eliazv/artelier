@@ -12,20 +12,30 @@ if (isset($_POST['btnInserisciQuadro'])) {
                     //(! empty($_POST['prezzo'])) && (! empty($_POST['immagineT'])) && (! empty($_POST['corrente'])) &&
                    // (! empty($_POST['descrizione']))){
 
-                    $titolo = $_POST['titolo'];
-                    $artista = $_POST['artista'];
-                    $dimensione = $_POST['dimensione'];
-                    $prezzo = $_POST['prezzo'];
-                    $corrente = $_POST['corrente'];
-                    $descrizione = $_POST['descrizione'];
-                    $immagine = $_POST['immagineT'];                   
-                           
-                    $dbh->insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $corrente, $descrizione);
+    $titolo = $_POST['titolo'];
+    $artista = $_POST['artista'];
+    $dimensione = $_POST['dimensione'];
+    $prezzo = $_POST['prezzo'];
+    $corrente = $_POST['corrente'];
+    $descrizione = $_POST['descrizione'];
+    $immagine = $_POST['immagineT'];                   
+            
+    $dbh->insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $corrente, $descrizione);
 
-                    $dbh->insertNotifica("Quadro inserito", "abbiamo aggiunto al nostro catalogo il nuovo articolo ". $titolo,
-                    date("Y-m-d H:i:s"), 0, $_SESSION['email']);
+    $dbh->insertNotifica("Quadro inserito", "abbiamo aggiunto al nostro catalogo il nuovo articolo ". $titolo,
+    date("Y-m-d H:i:s"), 0, $_SESSION['email']);
+
+    $output .= '
+        <div class="alert alert_default">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <p><strong>"Quadro Inserito con Successo!"</strong><br>
+            
+        </div>
+        ';
+
+    echo $output;
                    
-    }
+}
 
     if (isset($_POST['btnInserisciArtista'])) {
         //if( (! empty($_POST['titolo'])) &&  (! empty($_POST['artista'])) &&  (! empty($_POST['dimensione'])) && 

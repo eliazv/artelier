@@ -101,31 +101,15 @@
                 </div>
                 <div class="carousel-inner">
 
-                <div class="carousel-item-active">
-                  
-                      <img src="<?php echo UPLOAD_DIR.$templateParams["4Quadri"][0]["immagine"]; ?>" class="d-block w-100" alt="...">
-
-                  </div>
-
-                  <div class="carousel-item">
-                  
-                      <img src="<?php echo UPLOAD_DIR.$templateParams["4Quadri"][1]["immagine"]; ?>" class="d-block w-100" alt="...">
-
-                  </div>
-
-                  <div class="carousel-item">
-                  
-                     <img src="<?php echo UPLOAD_DIR.$templateParams["4Quadri"][2]["immagine"]; ?>" class="d-block w-100" alt="...">
-
-                  </div>
-
-                  <div class="carousel-item">
-                  
-                      <img src="<?php echo UPLOAD_DIR.$templateParams["4Quadri"][3]["immagine"]; ?>" class="d-block w-100" alt="...">
-
-                  </div>
-
-                </div>
+                  <?php $i=0; foreach($templateParams["4Quadri"] as $quadro) :?>
+                    <div class="carousel-item <?php if($i==0){ echo "active";}?> w-100">
+                        <a href="#">
+                            <img src="<?php echo UPLOAD_DIR.$quadro["immagine"];?>" class="d-block w-100" alt="...">
+                        </a>
+                        
+                    </div>
+                <?php $i=$i+1; endforeach; ?>
+              </div>
 
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
