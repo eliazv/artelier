@@ -27,8 +27,17 @@
             <nav class="navbar navbar-dark bg-dark fixed-top">
               <div class="container-fluid">
 
+              <div class="col-4">
                 <a href="./home2.php"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
+              </div>
+              <div class="col-4"></div>
 
+                <div class="col-2 text-end" style="padding-right:10px">
+                <button class="btn btn-default" type="button" data-toggle="modal" data-target="#MessagesModal">
+                    <img src="../Immagini/bell.png" alt="" style="height:30px"/>
+                </button>
+            </div>
+            <div class="col-1 text-start">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -84,6 +93,11 @@
             </div>
           </div>
         </section>
+
+        
+
+          
+        
         <div class="container marketing">
 
         <div class="row">
