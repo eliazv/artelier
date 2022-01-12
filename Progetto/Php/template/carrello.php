@@ -118,7 +118,11 @@
                       <div class="col-4"></div>
                       
                       <div class="col-4"><a href="./archivio-quadri.php"><button class="btn btn-primary btn-block pay-button" type="button">Continua lo shopping</button></a></div>
+                      <!--non va-->
+                      <?php if($templateParams["nquadri"][0]["numquadri"] !=0): ?>
                       <div class="col-4"><a href="./archivio-checkout.php"><button class="btn btn-warning btn-block pay-button" type="button">Procedi all'ordine</button></a></div>
+                      <?php else:?>
+                      <?php endif?>
                     </div>
                     
                 </div>

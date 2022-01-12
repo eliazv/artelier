@@ -1,3 +1,5 @@
+create database artelier;
+use artelier;
 
 CREATE TABLE Artista(
     cognome varchar(50) PRIMARY KEY,

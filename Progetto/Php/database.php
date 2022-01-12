@@ -110,6 +110,17 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+
+    public function getNumberOfPortrait($email){
+        $query = "SELECT COUNT(codCarrello) as numquadri FROM carrello WHERE email = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getQuadroInCarrello($email, $titolo){
         $query = "SELECT quantita FROM carrello WHERE email = ? AND titolo=?";
         $stmt = $this->db->prepare($query);
@@ -244,10 +255,18 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function updateNotifica($codNotifica, $email){
-        $query ="UPDATE notifica SET visualizzato=1 WHERE email=? AND codNotifica=?";
+    public function statoNotifica($codNotifica){
+        $stmt = $this->db->prepare("SELECT Visualizzato FROM Notifica  WHERE codNotifica = ?");
+        $stmt->bind_param("i",$codNotifica);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC)[0]["Visualizzato"];
+    }
+
+    public function leggiNotifica($codNotifica){
+        $query ="UPDATE notifica SET visualizzato=1 WHERE codNotifica=?";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('si', $email, $codNotifica);
+        $stmt->bind_param('i', $codNotifica);
         $stmt->execute();
         $result = $stmt->get_result();
 

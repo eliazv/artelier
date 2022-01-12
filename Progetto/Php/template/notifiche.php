@@ -89,9 +89,8 @@
 
 <div class="row justify-content-center">
   <div class="col-8">
-
-    <div class="<?php echo $visualizzato?>" role="alert" 
-    onclick="markAsRead(<?php echo $notifica['codNotifica'] ?>, <?php echo $notifica['visualizzato'] ?>)">
+  <a href="./leggi-notifica.php?codiceNotifica=<?php echo $notifica["codNotifica"]?>">
+    <div class="<?php echo $visualizzato?>" role="alert">
       <details>
         <summary>
           <div class="row">
@@ -112,7 +111,9 @@
         </div>
 
       </details>
+      
     </div>
+    </a>
     <hr class="rounded">
   </div> 
 </div>
