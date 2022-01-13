@@ -1,26 +1,24 @@
-utente
-
 <!doctype html>
 <html lang="it">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>HomePage</title>
+    <title>Modifica Quadri</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
 
     <!-- Bootstrap core CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
       
-  <!-- icone-->
+    <link rel="stylesheet" href="./bootstrap-italia.min.css">  <!-- icone-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="../Css/HomePage2.css" rel="stylesheet">
+    <link href="../Css/modificaArt.css" rel="stylesheet">
   </head>
   <body>
-    
+     
   <header>
       <div class="container-fluid" style="padding: 0px;">
         <div class="row">
@@ -74,94 +72,48 @@ utente
             </nav>
           </div>   
         </div>
-  
-  <main>
-    <br>
-    
+    </header>
 
+    <main>
     <div class="row">
-    <div class="col-1"> </div>
-      
-      <div class="col-md-10">
-        <h1>Il tuo Profilo</h1>
-
-        <?php foreach($templateParams["utente"] as $utente): ?>
-        <?php if($utente["venditore"] ): ?>
-
-        <h3><a class="mb-3" href="./archivio-modifica-art.php" style="color: black; text-decoration: none;" >• Modifica Articoli</a>
-        <a class="mb-3" href="./archivio-inserimentoArt.php"  style="color: black; text-decoration: none;" >&emsp;• Inserisci Articoli</a><br>
-        <?php else:?>
-        <a class="mb-3" href="./archivio-Ordini.php" style="color: black; text-decoration: none;" >• I tuoi Ordini</a><br>
-        <?php endif?>
-        </h3>
-
-        <div class="table-responsive">
-          <table class="table table-sm table-borderless mb-0">
-            <tbody>
-              <tr>
-                <th class="pl-0 w-25" scope="row">Nome: </th>
-                <td><?php echo $utente["nome"] ?></td>
-              </tr>
-              <tr>
-                <th class="pl-0 w-25" scope="row">Cognome: </th>
-                <td><?php echo $templateParams["utente"][0]["cognome"] ?></td>
-              </tr>
-              <tr>
-                <th class="pl-0 w-25" scope="row">Email:</th>
-                <td><?php echo $templateParams["utente"][0]["email"] ?></td>
-              </tr>
-              <tr>
-                <th class="pl-0 w-25" scope="row">Indirizzo: </th>
-                <td><?php echo $templateParams["utente"][0]["indirizzo"] ?>, <?php echo $templateParams["utente"][0]["citta"] ?>, <?php echo $templateParams["utente"][0]["paese"] ?></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <hr>
-
-
-        <h4 class="mb-3">Modifica i tuoi Dati<br><br>
-          <form class="row g-3"  action="./utente2.php" method="POST">
+        
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <h1><br><br>Modifica Quadri</h1><br>
             
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Vecchia Password</label>
-              <input type="password" class="form-control" id="inputPassword" name="vecchiaPassword">
-            </div>
-            <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Nuova Password</label>
-              <input type="password" class="form-control" id="inputPassword2" name="nuovaPassword">
-            </div>
-            <div class="col-md-6">
-              <label for="inputAddress" class="form-label">Indirizzo</label>
-              <input type="text" class="form-control" id="inputAddress" name="indirizzo" placeholder="<?php echo $utente["indirizzo"]?>">
-            </div>
-            <div class="col-md-6">
-              <label for="inputCity" class="form-label">citta</label>
-              <input type="text" class="form-control" id="inputCity" name="citta" placeholder="<?php echo $utente["citta"]?>">
-            </div>
-            <div class="col-md-4">
-            <label for="inputCity" class="form-label">Nazione</label>
-              <input type="text" class="form-control" id="inputNazione" name="paese" placeholder="<?php echo $utente["paese"]?>">
-            </div>
-            <div class="col-md-2">
-              <label for="inputCap" class="form-label">CAP</label>
-              <input type="text" class="form-control" id="inputZip" name="cap" placeholder="<?php echo $utente["cap"]?>">
-            </div>
-            <div class="col-12">
-            </div>
-            <div class="col-12">
-              
-            <button type="submit" class="btn btn-primary" name="btnModifica">Modifica</button> 
-            </div>
-          </form>
-          <?php endforeach; ?>
+            <div class="it-list-wrapper">
+  <ul class="it-list">
+
+  <?php foreach($templateParams["quadri"] as $quadro):?>
+    <div class="list-group">
+  <a class="list-group-item list-group-item-action d-flex gap-3 py-3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <img src="../Immagini/cornice.jpg" alt="twbs" width="60" height="42" class="flex-shrink-0">
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <div>
+        <h6 class="mb-0"><?php echo $quadro["titolo"]?></h6>
+        <p class="mb-0 opacity-75"><?php echo $quadro["artista"]?></p>
+
+<div class="collapse" id="collapseExample">
+    <div class="accordion-body row" id="modifyAccordion">
+    <div class="col-5 col-md-3 text-end">
+        <button type="button" class="btn btn-outline-danger">Elimina</button>
+    </div>
+    </div>
+</div>
       </div>
     </div>
-  </main>
+  </a>
+</div>
 
-  
-  <!-- FOOTER -->
+    <?php endforeach;?>
+  </ul>
+</div>
+                                  
+                </div>
+    </main>
+
+
+    <!-- FOOTER -->
 
   <div id="chisiamo" class="container-fluid mt-5" style="padding: 0px; text-align: center;">
     <div class="card" style="width: 100%;">
