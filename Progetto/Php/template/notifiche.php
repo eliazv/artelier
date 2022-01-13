@@ -110,8 +110,7 @@
           </div>   
         </div>
 
-      </details>
-      
+      </details>    
     </div>
     </a>
     <hr class="rounded">

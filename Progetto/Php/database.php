@@ -152,10 +152,20 @@ class DatabaseHelper{
     }
 
        //TUTTE LE NOTIFICHE
-       public function getNotifiche($email){
+    public function getNotifiche($email){
         $query ="SELECT * FROM notifica WHERE email=?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s',$email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getNotifica($codNotifica){
+        $query ="SELECT * FROM notifica WHERE codNotifica=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$codNotifica);
         $stmt->execute();
         $result = $stmt->get_result();
 

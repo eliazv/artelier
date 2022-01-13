@@ -19,29 +19,29 @@ if (isset($_POST['btnModifica'])) {
 
     if($indirizzo!=""){
         $dbh->updateIndirizzo($_SESSION['email'], $indirizzo);
-        $dbh->insertNotifica("Modifica indirizzo", "Hai modificato le tue credenziali.",
+        $dbh->insertNotifica("Modifica indirizzo", "Hai modificato le tue credenziali. Clicca qui per vedere i tuoi dati.",
         date("Y-m-d H:i:s"), 0, $_SESSION['email']);
     }
     if($paese!=""){
         $dbh->updatePaese($_SESSION['email'], $paese);
-        $dbh->insertNotifica("Modifica paese", "Hai modificato le tue credenziali.",
+        $dbh->insertNotifica("Modifica paese", "Hai modificato le tue credenziali. Clicca qui per vedere i tuoi dati.",
         date("Y-m-d H:i:s"), 0, $_SESSION['email']);
     }
     if($citta!=""){
         $dbh->updateCitta($_SESSION['email'], $citta);
-        $dbh->insertNotifica("Modifica citta", "Hai modificato le tue credenziali.",
+        $dbh->insertNotifica("Modifica citta", "Hai modificato le tue credenziali. Clicca qui per vedere i tuoi dati.",
         date("Y-m-d H:i:s"), 0, $_SESSION['email']);
     }
 
     if($cap!=""){
         $dbh->updateCap($_SESSION['email'], $cap);
-        $dbh->insertNotifica("Modifica CAP", "Hai modificato le tue credenziali.",
+        $dbh->insertNotifica("Modifica CAP", "Hai modificato le tue credenziali. Clicca qui per vedere i tuoi dati.",
         date("Y-m-d H:i:s"), 0, $_SESSION['email']);
     }
     if($vecchiaPassword!="" && $nuovaPassword!=""){
         if($templateParams["utente"][0]["passwordd"] == $vecchiaPassword){
             $dbh->updatePassword($_SESSION['email'], $nuovaPassword);
-            $dbh->insertNotifica("Modifica password", "Hai modificato le tue credenziali.",
+            $dbh->insertNotifica("Modifica password", "Hai modificato le tue credenziali. Clicca qui per vedere i tuoi dati.",
                     date("Y-m-d H:i:s"), 0, $_SESSION['email']);
         }
         else{

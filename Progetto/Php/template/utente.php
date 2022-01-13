@@ -88,13 +88,39 @@ utente
         <?php foreach($templateParams["utente"] as $utente): ?>
         <?php if($utente["venditore"] ): ?>
 
-        <a class="mb-3" href="./archivio-Ordini.php" style="color: black; text-decoration: none;" >• I tuoi Ordini</a><br>
-        <a class="mb-3" href="./archivio-inserimentoArt.php"  style="color: black; text-decoration: none;" >• Inserisci Articoli</a><br>
+        <h3><a class="mb-3" href="./archivio-Ordini.php" style="color: black; text-decoration: none;" >• I tuoi Ordini</a>
+        <a class="mb-3" href="./archivio-inserimentoArt.php"  style="color: black; text-decoration: none;" >&emsp;• Inserisci Articoli</a><br>
         <?php else:?>
         <a class="mb-3" href="./archivio-Ordini.php" style="color: black; text-decoration: none;" >• I tuoi Ordini</a><br>
         <?php endif?>
+        </h3>
+
+        <div class="table-responsive">
+          <table class="table table-sm table-borderless mb-0">
+            <tbody>
+              <tr>
+                <th class="pl-0 w-25" scope="row">Nome: </th>
+                <td><?php echo $utente["nome"] ?></td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row">Cognome: </th>
+                <td><?php echo $templateParams["utente"][0]["cognome"] ?></td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row">Email:</th>
+                <td><?php echo $templateParams["utente"][0]["email"] ?></td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row">Indirizzo: </th>
+                <td><?php echo $templateParams["utente"][0]["indirizzo"] ?>, <?php echo $templateParams["utente"][0]["citta"] ?>, <?php echo $templateParams["utente"][0]["paese"] ?></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <hr>
+
+
         <h4 class="mb-3">Modifica i tuoi Dati<br><br>
           <form class="row g-3"  action="./utente2.php" method="POST">
             
@@ -129,9 +155,7 @@ utente
             <button type="submit" class="btn btn-primary" name="btnModifica">Modifica</button> 
             </div>
           </form>
-          <?php endforeach;
-
-          ?>
+          <?php endforeach; ?>
       </div>
     </div>
   </main>
