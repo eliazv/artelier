@@ -39,7 +39,7 @@
         <div class="card-header bg-white">
             <div class="row justify-content-between">
                 <div class="col">
-                    <p class="text-muted"> Numero Ordine: <span class="font-weight-bold text-dark"><?php echo $ordinedaTr["CodQuadroOrdinato"]?></span></p>
+                    <p class="text-muted"> Numero Ordine: <span class="font-weight-bold text-dark"><?php echo $ordinedaTr["codOrdine"]?></span></p>
                 </div>
                 <div class="flex-col my-auto">
                     <p class="text-muted"> Ordinato il: <span class="font-weight-bold text-dark"><?php echo $ordinedaTr["dataOrdine"]?></span> </p>
