@@ -122,14 +122,14 @@
                               <div class="col-3"></div>
                               <div class="col-3">
                                   <div class="text-center form-floating mb-3">
-                                    <input type="prezzo" name="prezzo" class="form-control" id="floatingInput" placeholder="">
+                                    <input type="prezzo" name="prezzo" class="form-control" id="floatingInput"  value="<?php echo $quadro["prezzo"]?>">
                                     <label for="floatingInput">Prezzo €</label>
                                   </div>
                               </div>
 
                               <div class="col-3">
                                   <div class="text-center form-floating mb-3">
-                                    <input type="quantità" name="quantità" class="form-control" id="floatingInput" placeholder="">
+                                    <input type="quantità" name="quantità" class="form-control" id="floatingInput"  value="<?php echo $quadro["quantità"]?>">
                                     <label for="floatingInput">Quantità</label>
                                   </div>
                               </div>
