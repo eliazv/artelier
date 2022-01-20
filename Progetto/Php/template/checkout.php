@@ -128,13 +128,13 @@
             <?php $somma = $somma + $totPaziale;?>
 
             <?php endforeach; ?>
-          
+           
           <li class="list-group-item d-flex justify-content-between">
             <span>Totale</span>
             <strong>€<?php echo $somma?></strong>
           </li>
         </ul>
-
+          <?php $_SESSION["somma"]= $somma?>
         
       </div>
       <div class="col-md-7 col-lg-8">
@@ -201,7 +201,7 @@
             <input type="checkbox" class="form-check-input" id="save-info">
             <label class="form-check-label" for="save-info">Salva informazioni per la prossima volta</label>
           </div>
-          <a class="text-reset" href="./archivio-pagamento.php?somma=<?php echo $somma?>"><button type="button" class="w-100 btn btn-primary btn-lg">Continua al Pagamento</button></a>
+          <a class="text-reset" href="./archivio-pagamento.php"><button type="button" class="w-100 btn btn-primary btn-lg">Continua al Pagamento</button></a>
         </form>
       </div>
     </div>

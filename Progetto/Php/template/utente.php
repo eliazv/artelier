@@ -87,13 +87,14 @@ utente
 
         <?php foreach($templateParams["utente"] as $utente): ?>
         <?php if($utente["venditore"] ): ?>
-
-        <h3><a class="mb-3" href="./archivio-modifica-art.php" style="color: black; text-decoration: none;" >• Modifica Articoli</a>
-        <a class="mb-3" href="./archivio-inserimentoArt.php"  style="color: black; text-decoration: none;" >&emsp;• Inserisci Articoli</a><br>
+          <h3>
+            <a class="mb-3" href="./archivio-modifica-art.php" style="color: black; text-decoration: none;" >• Modifica Articoli</a>
+            <a class="mb-3" href="./archivio-inserimentoArt.php"  style="color: black; text-decoration: none;" >&emsp;• Inserisci Articoli</a>
+            <a class="mb-3" href="./archivio-admin-ordini.php"  style="color: black; text-decoration: none;" >&emsp;• Vedi tutti gli Ordini</a><br>
         <?php else:?>
-        <a class="mb-3" href="./archivio-Ordini.php" style="color: black; text-decoration: none;" >• I tuoi Ordini</a><br>
+            <a class="mb-3" href="./archivio-Ordini.php" style="color: black; text-decoration: none;" >• I tuoi Ordini</a><br>
         <?php endif?>
-        </h3>
+          </h3>
 
         <div class="table-responsive">
           <table class="table table-sm table-borderless mb-0">

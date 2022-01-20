@@ -73,6 +73,10 @@
         </div>
     </header>
 
+    <?php if($_SESSION['email']==NULL || $templateParams["utente"][0]["venditore"]==0): ?>
+      <h3> <br> <br><br><br> <br>  Non hai accesso a questa pagina.</h3>
+    <?php else:?>
+
     <main>
     <div class="row">
         
@@ -102,30 +106,39 @@
                 </button>
                 </h2>
                 <div id="disk<?php echo $ordine["codOrdine"]?>"  aria-labelledby="heading<?php echo $ordine["codOrdine"]?>" data-bs-parent="#diskAccordion">
-                    <div class="accordion-body row" id="modifyAccordion">
+                  <div class="accordion-body row" id="modifyAccordion">
                     <div class="row mt-2">
-                                <div class="col-12 text-center">
-                                  <label>
-                                    Nome e Cognome: <?php echo $ordine["nome"]?> <?php echo $ordine["cognome"]?>
-                                  </label><br>
-                                  <label>
-                                    Email: <?php echo $ordine["email"]?>
-                                  </label><br>
-                                  <label>
-                                    Importo: <?php echo $ordine["importo"]?>
-                                  </label><br>
-                                  <label>
-                                    Indirizzo: <?php echo $ordine["indirizzo"]?>, <?php echo $ordine["citta"]?> <?php echo $ordine["cap"]?>, <?php echo $ordine["paese"]?> 
-                                    </label><br>
-                                    <label>
-                                    Data ordine: <?php echo $ordine["dataOrdine"]?>
-                                    </label><br>
-                                    <label>
-                                    Data consegna: <?php echo $ordine["dataConsegna"]?>
-                                  </label>
-                              </div>
-                                <div class="col-3"></div>
-                            </div>
+                       <div class="col-12 text-center">
+                            <table class="table table-sm table-borderless mb-0">
+                              <tbody>
+                                <tr>
+                                  <th class="pl-0 w-25" scope="row">Nome e Cognome: </th>
+                                  <td><?php echo $ordine["nome"]?> <?php echo $ordine["cognome"]?></td>
+                                </tr>
+                                <tr>
+                                  <th class="pl-0 w-25" scope="row">Email: </th>
+                                  <td><?php echo $ordine["email"]?></td>
+                                </tr>
+                                <tr>
+                                  <th class="pl-0 w-25" scope="row">Importo:</th>
+                                  <td> €<?php echo $ordine["importo"]?></td>
+                                </tr>
+                                <tr>
+                                  <th class="pl-0 w-25" scope="row">Indirizzo: </th>
+                                  <td><?php echo $ordine["indirizzo"]?>, <?php echo $ordine["citta"]?> <?php echo $ordine["cap"]?>, <?php echo $ordine["paese"]?> </td>
+                                </tr>
+                                <tr>
+                                  <th class="pl-0 w-25" scope="row">Data ordine: </th>
+                                  <td><?php echo $ordine["dataOrdine"]?> </td>
+                                </tr>
+                                <tr>
+                                  <th class="pl-0 w-25" scope="row">Data consegna: </th>
+                                  <td><?php echo $ordine["dataConsegna"]?> </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -154,7 +167,7 @@
 </div>
     </main>
 
-
+    <?php endif?>
     <!-- FOOTER -->
 
   <div id="chisiamo" class="container-fluid mt-5" style="padding: 0px; text-align: center;">

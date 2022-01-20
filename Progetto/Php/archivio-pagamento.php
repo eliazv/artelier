@@ -5,14 +5,13 @@ require_once 'bootstrap.php';
 //Base Template
 $templateParams["titolo"] = "ArtElier - Pagamento";
 $templateParams["carrello"] = $dbh->getCarrello($_SESSION["email"]); //prendi email utente loggato 
-$totprezzocarrello= $_GET["somma"];
-
 
 //compra intero carrello
 if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
      $dataConsegna = date("Y-m-d H:i:s");
      //$totPaziale=(($templateParams["quadro"][0]["prezzo"]) * ($carrello["quantita"]));   //SERVE??
-     $dbh->insertOrder($_SESSION["email"], date("Y-m-d H:i:s"), date("Y-m-d 10:00:00", strtotime($dataConsegna. ' + 7 days')), 0,$totprezzocarrello);   //non va importo
+     $dbh->insertOrder($_SESSION["email"], date("Y-m-d H:i:s"), date("Y-m-d 10:00:00", strtotime($dataConsegna. ' + 7 days')),
+           0, $_SESSION["somma"]);
      $templateParams["lastorder"] = $dbh->getLastOrder($_SESSION["email"]);
 
      $lastOrder = $templateParams["lastorder"][0]["codOrdine"];
@@ -37,7 +36,8 @@ if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
 if(isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] != NULL ){
      $prezzotot=$_SESSION["bnprezzo"] * $_SESSION["bnquantita"];
      $dataConsegna = date("Y-m-d H:i:s");
-     $dbh->insertOrder($_SESSION["email"], date("Y-m-d H:i:s"), date("Y-m-d 10:00:00", strtotime($dataConsegna. ' + 7 days')), 0, $prezzotot);
+     $dbh->insertOrder($_SESSION["email"], date("Y-m-d H:i:s"), date("Y-m-d 10:00:00", strtotime($dataConsegna. ' + 7 days')), 
+          0, $prezzotot);
 
      $templateParams["lastorder"] = $dbh->getLastOrder($_SESSION["email"]);
 
