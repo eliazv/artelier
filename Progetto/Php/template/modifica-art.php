@@ -11,7 +11,6 @@
     <!-- Bootstrap core CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
       
-    <link rel="stylesheet" href="./bootstrap-italia.min.css">  <!-- icone-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
@@ -81,35 +80,92 @@
           <div class="col-md-10">
             <h1><br><br>Modifica Quadri</h1><br>
             
-            <div class="it-list-wrapper">
-  <ul class="it-list">
+          </div>
 
-  <?php foreach($templateParams["quadri"] as $quadro):?>
-    <div class="list-group">
-  <a class="list-group-item list-group-item-action d-flex gap-3 py-3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    <img src="../Immagini/cornice.jpg" alt="twbs" width="60" height="42" class="flex-shrink-0">
-    <div class="d-flex gap-2 w-100 justify-content-between">
-      <div>
-        <h6 class="mb-0"><?php echo $quadro["titolo"]?></h6>
-        <p class="mb-0 opacity-75"><?php echo $quadro["artista"]?></p>
+    </div>
 
-<div class="collapse" id="collapseExample">
-    <div class="accordion-body row" id="modifyAccordion">
-    <div class="col-5 col-md-3 text-end">
-        <button type="button" class="btn btn-outline-danger">Elimina</button>
-    </div>
-    </div>
-</div>
-      </div>
-    </div>
-  </a>
-</div>
-
-    <?php endforeach;?>
-  </ul>
-</div>
-                                  
+    <div class="row">
+    <div class="col-md-2 col-0"></div>
+    <div class="col-md-8 col-12 accordion px-4" id="diskAccordion">
+        <?php foreach($templateParams["quadri"] as $quadro): ?> 
+            <div class="accordion-item">
+                <h2 id="header<?php echo $quadro["titolo"]?>" class="accordion-header">
+                <button class="accordion-button pt-3 row mx-0" type="button"  data-bs-target="#quadro<?php echo $quadro["titolo"]?>" aria-controls="quadro<?php echo $quadro["titolo"]?>">
+                    
+                    <div class="col-5 ml-2">
+                        <label><?php echo $quadro["titolo"]?></label>
+                    </div>
+                    <div class="col-5">
+                        <label><?php echo $quadro["artista"]?></label>
+                    </div>
+                    <div class="col-2"></div>
+                </button>
+                </h2>
+                <div id="disk<?php echo $quadro["titolo"]?>"  aria-labelledby="heading<?php echo $quadro["titolo"]?>" data-bs-parent="#diskAccordion">
+                    <div class="accordion-body row" id="modifyAccordion">
+                    <div class="row mt-2">
+                                <div class="col-12 text-center">
+                                  <img src="../Immagini/<?php echo $quadro["immagine"]?>" alt="" width="300">
+                              </div>
+                                <div class="col-3"></div>
+                            </div>
+                        <div class="d-inline-block align-top">
+                            <div class="row mt-2">
+                                <div class="col-12 text-center">
+                                    <p><?php echo $quadro["titolo"]?> - <?php echo $quadro["artista"];?></p>                          
+                                </div>
+                                <div class="col-3"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <p><?php echo $quadro["prezzo"];?>€</p>
+                                </div>
+                                <div class="col-0 col-md-3"></div>
+                            </div>
+                            
+                            <div class="row mt-3">
+                                <div class="col-5 text-end">
+                                <button type="button" class="btn btn-outline-primary p-1" name="btnModifica" data-id="<?php echo $quadro["titolo"]?>"  onclick="modifyProduct(<?php echo $disk['Codice']?>)">
+                                        Modifica
+                                    </button>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-5">
+                                    <input type="hidden"  id="idDisk" value="<?php echo $quadro["titolo"]?>"/>
+                                    <button type="button" class="btn btn-outline-danger p-1" id="idElimina" data-id="<?php echo $quadro["titolo"]?>" onclick="$('#dataid').val($(this).data('id'));" data-toggle="modal" data-target="#modalDelete">
+                                        Elimina
+                                    </button>
+                                    
+                                </div>
+                                <div class="col-0 col-md-6"></div>
+                            </div>                         
+                        </div>
+                    </div>
                 </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDeleteLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalDeleteLabel">Avviso!</h5>
+                <button class="btn btn-default" data-dismiss="modal">
+                <img class="closeIcon" src="../../img/icon/close.png" alt=""/>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Sei sicuro di voler eliminare il prodotto?</p>
+                <input type="hidden"  id="dataid" value=""/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary px-2" data-dismiss="modal">Chiudi</button>
+                <button type="button" class="btn btn-primary px-2" id="btnSi" >Si</button>
+            </div>
+        </div>
+    </div>
+</div>
     </main>
 
 

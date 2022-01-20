@@ -117,7 +117,7 @@
 
                   <?php $i=0; foreach($templateParams["4Quadri"] as $quadro) :?>
                     <div class="carousel-item <?php if($i==0){ echo "active";}?> w-100">
-                        <a href="#">
+                        <a href="./archivio-articolo.php?titoloq=<?php echo $quadro["titolo"];?>">
                             <img src="<?php echo UPLOAD_DIR.$quadro["immagine"];?>" class="d-block w-100" alt="...">
                         </a>
                         
