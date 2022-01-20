@@ -22,6 +22,8 @@ if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
 
      $dbh->deleteCart($_SESSION["email"]);
 
+     $dbh->decreaseQuantità($carrello["quantita"], $carrello["titolo"]);
+
      $dbh->insertNotifica("Acquisto completato", "L'acquisto relativo all'ordine # $lastOrder  è stato completato. 
      Clicca qui per tracciare il tuo pacco.",
      date("Y-m-d H:i:s"), 0, $_SESSION['email']);
