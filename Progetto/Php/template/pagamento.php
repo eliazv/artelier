@@ -53,7 +53,6 @@
                     </div>
                     </form>
                 </div>
-                <?php var_dump($totprezzocarrello)?>
             </div>
         </div>
     </div>

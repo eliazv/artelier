@@ -404,5 +404,11 @@ class DatabaseHelper{
         $stmt->bind_param("is",$prezzo, $titolo);
         $stmt->execute();
     }
+
+    public function removeQuadroFromAllCart($titolo){
+        $stmt = $this->db->prepare("DELETE FROM carrello
+                                    WHERE titolo = ?");
+        $stmt->bind_param("is",$titolo);
+        $stmt->execute();    }
 }
 ?>

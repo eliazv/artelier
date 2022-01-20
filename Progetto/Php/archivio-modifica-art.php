@@ -12,6 +12,7 @@ if (isset($_POST["btnElimina"])) {
     
         $dbh->deleteQuadro($titolo);
         $templateParams["quadri"] = $dbh->getQuadriNonEliminati();
+        $dbh->removeQuadroFromAllCart($titolo);
 
 }
 

@@ -11,7 +11,7 @@ $totprezzocarrello= $_GET["somma"];
 //compra intero carrello
 if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
      $dataConsegna = date("Y-m-d H:i:s");
-     $totPaziale=(($templateParams["quadro"][0]["prezzo"]) * ($carrello["quantita"]));
+     //$totPaziale=(($templateParams["quadro"][0]["prezzo"]) * ($carrello["quantita"]));   //SERVE??
      $dbh->insertOrder($_SESSION["email"], date("Y-m-d H:i:s"), date("Y-m-d 10:00:00", strtotime($dataConsegna. ' + 7 days')), 0,$totprezzocarrello);   //non va importo
      $templateParams["lastorder"] = $dbh->getLastOrder($_SESSION["email"]);
 
@@ -23,7 +23,7 @@ if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
 
      $dbh->deleteCart($_SESSION["email"]);
 
-     $dbh->insertNotifica("Acquisto completato", "L'acquisto relativo all'ordine #" + $lastOrder + " è stato completato. 
+     $dbh->insertNotifica("Acquisto completato", "L'acquisto relativo all'ordine # $lastOrder  è stato completato. 
      Clicca qui per tracciare il tuo pacco.",
      date("Y-m-d H:i:s"), 0, $_SESSION['email']);
 
