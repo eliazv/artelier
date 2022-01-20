@@ -116,31 +116,37 @@
                                 </div>
                                 <div class="col-3"></div>
                             </div>
+                            <form action="./archivio-modifica-art.php?titoloq=<?php echo $quadro["titolo"]?>" method="post">
+
                             <div class="row">
-                                <div class="col-12 text-center">
-                                    <p><?php echo $quadro["prezzo"];?>€</p>
-                                </div>
-                                <div class="col-0 col-md-3"></div>
+                              <div class="col-4"></div>
+                              <div class="col-4">
+                                  <div class="text-center form-floating mb-3">
+                                    <input type="prezzo" name="prezzo" class="form-control" id="floatingInput" placeholder="">
+                                    <label for="floatingInput"><?php echo $quadro["prezzo"];?></label>
+                                  </div>
+                              </div>
                             </div>
                             
+
                             <div class="row mt-3">
                                 <div class="col-5 text-end">
-                                  <form action="./archivio-modifica-art.php?titoloq=<?php echo $quadro["titolo"]?>" method="post">
-                                <button type="button" class="btn btn-outline-primary p-1" name="btnModifica" data-id="<?php echo $quadro["titolo"]?>">
+                                <button type="submit" class="btn btn-outline-primary p-1" name="btnModifica" data-id="">
                                         Modifica
-                                    </button>
+                                </button>
                                 </div>
                                 <div class="col-2"></div>
-                                <div class="col-5">
+                                <div class="col-5 text-start">
                                     <input type="hidden"  id="idDisk" value="<?php echo $quadro["titolo"]?>"/>
                                     <button type="submit" name="btnElimina" class="btn btn-outline-danger p-1" id="btnElimina" data-toggle="modal" data-target="#modalDelete">
                                       Elimina
                                     </button>
-                                  </form>
                                     
                                 </div>
                                 <div class="col-0 col-md-6"></div>
-                            </div>                         
+                            </div>     
+                            </form>
+                    
                         </div>
                     </div>
                 </div>

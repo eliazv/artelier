@@ -11,7 +11,7 @@ class DatabaseHelper{
 
     //TUTTI I QUADRI (quadri.html)
     public function getQuadri(){
-        $query = "SELECT * FROM quadro";
+        $query = "SELECT * FROM quadro WHERE eliminato=0";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -49,7 +49,7 @@ class DatabaseHelper{
 
     //N QUADRI RANDOM (home.html)
     public function getRandomQuadri($n){
-        $stmt = $this->db->prepare("SELECT titolo, immagine, artista FROM quadro ORDER BY RAND() LIMIT ?");
+        $stmt = $this->db->prepare("SELECT titolo, immagine, artista FROM quadro WHERE eliminato=0 ORDER BY RAND() LIMIT ?");
         $stmt->bind_param('i',$n);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -99,7 +99,7 @@ class DatabaseHelper{
     }
 
     public function getQuadriByArtista($artista){
-        $query = "SELECT titolo, immagine, dimensione, artista, prezzo, nomeCorrArt FROM quadro WHERE artista = ?";
+        $query = "SELECT titolo, immagine, dimensione, artista, prezzo, nomeCorrArt FROM quadro WHERE artista = ? AND eliminato=0";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s',$artista);
         $stmt->execute();
@@ -389,18 +389,19 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function deleteQuadro2($titolo){
-        $query ="DELETE FROM quadro WHERE titolo = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('s', $titolo);
-        $stmt->execute();
-    }
-
     public function deleteQuadro($titolo){
         $stmt = $this->db->prepare("UPDATE quadro
                                     SET eliminato = 1
                                     WHERE titolo = ?");
         $stmt->bind_param("s",$titolo);
+        $stmt->execute();
+    }
+
+    public function updatePrezzo($prezzo, $titolo){
+        $stmt = $this->db->prepare("UPDATE quadro
+                                    SET prezzo = ?
+                                    WHERE titolo = ?");
+        $stmt->bind_param("is",$prezzo, $titolo);
         $stmt->execute();
     }
 }

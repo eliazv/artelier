@@ -18,7 +18,10 @@ if (isset($_POST["btnElimina"])) {
 
 
 if (isset($_POST["btnModifica"])) {
-
+    $nuovoPrezzo = $_POST["prezzo"];
+    $dbh->updatePrezzo($nuovoPrezzo, $titolo);
+    $templateParams["quadri"] = $dbh->getQuadriNonEliminati();
 }
+
 require 'template/modifica-art.php';
 ?>
