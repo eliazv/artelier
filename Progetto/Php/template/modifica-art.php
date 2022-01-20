@@ -86,11 +86,11 @@
 
     <div class="row">
     <div class="col-md-2 col-0"></div>
-    <div class="col-md-8 col-12 accordion px-4" id="diskAccordion">
+    <div class="col-md-8 col-12 accordion px-4" id="quadroAccordion">
         <?php foreach($templateParams["quadri"] as $quadro): ?> 
             <div class="accordion-item">
-                <h2 id="header<?php echo $quadro["titolo"]?>" class="accordion-header">
-                <button class="accordion-button pt-3 row mx-0" type="button"  data-bs-target="#quadro<?php echo $quadro["titolo"]?>" aria-controls="quadro<?php echo $quadro["titolo"]?>">
+                <h2 id="header<?php echo $quadro["codQuadro"]?>" class="accordion-header">
+                <button class="accordion-button pt-3 row mx-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#quadro<?php echo $quadro["codQuadro"]?>" aria-controls="quadro<?php echo $quadro["codQuadro"]?>">
                     
                     <div class="col-5 ml-2">
                         <label><?php echo $quadro["titolo"]?></label>
@@ -101,7 +101,7 @@
                     <div class="col-2"></div>
                 </button>
                 </h2>
-                <div id="disk<?php echo $quadro["titolo"]?>"  aria-labelledby="heading<?php echo $quadro["titolo"]?>" data-bs-parent="#diskAccordion">
+                <div id="quadro<?php echo $quadro["codQuadro"]?>"  class="accordion-collapse collapse " aria-labelledby="heading<?php echo $quadro["codQuadro"]?>" data-bs-parent="#quadroAccordion">
                     <div class="accordion-body row" id="modifyAccordion">
                     <div class="row mt-2">
                                 <div class="col-12 text-center">
@@ -137,7 +137,7 @@
                                 </div>
                                 <div class="col-2"></div>
                                 <div class="col-5 text-start">
-                                    <input type="hidden"  id="idDisk" value="<?php echo $quadro["titolo"]?>"/>
+                                    <input type="hidden"  id="idQuadro" value="<?php echo $quadro["codQuadro"]?>"/>
                                     <button type="submit" name="btnElimina" class="btn btn-outline-danger p-1" id="btnElimina" data-toggle="modal" data-target="#modalDelete">
                                       Elimina
                                     </button>

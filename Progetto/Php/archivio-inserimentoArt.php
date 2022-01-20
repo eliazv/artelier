@@ -1,3 +1,5 @@
+
+archivioinerimento
 <?php
 require_once 'bootstrap.php';
 
@@ -6,6 +8,7 @@ require_once 'bootstrap.php';
 //$templateParams["quadro"] = $dbh->getQuadroByTitolo("Guernica");
 //$templateParams['utente'] = $_SESSION['email'];
 $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
+
 
 if (isset($_POST['btnInserisciQuadro'])) {
     //if( (! empty($_POST['titolo'])) &&  (! empty($_POST['artista'])) &&  (! empty($_POST['dimensione'])) && 
@@ -18,9 +21,11 @@ if (isset($_POST['btnInserisciQuadro'])) {
     $prezzo = $_POST['prezzo'];
     $corrente = $_POST['corrente'];
     $descrizione = $_POST['descrizione'];
-    $immagine = $_POST['immagineT'];                   
+    $immagine = $_POST['immagineT'];  
+    
+    $codQuadro = $dbh->getMaxCodQuadro()[0]["codQuadro"]+1;
             
-    $dbh->insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $corrente, $descrizione);
+    $dbh->insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $corrente, $descrizione,0, $codQuadro);
 
     $dbh->insertNotifica("Quadro inserito", "abbiamo aggiunto al nostro catalogo il nuovo articolo ". $titolo,
     date("Y-m-d H:i:s"), 0, $_SESSION['email']);

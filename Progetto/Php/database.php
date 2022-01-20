@@ -222,10 +222,10 @@ class DatabaseHelper{
     }
 
     
-    public function insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $nomeCorrArt, $descrizione){
-        $query= "INSERT INTO quadro(titolo, immagine, dimensione, artista, prezzo, nomeCorrArt, descrizione) VALUES (?,?,?,?,?,?,?)";
+    public function insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $nomeCorrArt, $descrizione, $eliminato, $codQuadro){
+        $query= "INSERT INTO quadro(titolo, immagine, dimensione, artista, prezzo, nomeCorrArt, descrizione, eliminato, codQuadro) VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssssiss', $titolo, $immagine, $dimensione, $artista, $prezzo, $nomeCorrArt, $descrizione);
+        $stmt->bind_param('ssssissii', $titolo, $immagine, $dimensione, $artista, $prezzo, $nomeCorrArt, $descrizione, $eliminato, $codQuadro);
         $stmt->execute();
     }
 
@@ -405,10 +405,19 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
-    public function removeQuadroFromAllCart($titolo){
-        $stmt = $this->db->prepare("DELETE FROM carrello
-                                    WHERE titolo = ?");
-        $stmt->bind_param("is",$titolo);
-        $stmt->execute();    }
+        public function removeQuadroFromAllCart($titolo){
+            $stmt = $this->db->prepare("DELETE FROM carrello
+                                        WHERE titolo = ?");
+            $stmt->bind_param("s", $titolo);
+            return $stmt->execute();
+        }
+
+        public function getMaxCodQuadro(){
+            $stmt = $this->db->prepare("SELECT codQuadro FROM quadro ORDER by codQuadro DESC ");
+            $stmt->execute();
+            $result = $stmt->get_result();
+    
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
 }
 ?>
