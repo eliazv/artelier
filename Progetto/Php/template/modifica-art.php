@@ -125,16 +125,18 @@
                             
                             <div class="row mt-3">
                                 <div class="col-5 text-end">
-                                <button type="button" class="btn btn-outline-primary p-1" name="btnModifica" data-id="<?php echo $quadro["titolo"]?>"  onclick="modifyProduct(<?php echo $disk['Codice']?>)">
+                                  <form action="./archivio-modifica-art.php?titoloq=<?php echo $quadro["titolo"]?>" method="post">
+                                <button type="button" class="btn btn-outline-primary p-1" name="btnModifica" data-id="<?php echo $quadro["titolo"]?>">
                                         Modifica
                                     </button>
                                 </div>
                                 <div class="col-2"></div>
                                 <div class="col-5">
                                     <input type="hidden"  id="idDisk" value="<?php echo $quadro["titolo"]?>"/>
-                                    <button type="button" class="btn btn-outline-danger p-1" id="idElimina" data-id="<?php echo $quadro["titolo"]?>" onclick="$('#dataid').val($(this).data('id'));" data-toggle="modal" data-target="#modalDelete">
-                                        Elimina
+                                    <button type="submit" name="btnElimina" class="btn btn-outline-danger p-1" id="btnElimina" data-toggle="modal" data-target="#modalDelete">
+                                      Elimina
                                     </button>
+                                  </form>
                                     
                                 </div>
                                 <div class="col-0 col-md-6"></div>
@@ -152,11 +154,11 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="modalDeleteLabel">Avviso!</h5>
                 <button class="btn btn-default" data-dismiss="modal">
-                <img class="closeIcon" src="../../img/icon/close.png" alt=""/>
+                <img class="closeIcon" src="" alt=""/>
                 </button>
             </div>
             <div class="modal-body">
-                <p>Sei sicuro di voler eliminare il prodotto?</p>
+                <p>Sei sicuro di voler eliminare il quadro?</p>
                 <input type="hidden"  id="dataid" value=""/>
             </div>
             <div class="modal-footer">

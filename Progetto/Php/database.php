@@ -19,6 +19,15 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getQuadriNonEliminati(){
+        $query = "SELECT * FROM quadro WHERE eliminato=0";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     //TUTTI GLI ARTISTI (artisti.html)
     public function getArtisti(){
         $query = "SELECT * FROM artista";
@@ -378,6 +387,21 @@ class DatabaseHelper{
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function deleteQuadro2($titolo){
+        $query ="DELETE FROM quadro WHERE titolo = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $titolo);
+        $stmt->execute();
+    }
+
+    public function deleteQuadro($titolo){
+        $stmt = $this->db->prepare("UPDATE quadro
+                                    SET eliminato = 1
+                                    WHERE titolo = ?");
+        $stmt->bind_param("s",$titolo);
+        $stmt->execute();
     }
 }
 ?>
