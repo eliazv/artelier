@@ -119,11 +119,18 @@
                             <form action="./archivio-modifica-art.php?titoloq=<?php echo $quadro["titolo"]?>" method="post">
 
                             <div class="row">
-                              <div class="col-4"></div>
-                              <div class="col-4">
+                              <div class="col-3"></div>
+                              <div class="col-3">
                                   <div class="text-center form-floating mb-3">
                                     <input type="prezzo" name="prezzo" class="form-control" id="floatingInput" placeholder="">
-                                    <label for="floatingInput"><?php echo $quadro["prezzo"];?></label>
+                                    <label for="floatingInput">Prezzo €</label>
+                                  </div>
+                              </div>
+
+                              <div class="col-3">
+                                  <div class="text-center form-floating mb-3">
+                                    <input type="quantità" name="quantità" class="form-control" id="floatingInput" placeholder="">
+                                    <label for="floatingInput">Quantità</label>
                                   </div>
                               </div>
                             </div>

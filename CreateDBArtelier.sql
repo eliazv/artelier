@@ -36,6 +36,7 @@ CREATE TABLE Quadro(
     descrizione varchar(500),
     eliminato tinyint(1),
     codQuadro int,
+    quantità int,
     FOREIGN KEY(artista) REFERENCES Artista(cognome),
     FOREIGN KEY(nomeCorrArt) REFERENCES CorrenteArtistica(nomeCorrArt)
 );

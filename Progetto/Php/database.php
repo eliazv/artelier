@@ -415,6 +415,14 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
+    public function updateQuantità($quantità, $titolo){
+        $stmt = $this->db->prepare("UPDATE quadro
+                                    SET quantità = ?
+                                    WHERE titolo = ?");
+        $stmt->bind_param("is",$quantità, $titolo);
+        $stmt->execute();
+    }
+
         public function removeQuadroFromAllCart($titolo){
             $stmt = $this->db->prepare("DELETE FROM carrello
                                         WHERE titolo = ?");

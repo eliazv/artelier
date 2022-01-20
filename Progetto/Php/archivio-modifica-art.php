@@ -24,7 +24,14 @@ if (isset($_POST["btnModifica"])) {
     $titolo = $templateParams["quadroSpecifico"][0]["titolo"];
     $prezzo = $templateParams["quadroSpecifico"][0]["prezzo"];  
     $nuovoPrezzo = $_POST["prezzo"];
-    $dbh->updatePrezzo($nuovoPrezzo, $titolo);
+    $quantità = $_POST["quantità"];
+    if($prezzo!=""){
+        $dbh->updatePrezzo($nuovoPrezzo, $titolo);
+    }
+    if(($quantità!="")){
+        $dbh->updateQuantità($quantità, $titolo);
+    }
+    
     $templateParams["quadri"] = $dbh->getQuadriNonEliminati();
 }
 
