@@ -76,10 +76,13 @@
           </div>   
         </div>
 
-<h1 style="font-size: 35px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding: 10px"><br><i class="fa fa-bell" style="color:gray;"></i>&nbsp;Notifiche</h1><br><br>
+<h1 style="font-size: 35px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding: 10px"><br><i class="fa fa-bell" style="color:gray;"></i>&nbsp;Notifiche</h1>
 
-
-<!--scorrere dall'ultima notifica alla prima, non così!!-->
+<!--segna tutte come lette-->
+<form  action="./leggi-notifica.php" method="POST"> 
+  <div class="col-4"><button name="btnLeggiTutte" class="btn btn-primary btn-block pay-button" style="padding:5px; margin: 10px;" 
+  type="button">Segna tutte come Lette</button></div>
+</form>
 
 <?php foreach(array_reverse($templateParams["notifica"]) as $notifica): 
     $visualizzato="alert alert-secondary";

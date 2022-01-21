@@ -26,13 +26,13 @@ if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
 
      if($dbh->getQuadroByTitolo($carrello["titolo"])[0]["quantità"] <= 0){
           foreach($dbh->getAdmins() as $admin){
-               $dbh->insertNotifica("Quadro: ".$carrello["titolo"]." Sold Out", 
-               "Quadro terminato, tornerà disponibile prossimamente. Clicca qui per vedere altre opere.","archivio-quadri.php",
-               date("Y-m-d H:i:s"), 0, $admin["email"]);
+               $dbh->insertNotifica("".$carrello["titolo"]." è Sold Out", 
+               "Il quadro \"".$carrello["titolo"]."\" è terminato, tornerà disponibile prossimamente. Clicca qui per vedere altre opere.",
+               "archivio-quadri.php", date("Y-m-d H:i:s"), 0, $admin["email"]);
           }
      }
 
-     $dbh->insertNotifica("Acquisto completato", "Transazione autorizzata. L'acquisto relativo all'ordine # $lastOrder  è stato completato. 
+     $dbh->insertNotifica("Acquisto  #$lastOrder completato", "Transazione autorizzata. L'acquisto relativo all'ordine # $lastOrder  è stato completato. 
      Clicca qui per tracciare il tuo pacco.","archivio-Ordini.php",
      date("Y-m-d H:i:s"), 0, $_SESSION['email']);
 
@@ -59,9 +59,9 @@ if(isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] != NULL ){
 
      if($dbh->getQuadroByTitolo($_SESSION["bnquadro"])[0]["quantità"] <= 0){
           foreach($dbh->getAdmins() as $admin){
-               $dbh->insertNotifica("Quadro: ".$_SESSION["bnquadro"]." Sold Out", 
-               "Quadro terminato, tornerà disponibile prossimamente. Clicca qui per vedere altre opere.","archivio-quadri.php",
-               date("Y-m-d H:i:s"), 0, $admin["email"]);
+               $dbh->insertNotifica("".$_SESSION["bnquadro"]." è Sold Out", 
+               "Il quadro \"".$_SESSION["bnquadro"]."\" è terminato, tornerà disponibile prossimamente. Clicca qui per vedere altre opere.",
+               "archivio-quadri.php", date("Y-m-d H:i:s"), 0, $admin["email"]);
           }
      }
 
@@ -71,7 +71,7 @@ if(isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] != NULL ){
      $_SESSION["bnprezzo"]=NULL;
 
 
-     $dbh->insertNotifica("Acquisto completato", "L'acquisto relativo all'ordine # $lastOrder è stato completato. 
+     $dbh->insertNotifica("Acquisto #$lastOrder completato", "L'acquisto relativo all'ordine # $lastOrder è stato completato. 
      Clicca qui per tracciare il tuo pacco.","archivio-Ordini.php",
      date("Y-m-d H:i:s"), 0, $_SESSION['email']);
      

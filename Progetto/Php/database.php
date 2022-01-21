@@ -321,6 +321,16 @@ class DatabaseHelper{
         return $stmt->execute();
     }
 
+    public function leggiTutteNotifiche($email){
+        $query ="UPDATE notifica SET visualizzato=1 where email=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $stmt->execute();
+    }
+
     public function updateIndirizzo($email, $indirizzo){
         $query ="UPDATE utente SET indirizzo=? WHERE email=?";
         $stmt = $this->db->prepare($query);
