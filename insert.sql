@@ -20,111 +20,111 @@ values ("Dali'", "Salvador", "dali.jpg",
 
 Insert into artista()
 values ("Van Gogh", "Vincent", "vangogh.png", 
-"Van gohh � molto bravo");
+"Van Gogh nasce il 30 marzo 1853 a Groot Zundert (Olanda). E' uno dei pittori più celebri dell'intera storia dell'arte.");
 
 Insert into artista()
 values ("Munch", "Edvard", "Munch.jpeg", 
-"Munch � molto bravo");
+"Edvard Munch, il pittore che senz'altro più di ogni altro anticipa l'espressionismo, nasce il 12 dicembre 1863 a Löten.");
 
 Insert into artista()
 values ("Da Vinci", "Leonardo", "leodavinci.jpg", 
-"Leo � molto bravo");
+"Leonardo da Vinci (Anchiano, 15 aprile 1452), è stato uno scienziato, inventore e artista italiano. Uomo d'ingegno e talento universale del Rinascimento.");
 
 Insert into artista()
 values ("Kandinsky", "Vassilly", "kandisky.jpg", 
-"Kandisky molto bravo");
+"Vassilly Kandinsky (Mosca, 16 dicembre 1866) è stato un pittore russo, precursore e fondatore della pittura astratta.");
 
 Insert into artista()
 values ("Friedrich", "Caspar David", "friedrich.jpg", 
-"Friedrich molto bravo");
+"Caspar David Friedrich nacque a Greifswald (Pomerania) nel 1774; è stato un pittore tedesco, maggior esponente del Romanticismo Tedesco");
 
 Insert into artista()
 values ("Fussli", "Johann Heinrich", "fussli.jpg", 
-"Fussli molto bravo");
+"Johann Heinrich Füssli (Zurigo, 7 febbraio 1741) è stato un letterato e pittore svizzero, che esercitò la sua attività principalmente in Gran Bretagna");
 
 Insert into artista()
 values ("Turner", "William", "turner.jpg", 
-"Turner molto bravo");
+"William Turner (Londra, 23 aprile 1775) è stato un pittore e incisore inglese. Appartenente al movimento romantico, pose le basi dell'Impressionismo");
 
 Insert into artista()
 values ("Géricault", "Théodore", "gericault.jpg", 
-"Gericault molto bravo");
+"Gericault nacque nel 1791 e morì nel 1824. Fu un pittore, disegnatore e litografo francese.");
 
 Insert into artista()
 values ("Delacroix", "Eugène", "delacroix.jpg", 
-"delacroix molto bravo");
+"Eugène Delacroix (Saint-Maurice, 26 aprile 1798), è stato un artista e pittore francese, principale esponente del movimento romantico.");
 
 Insert into artista()
 values ("Magritte", "Renè", "magritte.jpg", 
-"magritte molto bravo");
+"René Magritte (Lessines, 21 novembre 1898) è stato un pittore belga, è considerato il maggior pittore del surrealismo in Belgio");
 
 Insert into artista()
 values ("Cezanne", "Paul", "cezanne.jpg", 
-"cezanne molto bravo");
+"Paul Cézanne (Aix-en-Provence 1839-1906) è stato un pittore francese, considerato uno dei più grandi artisti del XIX secolo.");
 
 Insert into artista()
 values ("Botticelli", "Sandro", "botticelli.jpg", 
-"botticelli molto bravo");
+"Sandro Botticelli (Firenze, 1º marzo 1445), è stato un pittore italiano inquadrabile nella corrente artistica del Rinascimento.");
 
 Insert into artista()
 values ("Mirò", "Joan", "miro.jpg", 
-"mirò molto bravo");
+"Miró è stato un artista poliedrico prolifico e riconosciuto come uno dei più influenti del XX secolo.");
 
 Insert into artista()
 values ("Renoir", "Pierre-Auguste", "renoir.jpg", 
-"Renoir molto bravo");
+"Pierre Auguste Renoir, pittore e incisore, uno dei primissimi Impressionisti francesi, nasce il 25 febbraio 1841 a Limoges.");
 
 Insert into artista()
 values ("Monet", "Claude", "monet.jpg", 
-"Monet molto bravo");
+"Claude Monet (Parigi, 14 novembre 1840), considerato uno dei fondatori dell'impressionismo francese.");
 
 
 Insert into artista()
 values ("Boccioni", "Umberto", "boccioni.jpg", 
-"boccioni molto bravo");
+"Umberto Boccioni (Reggio Calabria, 19 ottobre 1882) è stato un pittore e scultore italiano, esponente di spicco del futurismo.");
 
 Insert into artista()
 values ("Vecellio", "Tiziano", "vecellio.jpg", 
-"vecellio molto bravo");
+"Tiziano Vecellio(Pieve di Cadore, 1488/1490), è stato un pittore italiano, importante esponente della scuola veneziana.");
 
 Insert into artista()
 values ("Manet", "Edouard", "manet.jpg", 
-"manet molto bravo");
+"Edouard Manet (Parigi, 23 gennaio 1832) è stato un pittore francese, il maggiore interprete della pittura pre-impressionista.");
 
 Insert into artista()
 values ("Klee", "Paul", "klee.jpg", 
-"klee molto bravo");
+"Pittore, teorico, musicista, vissuto fra Ottocento e Novecento, è stato un artista dalla sensibilità raffinata.");
 
 Insert into artista()
 values ("Carrà", "Carlo", "carra.jpeg", 
-"carrà molto bravo");
+"Pittore italiano (Quargnento 1881), una delle figure più eminenti dell'arte italiana del Novecento.");
 
 insert into CorrenteArtistica()
 values ("Cubismo", "cubismo.jpg", "Cubismo e' il termine col quale si e' soliti rappresentare una corrente artistica e culturale ben riconoscibile, distinta e fondante rispetto a molte altre correnti e movimenti che si sarebbero successivamente sviluppate. Tuttavia il cubismo non è un movimento capeggiato da un fondatore e non ha una direzione unitaria.");
 
 insert into CorrenteArtistica()
-values ("Espressionismo", "espressionismo.png", "Espressionismo bella corrente");
+values ("Espressionismo", "espressionismo.png", "L'Espressionismo fu un movimento artistico europeo che si diffuse nel primo ventennio del Novecento inizialmente in Germania, come reazione al naturalismo e all'impressionismo.");
 
 insert into CorrenteArtistica()
-values ("Futurismo", "futurismo.jpg", "Futurismo bella corrente");
+values ("Futurismo", "futurismo.jpg", "Il Futurismo è stato un movimento letterario, culturale, artistico e musicale italiano dell'inizio del XX secolo , nonché una delle prime avanguardie europee.");
 
 insert into CorrenteArtistica()
-values ("Astrattismo", "astrattismo.png", "Astrattismo bella corrente");
+values ("Astrattismo", "astrattismo.png", "L'astrattismo L’arte dei primi decenni del Novecento è segnata dal’attività di numerose avanguardie che richiamavano l’attenzione sul modo di rappresentare la realtà.");
 
 insert into CorrenteArtistica()
-values ("Realismo", "realismo.png", "Realismo bella corrente");
+values ("Realismo", "realismo.png", "Il realismo è ampiamente considerato l’ inizio dell’ arte moderna. Letteralmente, ciò è dovuto alla sua convinzione che la vita quotidiana e il mondo moderno fossero soggetti adatti all’arte.");
 
 insert into CorrenteArtistica()
-values ("Surrealismo", "surrealismo.png", "Surrealismo bella corrente");
+values ("Surrealismo", "surrealismo.png", "Il surrealismo è un movimento artistico e letterario d'avanguardia del Novecento, nato negli anni 20 a Parigi come evoluzione del dadaismo, e che coinvolse tutte le arti, toccando anche letteratura e cinema.");
 
 insert into CorrenteArtistica()
-values ("Impressionismo", "impressionismo.png", "Impressionismo bella corrente");
+values ("Impressionismo", "impressionismo.png", "L’Impressionismo è una corrente artistica nata a Parigi nella seconda metà dell’Ottocento, in contrapposizione all’arte accademica sfidando la critica con opere apparentemente incomplete, spesso realizzate in poche ore.");
 
 insert into CorrenteArtistica()
-values ("Romanticismo", "romanticismo.png", "Romanticismo bella corrente");
+values ("Romanticismo", "romanticismo.png", "Romanticismo Movimento letterario, artistico e culturale, sorto in Germania e in Inghilterra negli ultimi anni del Settecento e quindi diffusosi in tutta l’Europa nel corso del 19° secolo.");
 
 insert into CorrenteArtistica()
-values ("Rinascimento", "rinascimento.png", "Rinascimento");
+values ("Rinascimento", "rinascimento.png", "L'arte del Rinascimento si sviluppò a Firenze a partire dai primi decenni del Quattrocento, e da qui si diffuse nel resto d'Italia e poi in Europa.");
 
 
 Insert into quadro()

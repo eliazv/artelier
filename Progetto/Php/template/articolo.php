@@ -100,7 +100,6 @@
   
         <p><span class="mr-1">$<?php echo $quadroq["prezzo"] ?></span></p>
 
-        <p class="pt-1"><?php echo $quadroq["descrizione"] ?></p>
 
     
         <div class="table-responsive">
