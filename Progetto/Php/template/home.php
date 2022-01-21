@@ -33,22 +33,26 @@
               <div class="col-1 text-end">
                 <button class="btn btn-default" type="button">
                   <a href="./archivio-carrello.php">
-                <img src="../Immagini/cart.png" alt="" style="height:30px"/>
+                  <?php if($templateParams["elemCarrello"][0]["numquadri"]!=0):?>
+                    <img src="../Immagini/cart2.png" alt="" style="height:30px"/>
+                  <?php else:?>
+                      <img src="../Immagini/cart.png" alt="" style="height:30px"/>
+                  <?php endif?>
+
                 </a>
               </div>
 
                 <div class="col-1 text-end" style="padding-right:30px">
                 <button class="btn btn-default" type="button">
-                <?php if($templateParams["notifiche"][0]["num"]!=0):?>
-                  <a href="./archivio-notifiche.php">
-                <img src="../Immagini/bell2.png" alt="" style="height:30px"/>
-                </a>
-                <?php else:?>
-                  <a href="./archivio-notifiche.php">
+                <a href="./archivio-notifiche.php">
 
+                <?php if($templateParams["notifiche"][0]["num"]!=0):?>
+                <img src="../Immagini/bell2.png" alt="" style="height:30px"/>
+                <?php else:?>
                 <img src="../Immagini/bell.png" alt="" style="height:30px"/>
-                </a>
                 <?php endif?>
+                </a>
+
                 </button>
             </div>
             <div class="col-1 text-start">
