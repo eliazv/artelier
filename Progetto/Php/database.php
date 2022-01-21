@@ -464,5 +464,13 @@ class DatabaseHelper{
     
             return $result->fetch_all(MYSQLI_ASSOC);
         }
+
+        public function setOrderDelivered($codOrdine){
+            $stmt = $this->db->prepare("UPDATE ordine
+                                        SET arrivato = 1
+                                        where codOrdine = ?");
+            $stmt->bind_param("i",$codOrdine);
+            $stmt->execute();
+        }
 }
 ?>

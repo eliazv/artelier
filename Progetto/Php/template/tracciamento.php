@@ -56,16 +56,27 @@
                 </div><img class="align-self-center img-fluid" src="<?php echo UPLOAD_DIR.$ordinedaTr["immagine"]?>" width="180 " height="180" style="margin-left: 10px;">
             </div>
         </div>
+        <?php if(date("Y-m-d H:i:s", strtotime(date("Y-m-d H:i:s"). '+ 5 days')) > $ordinedaTr["dataConsegna"]): ?>
         <div class="row px-3">
             <div class="col">
                 <ul id="progressbar">
-                    <li class="step0 active " id="step1">ORDINATO</li>
+                    <li class="step0 active" id="step1">ORDINATO</li>
                     <li class="step0 active text-center" id="step2">IN SPEDIZIONE</li>
                     <li class="step0 text-muted text-right" id="step3">CONSEGNATO</li>
                 </ul>
             </div>
         </div>
-       
+       <?php else: ?>
+        <div class="row px-3">
+            <div class="col">
+                <ul id="progressbar">
+                    <li class="step0 active " id="step1">ORDINATO</li>
+                    <li class="step0 text-center" id="step2">IN SPEDIZIONE</li>
+                    <li class="step0 text-muted text-right" id="step3">CONSEGNATO</li>
+                </ul>
+            </div>
+        </div>
+        <?php endif; ?>
     </div>
     
 </div>
