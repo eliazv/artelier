@@ -276,10 +276,10 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
-    public function insertNotifica($titolo, $testo, $dataeora, $visualizzato, $email){
-        $query= "INSERT INTO notifica(titolo, testo, dataeora, visualizzato, email) VALUES (?,?,?,?,?)";
+    public function insertNotifica($titolo, $testo, $link, $dataeora, $visualizzato, $email){
+        $query= "INSERT INTO notifica(titolo, testo, link, dataeora, visualizzato, email) VALUES (?,?,?,?,?,?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('sssis', $titolo, $testo, $dataeora, $visualizzato, $email);
+        $stmt->bind_param('ssssis', $titolo, $testo, $link, $dataeora, $visualizzato, $email);
         $stmt->execute();
     }
 

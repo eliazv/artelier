@@ -27,13 +27,13 @@ if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
      if($dbh->getQuadroByTitolo($carrello["titolo"])[0]["quantità"] <= 0){
           foreach($dbh->getAdmins() as $admin){
                $dbh->insertNotifica("Quadro: ".$carrello["titolo"]." Sold Out", 
-               "Quadro terminato, clicca per modificare la quantità del prodotto.",
+               "Quadro terminato, tornerà disponibile prossimamente. Clicca qui per vedere altre opere.","archivio-quadri.php",
                date("Y-m-d H:i:s"), 0, $admin["email"]);
           }
      }
 
-     $dbh->insertNotifica("Acquisto completato", "L'acquisto relativo all'ordine # $lastOrder  è stato completato. 
-     Clicca qui per tracciare il tuo pacco.",
+     $dbh->insertNotifica("Acquisto completato", "Transazione autorizzata. L'acquisto relativo all'ordine # $lastOrder  è stato completato. 
+     Clicca qui per tracciare il tuo pacco.","archivio-Ordini.php",
      date("Y-m-d H:i:s"), 0, $_SESSION['email']);
 
      mail("zavattaelia@gmail.com","Ordine confermato","Il tuo ordine è stato confermato");//non funziona 
@@ -60,7 +60,7 @@ if(isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] != NULL ){
      if($dbh->getQuadroByTitolo($_SESSION["bnquadro"])[0]["quantità"] <= 0){
           foreach($dbh->getAdmins() as $admin){
                $dbh->insertNotifica("Quadro: ".$_SESSION["bnquadro"]." Sold Out", 
-               "Quadro terminato, clicca per modificare la quantità del prodotto.",
+               "Quadro terminato, tornerà disponibile prossimamente. Clicca qui per vedere altre opere.","archivio-quadri.php",
                date("Y-m-d H:i:s"), 0, $admin["email"]);
           }
      }
@@ -72,7 +72,7 @@ if(isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] != NULL ){
 
 
      $dbh->insertNotifica("Acquisto completato", "L'acquisto relativo all'ordine # $lastOrder è stato completato. 
-     Clicca qui per tracciare il tuo pacco.",
+     Clicca qui per tracciare il tuo pacco.","archivio-Ordini.php",
      date("Y-m-d H:i:s"), 0, $_SESSION['email']);
      
      header("location: ./archivio-ordini.php");   
