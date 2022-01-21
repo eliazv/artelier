@@ -235,15 +235,21 @@ insert into quadro()
 values ("Il falso specchio","falsospecchio.jpg", "54x81", "Magritte", "Surrealismo", "79.99", "bel quadro",0, 35, 100);
 
 
-insert into notifica(titolo, testo, dataeora, visualizzato, email)
-values ("Per te", "consigli quadri", '2021-12-20 18:00:00', false , "elia@ciao.com");
+insert into notifica(titolo, testo, link, dataeora, visualizzato, email)
+values ("Per te", "consigli quadri", "archivio-quadri.php", '2021-12-20 18:00:00', false , "elia@ciao.com");
 
-insert into notifica(titolo, testo, dataeora, visualizzato, email)
-values ("Ordine Confermato", "Abbiamo confermato il tuo ordine, il pacco verr� spedito a breve", '2021-12-20 19:00:00', true , "elia@ciao.com");
+insert into notifica(titolo, testo, link, dataeora, visualizzato, email)
+values ("Ordine Confermato", "Abbiamo confermato il tuo ordine, il pacco verrà spedito a breve", "archivio-Ordini.php", '2021-12-20 19:00:00', true , "elia@ciao.com");
 
 
 insert into ordine(codOrdine, email, dataOrdine, dataConsegna, arrivato, importo)
 values (1,"elia@ciao.com",'2021-12-20 18:00:00','2021-12-22 18:00:00',1,799.99);
+
+insert into ordine(codOrdine, email, dataOrdine, dataConsegna, arrivato, importo)
+values (2,"pietro@ciao.com",'2021-12-20 18:00:00','2021-12-22 18:00:00',1,129.99);
+
+insert into ordine(codOrdine, email, dataOrdine, dataConsegna, arrivato, importo)
+values (3,"giovanni@ciao.com",'2021-12-20 18:00:00','2022-12-22 18:00:00',0,89.99);
 
 
 insert into quadro_ordinato(codOrdine, titoloQuaOrd, quantita)
@@ -251,6 +257,12 @@ values (1,"Guernica",1);
 
 insert into quadro_ordinato(codOrdine, titoloQuaOrd, quantita )
 values (1,"Notte stellata", 2);
+
+insert into quadro_ordinato(codOrdine, titoloQuaOrd, quantita)
+values (2,"Incubo",1);
+
+insert into quadro_ordinato(codOrdine, titoloQuaOrd, quantita)
+values (3,"Ninfee",1);
 
 
 insert into Carrello(email, titolo, quantita)

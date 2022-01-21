@@ -73,6 +73,7 @@ CREATE TABLE Notifica(
     codNotifica int PRIMARY KEY AUTO_INCREMENT,
     titolo varchar(40),
     testo varchar(500),
+    link varchar(100),
     dataeora datetime,
     visualizzato boolean,
     email varchar(50),
