@@ -24,6 +24,14 @@ if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
 
      $dbh->decreaseQuantità($carrello["quantita"], $carrello["titolo"]);
 
+     if($dbh->getQuadroByTitolo($carrello["titolo"])["quantita"] <= 0){
+          foreach($dbh->getAdmins() as $admin){
+               $dbh->insertNotifica("Quadro: ".$carrello["titolo"]." Sold Out", 
+               "Quadro terminato, clicca per modificare la quantità del prodotto.",
+               date("Y-m-d H:i:s"), 0, $admin["email"]);
+          }
+     }
+
      $dbh->insertNotifica("Acquisto completato", "L'acquisto relativo all'ordine # $lastOrder  è stato completato. 
      Clicca qui per tracciare il tuo pacco.",
      date("Y-m-d H:i:s"), 0, $_SESSION['email']);
@@ -47,6 +55,14 @@ if(isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] != NULL ){
      
      $dbh->insertOrderedPainting($lastOrder, $_SESSION["bnquadro"], $_SESSION["bnquantita"]);   
      
+     if($dbh->getQuadroByTitolo($_SESSION["bnquadro"])["quantita"] <= 0){
+          foreach($dbh->getAdmins() as $admin){
+               $dbh->insertNotifica("Quadro: ".$_SESSION["bnquadro"]." Sold Out", 
+               "Quadro terminato, clicca per modificare la quantità del prodotto.",
+               date("Y-m-d H:i:s"), 0, $admin["email"]);
+          }
+     }
+
      //cancello variabili
      $_SESSION["bnquadro"]=NULL;
      $_SESSION["bnquantita"]=NULL;

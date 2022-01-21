@@ -47,6 +47,15 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getAdmins(){
+        $stmt = $this->db->prepare("SELECT * FROM utente WHERE venditore=1");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
     //N QUADRI RANDOM (home.html)
     public function getRandomQuadri($n){
         $stmt = $this->db->prepare("SELECT titolo, immagine, artista FROM quadro WHERE eliminato=0 ORDER BY RAND() LIMIT ?");
@@ -192,7 +201,7 @@ class DatabaseHelper{
     }
 
     public function getAllOrders(){
-        $query ="SELECT * From ordine, utente where ordine.email = utente.email";
+        $query ="SELECT * From ordine, utente where ordine.email = utente.email ORDER BY codOrdine DESC";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();

@@ -28,7 +28,11 @@ require_once 'bootstrap.php';
                         $dbh->insertUser($email, $hash, $nome, $cognome, $venditore, $indirizzo, $città, $paese, $cap); 
                         
                         if($dbh->getUtente($email) != NULL){
-                            require 'inviaMail.php';
+                            $dbh->insertNotifica("Benvenuto in ArtElier.", "Grazie per aver scelto il nostro sito, buona navigazione.". $titolo,
+                            date("Y-m-d H:i:s"), 0, $_SESSION['email']);
+                           
+                            $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
+                            header("location: ./login.php");                           
                         }
                             
                         
