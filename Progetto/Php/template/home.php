@@ -31,6 +31,7 @@
               </div>
               <div class="col-5"></div>
               <div class="col-1 text-end">
+              <?php if(isUserLoggedIn()): ?>
                 <button class="btn btn-default" type="button">
                   <a href="./archivio-carrello.php">
                   <?php if($templateParams["elemCarrello"][0]["numquadri"]!=0):?>
@@ -38,22 +39,31 @@
                   <?php else:?>
                       <img src="../Immagini/cart.png" alt="" style="height:30px"/>
                   <?php endif?>
+                  </a>
+                  </button>
 
-                </a>
+                  <?php endif?>
+
+                
               </div>
 
                 <div class="col-1 text-end" style="padding-right:30px">
-                <button class="btn btn-default" type="button">
-                <a href="./archivio-notifiche.php">
+                <?php if(isUserLoggedIn()): ?>
+                  <button class="btn btn-default" type="button">
+
+                  <a href="./archivio-notifiche.php">
 
                 <?php if($templateParams["notifiche"][0]["num"]!=0):?>
                 <img src="../Immagini/bell2.png" alt="" style="height:30px"/>
                 <?php else:?>
                 <img src="../Immagini/bell.png" alt="" style="height:30px"/>
                 <?php endif?>
+                
                 </a>
 
                 </button>
+                <?php endif?>
+
             </div>
             <div class="col-1 text-start">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
