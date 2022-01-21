@@ -25,15 +25,20 @@
           <div class="col-12">
 
             <nav class="navbar navbar-dark bg-dark fixed-top">
-              <div class="container-fluid">
 
               <div class="col-4">
-                <a href="./home2.php"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
+                <a href="./home2.php"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin-left: 10px; padding: 0px; width: 150px;"></a>
               </div>
-              <div class="col-4"></div>
+              <div class="col-5"></div>
+              <div class="col-1 text-end">
+                <button class="btn btn-default" type="button">
+                  <a href="./archivio-carrello.php">
+                <img src="../Immagini/cart.png" alt="" style="height:30px"/>
+                </a>
+              </div>
 
-                <div class="col-2 text-end" style="padding-right:10px">
-                <button class="btn btn-default" type="button" data-toggle="modal" data-target="#MessagesModal">
+                <div class="col-1 text-end" style="padding-right:30px">
+                <button class="btn btn-default" type="button">
                 <?php if($templateParams["notifiche"][0]["num"]!=0):?>
                   <a href="./archivio-notifiche.php">
                 <img src="../Immagini/bell2.png" alt="" style="height:30px"/>
