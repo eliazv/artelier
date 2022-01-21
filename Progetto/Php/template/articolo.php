@@ -106,10 +106,6 @@
           <table class="table table-sm table-borderless mb-0">
             <tbody>
               <tr>
-                <th class="pl-0 w-25" scope="row">Descrizione: </th>
-                <td><?php echo $quadroq["descrizione"] ?></td>
-              </tr>
-              <tr>
                 <th class="pl-0 w-25" scope="row">Corrente: </th>
                 <td><?php echo $quadroq["nomeCorrArt"] ?></td>
               </tr>
