@@ -24,7 +24,7 @@ if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
 
      $dbh->decreaseQuantità($carrello["quantita"], $carrello["titolo"]);
 
-     if($dbh->getQuadroByTitolo($carrello["titolo"])["quantita"] <= 0){
+     if($dbh->getQuadroByTitolo($carrello["titolo"])[0]["quantità"] <= 0){
           foreach($dbh->getAdmins() as $admin){
                $dbh->insertNotifica("Quadro: ".$carrello["titolo"]." Sold Out", 
                "Quadro terminato, clicca per modificare la quantità del prodotto.",
@@ -55,7 +55,9 @@ if(isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] != NULL ){
      
      $dbh->insertOrderedPainting($lastOrder, $_SESSION["bnquadro"], $_SESSION["bnquantita"]);   
      
-     if($dbh->getQuadroByTitolo($_SESSION["bnquadro"])["quantita"] <= 0){
+     $dbh->decreaseQuantità($_SESSION["bnquantita"], $_SESSION["bnquadro"]);
+
+     if($dbh->getQuadroByTitolo($_SESSION["bnquadro"])[0]["quantità"] <= 0){
           foreach($dbh->getAdmins() as $admin){
                $dbh->insertNotifica("Quadro: ".$_SESSION["bnquadro"]." Sold Out", 
                "Quadro terminato, clicca per modificare la quantità del prodotto.",

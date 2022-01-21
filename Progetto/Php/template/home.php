@@ -34,7 +34,16 @@
 
                 <div class="col-2 text-end" style="padding-right:10px">
                 <button class="btn btn-default" type="button" data-toggle="modal" data-target="#MessagesModal">
-                    <img src="../Immagini/bell.png" alt="" style="height:30px"/>
+                <?php if($templateParams["notifiche"][0]["num"]!=0):?>
+                  <a href="./archivio-notifiche.php">
+                <img src="../Immagini/bell2.png" alt="" style="height:30px"/>
+                </a>
+                <?php else:?>
+                  <a href="./archivio-notifiche.php">
+
+                <img src="../Immagini/bell.png" alt="" style="height:30px"/>
+                </a>
+                <?php endif?>
                 </button>
             </div>
             <div class="col-1 text-start">
