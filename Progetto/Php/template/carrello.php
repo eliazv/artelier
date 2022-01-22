@@ -123,6 +123,8 @@
                       <div class="col-4"><a href="./archivio-checkout.php"><button class="btn btn-warning btn-block pay-button" type="button">Procedi all'ordine</button></a></div>
                       <?php else:?>
                       <?php endif?>
+                      <?php var_dump($_SESSION["q1"])?><br>
+                      <?php var_dump($_SESSION["q2"])?>
                     </div>
                     
                 </div>

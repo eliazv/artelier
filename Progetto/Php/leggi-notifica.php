@@ -1,13 +1,14 @@
 <?php
 require_once 'bootstrap.php';
+
+if ($_GET["codiceNotifica"]==NULL) {
+    $dbh->leggiTutteNotifiche($_SESSION["email"]);
+    header("location: archivio-notifiche.php");
+}
+
 if(isset($_GET["codiceNotifica"])){
     if($dbh->statoNotifica($_GET["codiceNotifica"]) == 0){
         $dbh->leggiNotifica($_GET["codiceNotifica"]);
-    }
-    //$notifyLink = $dbh->getNotificationLink($_GET["codiceNotifica"]);
-
-    if (isset($_POST["btnLeggiTutte"])) {
-        $dbh->leggiTutteNotifiche($_SESSION["email"]);
     }
 
     $templateParams["notifica"] = $dbh->getNotifica($_GET["codiceNotifica"]); 

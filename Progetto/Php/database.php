@@ -322,7 +322,7 @@ class DatabaseHelper{
     }
 
     public function leggiTutteNotifiche($email){
-        $query ="UPDATE notifica SET visualizzato=1 where email=?";
+        $query ="UPDATE notifica SET visualizzato=1 where email=? AND visualizzato=0";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s', $email);
         $stmt->execute();
