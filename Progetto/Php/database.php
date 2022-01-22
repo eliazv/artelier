@@ -209,6 +209,15 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getAllOrdersFromUser($email){
+        $query ="SELECT * From ordine WHERE email = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 
     public function getDeliveredOrders($email){
         $query ="SELECT quadro_ordinato.titoloQuaOrd, quadro_ordinato.quantita, quadro.immagine, quadro.prezzo, ordine.dataOrdine, ordine.dataConsegna FROM quadro_ordinato, quadro, utente, ordine WHERE quadro_ordinato.titoloQuaOrd = quadro.titolo AND quadro_ordinato.codOrdine = ordine.codOrdine AND ordine.email = utente.email AND ordine.arrivato = 1 AND utente.email = ?";

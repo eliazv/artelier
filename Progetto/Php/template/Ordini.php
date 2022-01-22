@@ -80,7 +80,12 @@
             ?>
               <h3>DEVI EFFETTUARE IL LOGIN PER VISUALIZZARE GLI ORDINI</h3>
             <?php else: ?>
-            
+            <?php foreach($templateParams["ordini"] as $ordini): ?>
+              <?php if(date("Y-m-d H:i:s") >= $ordini["dataConsegna"]):?>
+                <?php $dbh->setOrderDelivered($ordini["codOrdine"]) ?>
+              <?php endif; ?>
+            <?php endforeach; ?>
+              
             <div class="d-flex justify-content-center row">
                 <div class="col-md-8">
                     <div class="p-2">
