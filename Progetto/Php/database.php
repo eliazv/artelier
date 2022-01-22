@@ -200,6 +200,16 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getSpecificOrders($email, $codOrdine){
+        $query ="SELECT quadro_ordinato.titoloQuaOrd, quadro_ordinato.quantita, quadro.immagine, quadro.prezzo, ordine.dataOrdine, ordine.dataConsegna FROM quadro_ordinato, quadro, utente, ordine WHERE quadro_ordinato.titoloQuaOrd = quadro.titolo AND quadro_ordinato.codOrdine = ordine.codOrdine AND ordine.email = utente.email AND utente.email = ? AND ordine.codOrdine = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('si',$email, $codOrdine);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getAllOrders(){
         $query ="SELECT * From ordine, utente where ordine.email = utente.email ORDER BY codOrdine DESC";
         $stmt = $this->db->prepare($query);
@@ -211,6 +221,16 @@ class DatabaseHelper{
 
     public function getAllOrdersFromUser($email){
         $query ="SELECT * From ordine WHERE email = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getShipOrdersFromUser($email){
+        $query ="SELECT * From ordine WHERE email = ? AND arrivato = 0";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('s',$email);
         $stmt->execute();

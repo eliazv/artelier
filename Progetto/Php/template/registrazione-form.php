@@ -116,7 +116,9 @@
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <h1>Registrazione</h1>
-        
+        <?php if(isset($templateParams["errore"])): ?>
+          <p><?php echo $templateParams["errore"]; ?></p>
+        <?php endif; ?>
         <h4 class="mb-3">Inserisci i tuoi Dati:<br><br>
           <form class="row g-3" action="#" method="POST">
             <div class="col-md-6">

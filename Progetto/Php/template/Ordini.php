@@ -125,7 +125,10 @@
                     <div class="p-2">
                         <h4>Ordini in transito</h4>
                     </div>
-                    <?php foreach($templateParams["ordine"] as $ordine): ?>
+                    <?php foreach($templateParams["ordiniShip"] as $ordini): ?>
+                        <h4>Ordine <?php echo($ordini["codOrdine"]) ?>: </h4>
+                        <?php $templateParams["ordiniShip"] = $dbh->getSpecificOrders($_SESSION["email"], $ordini["codOrdine"]); ?>
+                    <?php foreach($templateParams["ordiniShip"] as $ordine): ?>
                     <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
                       <div class="mr-1"><img class="rounded" src="<?php echo UPLOAD_DIR.$ordine["immagine"] ?> " width="120" height="70"></div>
                       <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold"><?php echo $ordine["titoloQuaOrd"]?></span>
@@ -143,7 +146,8 @@
 
                     </div>
                     <?php endforeach; ?>     
-                  
+                    <br><br>
+                    <?php endforeach; ?>
                     
 
                     <hr class="featurette-divider">
