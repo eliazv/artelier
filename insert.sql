@@ -236,10 +236,14 @@ values ("Il falso specchio","falsospecchio.jpg", "54x81", "Magritte", "Surrealis
 
 
 insert into notifica(titolo, testo, link, dataeora, visualizzato, email)
-values ("Per te", "consigli quadri", "archivio-quadri.php", '2021-12-20 18:00:00', false , "elia@ciao.com");
+values ("Per te", "Esplora la nostra collezione di quadri.", "archivio-quadri.php", '2021-12-20 18:00:00', false , "elia@ciao.com");
 
 insert into notifica(titolo, testo, link, dataeora, visualizzato, email)
-values ("Ordine Confermato", "Abbiamo confermato il tuo ordine, il pacco verrà spedito a breve", "archivio-Ordini.php", '2021-12-20 19:00:00', true , "elia@ciao.com");
+values (("Acquisto #1 completato", "Transazione autorizzata. L'acquisto relativo all'ordine #1 è stato completato. 
+     Clicca qui per tracciare il tuo pacco.", "archivio-Ordini.php", '2021-12-20 19:02:00', true , "elia@ciao.com");
+
+insert into notifica(titolo, testo, link, dataeora, visualizzato, email)
+values (("Ordine #1 consegnato", "L'ordine #1 è arrivato a destinazione.", "archivio-Ordini.php", '2021-12-24 13:40:00', true , "elia@ciao.com");
 
 
 insert into ordine(codOrdine, email, dataOrdine, dataConsegna, arrivato, importo)

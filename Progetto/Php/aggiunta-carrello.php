@@ -8,6 +8,7 @@ $email = $_SESSION["email"];
 $quantita = $_POST['quantita'];
 $titolo = $templateParams["quadroSpecifico"][0]["titolo"];
 $prezzo = $templateParams["quadroSpecifico"][0]["prezzo"];
+$quantitaDisp = $templateParams["quadroSpecifico"][0]["quantita"];
 $templateParams["quantitaPrecedente"]= $dbh->getQuadroInCarrello($email, $titolo);
 $qprecedente=$templateParams["quantitaPrecedente"][0]["quantita"];
 
@@ -18,6 +19,14 @@ if(isset($_SESSION['email'])){
 
 //se gia presente aumenta quantità
 if (isset($_POST["btnAggCarrello"])) {
+
+    //se esaurita la quantità torna alla pagina precedente NON VA
+    if($quantitaDisp < $quantita){
+        header("location: ./archivio-quadri.php"); 
+        //header("location:javascript://history.go(-1)"); 
+    }
+
+    //aggiunge alla quantità precedente DA TESTARE
     if($qprecedente != NULL || $qprecedente != 0){
         $qprecedente = $qprecedente + $quantita;
         $dbh->updateQuantitaInCarrello($email, $titolo, $qprecedente);
@@ -31,6 +40,12 @@ if (isset($_POST["btnAggCarrello"])) {
 }
 
 if (isset($_POST["btnBuyNow"])) {
+
+    //se esaurita la quantità torna alla pagina precedente NON VA
+    if($quantitaDisp < $quantita){
+        header("location: ./archivio-quadri.php"); 
+        //header("location:javascript://history.go(-1)"); 
+    }    
     $_SESSION["bnquadro"]=$titolo;
     $_SESSION["bnquantita"]=$quantita;
     $_SESSION["bnprezzo"]=$prezzo;

@@ -31,9 +31,8 @@ if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
                "archivio-quadri.php", date("Y-m-d H:i:s"), 0, $admin["email"]);
           }
      }
-
      $dbh->insertNotifica("Acquisto  #$lastOrder completato", "Transazione autorizzata. L'acquisto relativo all'ordine # $lastOrder  è stato completato. 
-     Clicca qui per tracciare il tuo pacco.","archivio-Ordini.php",
+     Clicca qui per controllare il suo stato.","archivio-Ordini.php",
      date("Y-m-d H:i:s"), 0, $_SESSION['email']);
 
      mail("zavattaelia@gmail.com","Ordine confermato","Il tuo ordine è stato confermato");//non funziona 
@@ -65,15 +64,15 @@ if(isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] != NULL ){
           }
      }
 
+     $titolobn=$_SESSION["bnquadro"];
+     $dbh->insertNotifica("Acquisto #$lastOrder completato", "L'acquisto relativo all'ordine # $lastOrder è stato completato. 
+     Clicca qui per tracciare il tuo pacco.","archivio-Tracciamento.php?titoloq=$titolobn",
+     date("Y-m-d H:i:s"), 0, $_SESSION['email']);
+
      //cancello variabili
      $_SESSION["bnquadro"]=NULL;
      $_SESSION["bnquantita"]=NULL;
      $_SESSION["bnprezzo"]=NULL;
-
-
-     $dbh->insertNotifica("Acquisto #$lastOrder completato", "L'acquisto relativo all'ordine # $lastOrder è stato completato. 
-     Clicca qui per tracciare il tuo pacco.","archivio-Ordini.php",
-     date("Y-m-d H:i:s"), 0, $_SESSION['email']);
      
      header("location: ./archivio-ordini.php");   
   
