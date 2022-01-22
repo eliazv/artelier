@@ -3,8 +3,11 @@ require_once 'bootstrap.php';
 
 //Base Template
 $templateParams["artistaSpecifico"] = $dbh->getQuadriByArtista($_GET["artistaA"]);
-$templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
 
+if(isset($_SESSION['email'])){
+    $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
+    $templateParams["elemCarrello"]= $dbh->getNumberOfPortrait($_SESSION['email']);
+}
 //var_dump($templateParams);
 require 'template/artistaSpecifico.php';
 ?>

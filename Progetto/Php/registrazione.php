@@ -32,6 +32,7 @@ require_once 'bootstrap.php';
                             date("Y-m-d H:i:s"), 0, $_SESSION['email']);
                            
                             $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
+                            
                             header("location: ./login.php");                           
                         }
                             

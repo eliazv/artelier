@@ -1,7 +1,10 @@
 <?php
 require_once 'bootstrap.php';
 
-$templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
+if(isset($_SESSION['email'])){
+    $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
+    $templateParams["elemCarrello"]= $dbh->getNumberOfPortrait($_SESSION['email']);
+}
 $templateParams["quadri"] = $dbh->getQuadriNonEliminati();
 
 

@@ -7,7 +7,7 @@ $templateParams["quadroSpecifico"] = $dbh->getQuadroByTitolo($_GET["titoloq"]);
 if(isset($_SESSION['email'])){
 
     $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
-
+    $templateParams["elemCarrello"]= $dbh->getNumberOfPortrait($_SESSION['email']);
     $email = $_SESSION["email"];
 }
 

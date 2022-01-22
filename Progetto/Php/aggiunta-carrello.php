@@ -11,6 +11,11 @@ $prezzo = $templateParams["quadroSpecifico"][0]["prezzo"];
 $templateParams["quantitaPrecedente"]= $dbh->getQuadroInCarrello($email, $titolo);
 $qprecedente=$templateParams["quantitaPrecedente"][0]["quantita"];
 
+if(isset($_SESSION['email'])){
+    $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
+    $templateParams["elemCarrello"]= $dbh->getNumberOfPortrait($_SESSION['email']);
+}
+
 //se gia presente aumenta quantità
 if (isset($_POST["btnAggCarrello"])) {
     if($qprecedente != NULL || $qprecedente != 0){

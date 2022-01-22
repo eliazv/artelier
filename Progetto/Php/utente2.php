@@ -4,7 +4,10 @@
 require_once 'bootstrap.php';
 
 //var_dump($templateParams);
-$templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
+if(isset($_SESSION['email'])){
+    $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
+    $templateParams["elemCarrello"]= $dbh->getNumberOfPortrait($_SESSION['email']);
+}
 $templateParams["utente"] = $dbh->getUtente($_SESSION['email']);
 
 

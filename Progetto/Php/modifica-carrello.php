@@ -2,8 +2,12 @@
 require_once 'bootstrap.php';
 
 $templateParams["carrello"] = $dbh->getQuadroInCarrello($_SESSION["email"], $_GET["titoloq"]); //prendi email utente loggato 
-$templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
 $templateParams["quadroSpecifico"] = $dbh->getQuadroByTitolo($_GET["titoloq"]);
+
+if(isset($_SESSION['email'])){
+    $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
+    $templateParams["elemCarrello"]= $dbh->getNumberOfPortrait($_SESSION['email']);
+}
 
 $qquadro=$templateParams["quadroSpecifico"][0]["quantita"];
 

@@ -25,10 +25,47 @@
           <div class="col-12">
 
             <nav class="navbar navbar-dark bg-dark fixed-top">
-              <div class="container-fluid">
 
-                <a href="./home2.php"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin: 0px; padding: 0px; width: 150px;"></a>
+              <div class="col-4">
+                <a href="./home2.php"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin-left: 10px; padding: 0px; width: 150px;"></a>
+              </div>
+              <div class="col-5"></div>
+              <div class="col-1 text-end">
+              <?php if(isUserLoggedIn()): ?>
+                <button class="btn btn-default" type="button">
+                  <a href="./archivio-carrello.php">
+                  <?php if($templateParams["elemCarrello"][0]["numquadri"]!=0):?>
+                    <img src="../Immagini/cart2.png" alt="" style="height:30px"/>
+                  <?php else:?>
+                      <img src="../Immagini/cart.png" alt="" style="height:30px"/>
+                  <?php endif?>
+                  </a>
+                  </button>
 
+                  <?php endif?>
+
+                
+              </div>
+
+                <div class="col-1 text-end" style="padding-right:30px">
+                <?php if(isUserLoggedIn()): ?>
+                  <button class="btn btn-default" type="button">
+
+                  <a href="./archivio-notifiche.php">
+
+                <?php if($templateParams["notifiche"][0]["num"]!=0):?>
+                <img src="../Immagini/bell2.png" alt="" style="height:30px"/>
+                <?php else:?>
+                <img src="../Immagini/bell.png" alt="" style="height:30px"/>
+                <?php endif?>
+                
+                </a>
+
+                </button>
+                <?php endif?>
+
+            </div>
+            <div class="col-1 text-start">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -62,17 +99,13 @@
                         
                       </li>
                     </ul>
-                    <form class="d-flex">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-light" type="submit">Search</button>
-                    </form>
                   </div>
                 </div>
               </div>
             </nav>
           </div>   
         </div>
-  </header>
+        </header>
 
 
 

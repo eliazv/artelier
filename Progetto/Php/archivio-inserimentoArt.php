@@ -7,8 +7,10 @@ require_once 'bootstrap.php';
 //$templateParams["titolo"] = "ArtElier - Articolo";
 //$templateParams["quadro"] = $dbh->getQuadroByTitolo("Guernica");
 //$templateParams['utente'] = $_SESSION['email'];
-$templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
-
+if(isset($_SESSION['email'])){
+    $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
+    $templateParams["elemCarrello"]= $dbh->getNumberOfPortrait($_SESSION['email']);
+}
 
 if (isset($_POST['btnInserisciQuadro'])) {
     //if( (! empty($_POST['titolo'])) &&  (! empty($_POST['artista'])) &&  (! empty($_POST['dimensione'])) && 
