@@ -129,8 +129,8 @@
 
                               <div class="col-3">
                                   <div class="text-center form-floating mb-3">
-                                    <input type="quantità" name="quantità" class="form-control" id="floatingInput"  value="<?php echo $quadro["quantità"]?>">
-                                    <label for="floatingInput">Quantità</label>
+                                    <input type="quantita" name="quantita" class="form-control" id="floatingInput"  value="<?php echo $quadro["quantita"]?>">
+                                    <label for="floatingInput">quantita</label>
                                   </div>
                               </div>
                             </div>

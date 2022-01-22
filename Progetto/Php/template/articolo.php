@@ -174,7 +174,7 @@
         <i class="fa fa-shopping-cart "></i> &nbsp;Aggiungi al carrello</button>
 
         <?php else:?>
-
+          <h1>Effettua Login per acquistare un quadro.</h1>
         <?php endif?>
         
         <?php endforeach; ?>

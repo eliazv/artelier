@@ -443,19 +443,19 @@ class DatabaseHelper{
         $stmt->execute();
     }
 
-    public function updateQuantità($quantità, $titolo){
+    public function updatequantita($quantita, $titolo){
         $stmt = $this->db->prepare("UPDATE quadro
-                                    SET quantità = ?
+                                    SET quantita = ?
                                     WHERE titolo = ?");
-        $stmt->bind_param("is",$quantità, $titolo);
+        $stmt->bind_param("is",$quantita, $titolo);
         $stmt->execute();
     }
 
-    public function decreaseQuantità($quantità2, $titolo){
+    public function decreasequantita($quantita2, $titolo){
         $stmt = $this->db->prepare("UPDATE quadro
-                                    SET quantità = quantità - ?
+                                    SET quantita = quantita - ?
                                     WHERE titolo = ?");
-        $stmt->bind_param("is", $quantità2, $titolo);
+        $stmt->bind_param("is", $quantita2, $titolo);
         $stmt->execute();
     }
 

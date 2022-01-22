@@ -5,7 +5,7 @@ $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
 $templateParams["quadri"] = $dbh->getQuadriNonEliminati();
 
 
-//se gia presente aumenta quantità
+//se gia presente aumenta quantita
 if (isset($_POST["btnElimina"])) {
     
     $templateParams["quadroSpecifico"] = $dbh->getQuadroByTitolo($_GET["titoloq"]);
@@ -24,12 +24,12 @@ if (isset($_POST["btnModifica"])) {
     $titolo = $templateParams["quadroSpecifico"][0]["titolo"];
     $prezzo = $templateParams["quadroSpecifico"][0]["prezzo"];  
     $nuovoPrezzo = $_POST["prezzo"];
-    $quantità = $_POST["quantità"];
+    $quantita = $_POST["quantita"];
     if($prezzo!=""){
         $dbh->updatePrezzo($nuovoPrezzo, $titolo);
     }
-    if(($quantità!="")){
-        $dbh->updateQuantità($quantità, $titolo);
+    if(($quantita!="")){
+        $dbh->updatequantita($quantita, $titolo);
     }
     
     $templateParams["quadri"] = $dbh->getQuadriNonEliminati();
