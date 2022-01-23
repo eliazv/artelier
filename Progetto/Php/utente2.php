@@ -42,8 +42,9 @@ if (isset($_POST['btnModifica'])) {
         date("Y-m-d H:i:s"), 0, $_SESSION['email']);
     }
     if($vecchiaPassword!="" && $nuovaPassword!=""){
-        if($templateParams["utente"][0]["passwordd"] == $vecchiaPassword){
-            $dbh->updatePassword($_SESSION['email'], $nuovaPassword);
+        //if($templateParams["utente"][0]["passwordd"] == $vecchiaPassword){
+        if(password_verify($vecchiaPassword, $templateParams["utente"][0]["passwordd"])){
+            $dbh->updatePassword($_SESSION['email'], password_hash($nuovaPassword, PASSWORD_DEFAULT));
             $dbh->insertNotifica("Modifica password", "Hai modificato le tue credenziali. Clicca qui per vedere i tuoi dati.","utente2.php",
                     date("Y-m-d H:i:s"), 0, $_SESSION['email']);
         }

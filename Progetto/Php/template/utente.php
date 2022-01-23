@@ -173,7 +173,7 @@ utente
               <input type="text" class="form-control" id="inputAddress" name="indirizzo" placeholder="<?php echo $utente["indirizzo"]?>">
             </div>
             <div class="col-md-6">
-              <label for="inputCity" class="form-label">citta</label>
+              <label for="inputCity" class="form-label">Città</label>
               <input type="text" class="form-control" id="inputCity" name="citta" placeholder="<?php echo $utente["citta"]?>">
             </div>
             <div class="col-md-4">

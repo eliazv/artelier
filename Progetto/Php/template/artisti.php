@@ -19,6 +19,7 @@
   </head>
   <body>
     
+     
   <header>
       <div class="container-fluid" style="padding: 0px;">
         <div class="row">
@@ -106,7 +107,7 @@
           </div>   
         </div>
         </header>
-  
+
         <div class="container marketing">
       
           <h1 id="artisti" style="padding-bottom: 30px;">Tutti i nostri Artisti</h1>

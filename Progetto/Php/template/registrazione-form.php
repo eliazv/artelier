@@ -147,7 +147,7 @@
             </div>
             <div class="col-md-4">
             <label for="indirizzo" class="form-label">Paese:</label>
-              <input type="text" class="form-control" id="paese" name="paese" placeholder="Italia">
+              <input type="text" class="form-control" id="paese" name="paese" placeholder="Esempio: Italia">
               </select>
             </div>
             <div class="col-md-2">
