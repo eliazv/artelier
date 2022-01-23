@@ -29,7 +29,7 @@ if (isset($_POST['btnInserisciQuadro'])) {
             
     $dbh->insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $corrente, $descrizione,0, $codQuadro);
 
-    $dbh->insertNotifica("Quadro inserito", "abbiamo aggiunto al nostro catalogo il nuovo articolo ". $titolo,
+    $dbh->insertNotifica("Quadro inserito", "abbiamo aggiunto al nostro catalogo il nuovo articolo ". $titolo, "archivio-articolo.php?titoloq=$titolo",
     date("Y-m-d H:i:s"), 0, $_SESSION['email']);
     $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
 
@@ -61,7 +61,7 @@ if (isset($_POST['btnInserisciQuadro'])) {
                                
                         $dbh->insertArtista($cognome, $nome, $immagine, $descrizione);   
                         
-                        $dbh->insertNotifica("Artista inserito", "abbiamo aggiunto al nostro catalogo il nuovo artista ".$cognome . " ". "$nome",
+                        $dbh->insertNotifica("Artista inserito", "abbiamo aggiunto al nostro catalogo il nuovo artista ".$cognome . " ". "$nome", "archivio-artistaSpecifico.php?artistaA=$cognome",
                         date("Y-m-d H:i:s"), 0, $_SESSION['email']);
                         $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
 
@@ -79,7 +79,7 @@ if (isset($_POST['btnInserisciQuadro'])) {
                             
                 
                             $dbh->insertCategoria($nome, $immagine,$descrizione );       
-                            $dbh->insertNotifica("Categoria inserita", "abbiamo aggiunto al nostro catalogo la nuova categoria ".$nome,
+                            $dbh->insertNotifica("Categoria inserita", "abbiamo aggiunto al nostro catalogo la nuova categoria ".$nome, "archivio-CategoriaSpecifica.php?nomec=$nome",
                             date("Y-m-d H:i:s"), 0, $_SESSION['email']);    
                             $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
             
