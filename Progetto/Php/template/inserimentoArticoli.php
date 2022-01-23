@@ -124,7 +124,13 @@
                 </div>
                 <div class="col-md-6">
                   <label for="inputPassword4" class="form-label">Artista:</label>
-                  <input type="text" class="form-control" id="artista" name="artista">
+                  <!--<input type="text" class="form-control" id="artista" name="artista">-->
+                  <select class="form-select" id="artista" >
+                    <option value="">Scegli...</option>
+                    <?php foreach($templateParams["artisti"] as $artista): ?>
+                    <option><?php echo $artista["nome"]; echo " "; echo $artista["cognome"]; ?></option>
+                    <?php endforeach; ?>
+                  </select>
                 </div>
                 <div class="col-md-6">
                   <label for="inputEmail4" class="form-label">Dimensione:</label>
@@ -136,7 +142,13 @@
                 </div>
                 <div class="col-md-6">
                   <label for="inputPassword4" class="form-label">Corrente Artistica:</label>
-                  <input type="text" class="form-control" id="corrente" name="corrente">
+                  <!--<input type="text" class="form-control" id="corrente" name="corrente">-->
+                  <select class="form-select" id="corrente" >
+                    <option value="">Scegli...</option>
+                    <?php foreach($templateParams["correnteartistica"] as $categoria): ?>
+                    <option><?php echo $categoria["nomeCorrArt"]; ?></option>
+                    <?php endforeach; ?>
+                  </select>
                 </div>
                 <div class="col-md-6">
                   <label for="inputPassword4" class="form-label">Quantità:</label>

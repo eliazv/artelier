@@ -123,7 +123,7 @@
             <div class="d-flex justify-content-center row">
                 <div class="col-md-8">
                     <div class="p-2">
-                        <h4>Ordini in transito</h4>
+                        <h3>Ordini in transito</h3>
                     </div>
                     <?php foreach($templateParams["ordiniShip"] as $ordini): ?>
                         <h4>Ordine <?php echo($ordini["codOrdine"]) ?>: </h4>
@@ -152,7 +152,7 @@
 
                     <hr class="featurette-divider">
                     <div class="p-2">
-                        <h4>Ordini arrivati</h4>
+                        <h3>Ordini arrivati</h3>
                     </div>
                     <?php foreach($templateParams["ordiniArrivati"] as $ordineArrivato): ?>
                     <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
