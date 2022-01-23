@@ -22,12 +22,12 @@ if (isset($_POST['btnInserisciQuadro'])) {
     $dimensione = $_POST['dimensione'];
     $prezzo = $_POST['prezzo'];
     $corrente = $_POST['corrente'];
-    $descrizione = $_POST['descrizione'];
+    $quantita = $_POST['quantita'];
     $immagine = $_POST['immagineT'];  
     
     $codQuadro = $dbh->getMaxCodQuadro()[0]["codQuadro"]+1;
             
-    $dbh->insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $corrente, $descrizione,0, $codQuadro);
+    $dbh->insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $corrente, $quantita,0, $codQuadro);
 
     $dbh->insertNotifica("Quadro inserito", "abbiamo aggiunto al nostro catalogo il nuovo articolo ". $titolo, "archivio-articolo.php?titoloq=$titolo",
     date("Y-m-d H:i:s"), 0, $_SESSION['email']);

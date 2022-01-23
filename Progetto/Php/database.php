@@ -270,10 +270,10 @@ class DatabaseHelper{
     }
 
     
-    public function insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $nomeCorrArt, $descrizione, $eliminato, $codQuadro){
-        $query= "INSERT INTO quadro(titolo, immagine, dimensione, artista, prezzo, nomeCorrArt, descrizione, eliminato, codQuadro) VALUES (?,?,?,?,?,?,?,?,?)";
+    public function insertQuadro($titolo, $immagine, $dimensione, $artista, $prezzo, $nomeCorrArt, $quantita, $eliminato, $codQuadro){
+        $query= "INSERT INTO quadro(titolo, immagine, dimensione, artista, prezzo, nomeCorrArt, quantita, eliminato, codQuadro) VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ssssdssii', $titolo, $immagine, $dimensione, $artista, $prezzo, $nomeCorrArt, $descrizione, $eliminato, $codQuadro);
+        $stmt->bind_param('ssssdsiii', $titolo, $immagine, $dimensione, $artista, $prezzo, $nomeCorrArt, $quantita, $eliminato, $codQuadro);
         $stmt->execute();
     }
 

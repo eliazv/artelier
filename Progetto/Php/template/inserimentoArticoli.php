@@ -137,8 +137,8 @@
                   <input type="text" class="form-control" id="corrente" name="corrente">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputPassword4" class="form-label">Descrizione:</label>
-                  <input type="text" class="form-control" id="descrizione" name="descrizione">
+                  <label for="inputPassword4" class="form-label">Quantità:</label>
+                  <input type="text" class="form-control" id="quantita" name="quantita">
                 </div>
                 <div class="col-md-3"> </div>
                 <div class="col-md-6">
