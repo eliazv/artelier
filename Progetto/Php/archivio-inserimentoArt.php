@@ -1,5 +1,3 @@
-
-archivioinerimento
 <?php
 require_once 'bootstrap.php';
 
@@ -13,9 +11,9 @@ if(isset($_SESSION['email'])){
 }
 
 if (isset($_POST['btnInserisciQuadro'])) {
-    //if( (! empty($_POST['titolo'])) &&  (! empty($_POST['artista'])) &&  (! empty($_POST['dimensione'])) && 
-                    //(! empty($_POST['prezzo'])) && (! empty($_POST['immagineT'])) && (! empty($_POST['corrente'])) &&
-                   // (! empty($_POST['descrizione']))){
+    if( empty($_POST['titolo']) ||   empty($_POST['artista']) ||  empty($_POST['dimensione']) || empty($_POST['prezzo']) || empty($_POST['immagineT']) || empty($_POST['corrente']) || empty($_POST['descrizione'])){
+        $templateParams["erroreQuadri"] = "Errore nell'inserimento per i dati di un quadro!";
+    } else {
 
     $titolo = $_POST['titolo'];
     $artista = $_POST['artista'];
@@ -43,13 +41,13 @@ if (isset($_POST['btnInserisciQuadro'])) {
         ';
 
     echo $output;
-                   
+    }        
 }
 
     if (isset($_POST['btnInserisciArtista'])) {
-        //if( (! empty($_POST['titolo'])) &&  (! empty($_POST['artista'])) &&  (! empty($_POST['dimensione'])) && 
-                        //(! empty($_POST['prezzo'])) && (! empty($_POST['immagineT'])) && (! empty($_POST['corrente'])) &&
-                       // (! empty($_POST['descrizione']))){
+        if( empty($_POST['nome']) || empty($_POST['cognome']) || empty($_POST['immagineT']) || empty($_POST['descrizione'])){
+            $templateParams["erroreArtista"] = "Errore nell'inserimento per i dati di un artista!";
+        } else {
     
                         $cognome = $_POST['cognome'];
                         $nome = $_POST['nome'];
@@ -66,12 +64,12 @@ if (isset($_POST['btnInserisciQuadro'])) {
                         $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
 
         }
-
+    }
 
         if (isset($_POST['btnInserisciCategoria'])) {
-            //if( (! empty($_POST['titolo'])) &&  (! empty($_POST['artista'])) &&  (! empty($_POST['dimensione'])) && 
-                            //(! empty($_POST['prezzo'])) && (! empty($_POST['immagineT'])) && (! empty($_POST['corrente'])) &&
-                           // (! empty($_POST['descrizione']))){
+            if(empty($_POST['nome']) || empty($_POST['immagineT']) || empty($_POST['descrizione'])){
+                $templateParams["erroreCategoria"] = "Errore nell'inserimento per i dati di una categoria!";
+            } else {
         
                             $nome = $_POST['nome'];
                             $immagine = $_POST['immagineT'];
@@ -84,7 +82,7 @@ if (isset($_POST['btnInserisciQuadro'])) {
                             $templateParams["notifiche"] = $dbh->countNotifiche($_SESSION['email']);
             
             }
-
+        }
 
 
 

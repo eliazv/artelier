@@ -114,11 +114,14 @@
             <h1><br><br>Modifica Quadri</h1><br>
             
           </div>
-
+          <?php if (isset($templateParams["errore"])): ?>
+            <p><?php echo($templateParams["errore"]);?></p>
+          <?php endif; ?>
     </div>
 
     <div class="row">
     <div class="col-md-2 col-0"></div>
+    
     <div class="col-md-8 col-12 accordion px-4" id="quadroAccordion">
         <?php foreach($templateParams["quadri"] as $quadro): ?> 
             <div class="accordion-item">

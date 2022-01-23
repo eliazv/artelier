@@ -23,19 +23,23 @@ if (isset($_POST["btnElimina"])) {
 
 
 if (isset($_POST["btnModifica"])) {
-    $templateParams["quadroSpecifico"] = $dbh->getQuadroByTitolo($_GET["titoloq"]);
-    $titolo = $templateParams["quadroSpecifico"][0]["titolo"];
-    $prezzo = $templateParams["quadroSpecifico"][0]["prezzo"];  
-    $nuovoPrezzo = $_POST["prezzo"];
-    $quantita = $_POST["quantita"];
-    if($prezzo!=""){
-        $dbh->updatePrezzo($nuovoPrezzo, $titolo);
-    }
-    if(($quantita!="")){
-        $dbh->updatequantita($quantita, $titolo);
-    }
+    if(empty($_POST["quantita"]) || empty($_POST["prezzo"]) || !is_numeric($_POST["quantita"]) || !is_numeric($_POST["prezzo"])){
+        $templateParams["errore"] = "Errore nei dati da modificare!";
+    } else {
+        $templateParams["quadroSpecifico"] = $dbh->getQuadroByTitolo($_GET["titoloq"]);
+        $titolo = $templateParams["quadroSpecifico"][0]["titolo"];
+        $prezzo = $templateParams["quadroSpecifico"][0]["prezzo"];  
+        $nuovoPrezzo = $_POST["prezzo"];
+        $quantita = $_POST["quantita"];
+        if($prezzo!=""){
+            $dbh->updatePrezzo($nuovoPrezzo, $titolo);
+        }
+        if(($quantita!="")){
+            $dbh->updatequantita($quantita, $titolo);
+        }
     
-    $templateParams["quadri"] = $dbh->getQuadriNonEliminati();
+        $templateParams["quadri"] = $dbh->getQuadriNonEliminati();
+    }
 }
 
 require 'template/modifica-art.php';

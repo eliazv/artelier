@@ -15,7 +15,11 @@ require_once 'bootstrap.php';
                         if(empty($_POST['nome']) || empty($_POST['cognome']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['città']) || empty($_POST['indirizzo']) || empty($_POST['paese']) || empty($_POST['cap'])){
                             $templateParams["errore"] = "Errore! Non sono stati inseriti alcuni dati";
                         }
-                        else{
+                        elseif(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+                            $templateParams["errore"] = "Errore! la mail non è giusta";
+                        } elseif(!is_numeric($_POST["cap"])) {
+                            $templateParams["errore"] = "Errore! hai inserito un CAP non valido";
+                        } else {
                     
                     
                             $nome = $_POST['nome'];

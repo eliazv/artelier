@@ -113,7 +113,9 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <h1><br><br>Inserisci Quadro</h1><br>
-            
+            <?php if (isset($templateParams["erroreQuadri"])): ?>
+              <p><?php echo($templateParams["erroreQuadri"]);?></p>
+            <?php endif; ?>
             <h4 class="mb-3">
               <form action="./archivio-inserimentoArt.php" method="post" class="row g-3">
                 <div class="col-md-6">
@@ -168,7 +170,9 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <h1><br><br>Inserisci Artista</h1><br>
-            
+            <?php if (isset($templateParams["erroreArtista"])): ?>
+              <p><?php echo($templateParams["erroreArtista"]);?></p>
+            <?php endif; ?>
             <h4 class="mb-3">
               <form action="./archivio-inserimentoArt.php" method="post" class="row g-3">
                 <div class="col-md-6">
@@ -206,7 +210,9 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <h1><br><br>Inserisci Categoria</h1><br>
-            
+            <?php if (isset($templateParams["erroreCategoria"])): ?>
+              <p><?php echo($templateParams["erroreCategoria"]);?></p>
+            <?php endif; ?>
             <h4 class="mb-3">
               <form action="./archivio-inserimentoArt.php" method="post" class="row g-3">
                 
