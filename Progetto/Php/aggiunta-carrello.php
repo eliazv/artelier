@@ -21,13 +21,13 @@ if(isset($_SESSION['email'])){
 if (isset($_POST["btnAggCarrello"])) {
 
     //se esaurita la quantità torna alla pagina precedente NON VA
-    if($quantitaDisp < $quantita){
+    if($quantitaDisp < $quantita || $quantitaDisp < ($qprecedente + $quantita)){
         header("location: ./archivio-quadri.php"); 
         //header("location:javascript://history.go(-1)"); 
     }
 
     //aggiunge alla quantità precedente DA TESTARE
-    if($qprecedente != NULL || $qprecedente != 0){
+    else if($qprecedente != NULL || $qprecedente != 0){
         $qprecedente = $qprecedente + $quantita;
         $dbh->updateQuantitaInCarrello($email, $titolo, $qprecedente);
     }

@@ -171,69 +171,46 @@
         
       </div>
       <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3">Inserisci i tuoi Dati</h4>
+        <h3 class="mb-3">Dati di Fatturazione</h3>
         <form>
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="nome" placeholder="" value="" >
-              <div class="invalid-feedback">
-                Inserisci Nome valido.
-              </div>
+              <h4 class="mb-3"><?php echo $templateParams["utente"][0]["nome"]?></h4>
             </div>
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Cognome</label>
-              <input type="text" class="form-control" id="cognome" placeholder="" value="" >
-              <div class="invalid-feedback">
-                Inserisci Cognome valido.
-              </div>
+              <h4 class="mb-3"><?php echo$templateParams["utente"][0]["cognome"]?></h4>
             </div>
 
             <div class="col-12">
               <label for="username" class="form-label">Email</label>
               <div class="input-group">
-                <input type="text" class="form-control" id="email" placeholder="Username" >
-              <div class="invalid-feedback">
-                Inserisci Email valida.
-                </div>
+              <h4 class="mb-3"><?php echo $_SESSION["email"]?></h4>
               </div>
             </div>
+        
 
-            <div class="col-12">
+            <div class="col-6">
               <label for="address" class="form-label">Indirizzo</label>
-              <input type="text" class="form-control" id="indirizzo" placeholder="Via Gramsci 120" >
-              <div class="invalid-feedback">
-                Inserisci Indirizzo valido.
-              </div>
-            </div>
-
-            <div class="col-md-5">
-              <label for="country" class="form-label">Paese</label>
-              <select class="form-select" id="paese" >
-                <option value="">Scegli...</option>
-                <option>Italia</option>
-              </select>
-              <div class="invalid-feedback">
-                Seleziona un Paese valido.
-              </div>
+              <h4 class="mb-3"><?php echo $templateParams["utente"][0]["indirizzo"]?></h4>
             </div>
 
             <div class="col-md-3">
+              <label for="country" class="form-label">Paese</label><br>
+              <h4 class="mb-3"><?php echo $templateParams["utente"][0]["paese"]?></h4>
+            </div>
+
+            <div class="col-md-2">
               <label for="zip" class="form-label">CAP</label>
-              <input type="text" class="form-control" id="cap" placeholder="" >
-              <div class="invalid-feedback">
-                Zip code required.
-              </div>
+              <h4 class="mb-3"><?php echo $templateParams["utente"][0]["cap"]?></h4>
             </div>
           </div>
 
           <hr class="my-4">
 
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info">
-            <label class="form-check-label" for="save-info">Salva informazioni per la prossima volta</label>
-          </div>
+          
           <a class="text-reset" href="./archivio-pagamento.php"><button type="button" class="w-100 btn btn-primary btn-lg">Continua al Pagamento</button></a>
         </form>
       </div>
