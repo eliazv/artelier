@@ -15,7 +15,7 @@ if(isset($_SESSION['email'])){
 }
 
 if (isset($_POST['btnInserisciQuadro'])) {
-    if( empty($_POST['titolo']) ||   empty($_POST['artista']) ||  empty($_POST['dimensione']) || empty($_POST['prezzo']) || empty($_POST['immagineT']) || empty($_POST['corrente']) || empty($_POST['descrizione'])){
+    if( empty($_POST['titolo']) || empty($_POST['dimensione']) || empty($_POST['prezzo']) || empty($_POST['immagineT']) || empty($_POST['quantita']) || !is_numeric($_POST['quantita']) || !is_numeric($_POST['prezzo'])){
         $templateParams["erroreQuadri"] = "Errore nell'inserimento per i dati di un quadro!";
     } else {
 

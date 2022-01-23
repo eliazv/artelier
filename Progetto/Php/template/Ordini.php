@@ -115,8 +115,10 @@
               <h3>DEVI EFFETTUARE IL LOGIN PER VISUALIZZARE GLI ORDINI</h3>
             <?php else: ?>
             <?php foreach($templateParams["ordini"] as $ordini): ?>
-              <?php if(date("Y-m-d H:i:s") >= $ordini["dataConsegna"]):?>
+              <?php if(date("Y-m-d H:i:s") >= $ordini["dataConsegna"] && $ordini["arrivato"] == 0): ?>
                 <?php $dbh->setOrderDelivered($ordini["codOrdine"]) ?>
+                <?php $codOrd = $ordini["codOrdine"]; ?>
+                <?php $dbh->insertNotifica("Ordine  #$codOrd consegnato", "Ordine  #$codOrd consegnato all'indirizzo di destinazione. Clicca qui per verdere i dettaglia","archivio-Ordini.php", date("Y-m-d H:i:s"), 0, $_SESSION['email']);?>
               <?php endif; ?>
             <?php endforeach; ?>
               
@@ -126,7 +128,7 @@
                         <h3>Ordini in transito</h3>
                     </div>
                     <?php foreach($templateParams["ordiniShip"] as $ordini): ?>
-                        <h4>Ordine <?php echo($ordini["codOrdine"]) ?>: </h4>
+                        <h4>&ensp;Ordine <?php echo($ordini["codOrdine"]) ?>: </h4>
                         <?php $templateParams["ordiniShip"] = $dbh->getSpecificOrders($_SESSION["email"], $ordini["codOrdine"]); ?>
                     <?php foreach($templateParams["ordiniShip"] as $ordine): ?>
                     <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">

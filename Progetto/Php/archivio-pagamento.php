@@ -8,41 +8,47 @@ $templateParams["carrello"] = $dbh->getCarrello($_SESSION["email"]); //prendi em
 
 //compra intero carrello
 if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
-     $dataConsegna = date("Y-m-d H:i:s");
-     //$totPaziale=(($templateParams["quadro"][0]["prezzo"]) * ($carrello["quantita"]));   //SERVE??
-     $dbh->insertOrder($_SESSION["email"], date("Y-m-d H:i:s"), date("Y-m-d 10:00:00", strtotime($dataConsegna. ' + 7 days')),
-           0, $_SESSION["somma"]);
-     $templateParams["lastorder"] = $dbh->getLastOrder($_SESSION["email"]);
+     if(empty($_POST["numCarta"]) || !is_numeric($_POST["numCarta"]) || empty($_POST["cardOwn"]) || empty($POST["cvCode"]) ||  !is_numeric($_POST["cvCode"]) || empty($_PO_ST["expDate"])){
+          $templateParams["errore"] = "Errore dati";
+     } else {
+          $dataConsegna = date("Y-m-d H:i:s");
+          //$totPaziale=(($templateParams["quadro"][0]["prezzo"]) * ($carrello["quantita"]));   //SERVE??
+          $dbh->insertOrder($_SESSION["email"], date("Y-m-d H:i:s"), date("Y-m-d 10:00:00", strtotime($dataConsegna. ' + 7 days')),
+               0, $_SESSION["somma"]);
+          $templateParams["lastorder"] = $dbh->getLastOrder($_SESSION["email"]);
 
-     $lastOrder = $templateParams["lastorder"][0]["codOrdine"];
+          $lastOrder = $templateParams["lastorder"][0]["codOrdine"];
 
-     foreach($templateParams["carrello"] as $carrello){
-          $dbh->insertOrderedPainting($lastOrder, $carrello["titolo"], $carrello["quantita"]);     
-     }
-
-     $dbh->deleteCart($_SESSION["email"]);
-
-     $dbh->decreasequantita($carrello["quantita"], $carrello["titolo"]);
-
-     if($dbh->getQuadroByTitolo($carrello["titolo"])[0]["quantita"] <= 0){
-          foreach($dbh->getAdmins() as $admin){
-               $dbh->insertNotifica("".$carrello["titolo"]." è Sold Out", 
-               "Il quadro \"".$carrello["titolo"]."\" è terminato, tornerà disponibile prossimamente. Clicca qui per vedere altre opere.",
-               "archivio-quadri.php", date("Y-m-d H:i:s"), 0, $admin["email"]);
+          foreach($templateParams["carrello"] as $carrello){
+               $dbh->insertOrderedPainting($lastOrder, $carrello["titolo"], $carrello["quantita"]);     
           }
-     }
-     $dbh->insertNotifica("Acquisto  #$lastOrder completato", "Transazione autorizzata. L'acquisto relativo all'ordine # $lastOrder  è stato completato. 
-     Clicca qui per controllare il suo stato.","archivio-Ordini.php",
-     date("Y-m-d H:i:s"), 0, $_SESSION['email']);
 
-     mail("zavattaelia@gmail.com","Ordine confermato","Il tuo ordine è stato confermato");//non funziona 
+          $dbh->deleteCart($_SESSION["email"]);
+
+          $dbh->decreasequantita($carrello["quantita"], $carrello["titolo"]);
+
+          if($dbh->getQuadroByTitolo($carrello["titolo"])[0]["quantita"] <= 0){
+               foreach($dbh->getAdmins() as $admin){
+                    $dbh->insertNotifica("".$carrello["titolo"]." è Sold Out", 
+                    "Il quadro \"".$carrello["titolo"]."\" è terminato, tornerà disponibile prossimamente. Clicca qui per vedere altre opere.",
+                    "archivio-quadri.php", date("Y-m-d H:i:s"), 0, $admin["email"]);
+               }
+          }
+          $dbh->insertNotifica("Acquisto  #$lastOrder completato", "Transazione autorizzata. L'acquisto relativo all'ordine # $lastOrder  è stato completato. 
+          Clicca qui per controllare il suo stato.","archivio-Ordini.php",
+          date("Y-m-d H:i:s"), 0, $_SESSION['email']);
+
+          mail("zavattaelia@gmail.com","Ordine confermato","Il tuo ordine è stato confermato");//non funziona 
      
-     header("location: ./archivio-ordini.php");   
-
+          header("location: ./archivio-ordini.php");   
+     }
 }
 
 //Compra ora
 if(isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] != NULL ){
+     if(empty($_POST["numCarta"]) || !is_numeric($_POST["numCarta"]) || empty($_POST["cardOwn"]) || empty($_POST["cvCode"]) ||  !is_numeric($_POST["cvCode"]) || empty($_POST["expDate"])){
+          $templateParams["errore"] = "Errore dati";
+     } else {
      $prezzotot=$_SESSION["bnprezzo"] * $_SESSION["bnquantita"];
      $dataConsegna = date("Y-m-d H:i:s");
      $dbh->insertOrder($_SESSION["email"], date("Y-m-d H:i:s"), date("Y-m-d 10:00:00", strtotime($dataConsegna. ' + 7 days')), 
@@ -75,7 +81,7 @@ if(isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] != NULL ){
      $_SESSION["bnprezzo"]=NULL;
      
      header("location: ./archivio-ordini.php");   
-  
+}
 }
 
 

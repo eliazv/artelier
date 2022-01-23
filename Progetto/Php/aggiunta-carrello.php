@@ -54,6 +54,7 @@ if (isset($_POST["btnBuyNow"])) {
 }
 //require "archivio-quadri.php"//da modificare
 
-   
+//funzione per vedere se il numero della carta è giusto
+
     
 ?>
