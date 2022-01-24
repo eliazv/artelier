@@ -11,6 +11,7 @@ if(isset($_SESSION['email'])){
 $templateParams["utente"] = $dbh->getUtente($_SESSION['email']);
 
 
+
 if (isset($_POST['btnModifica'])) {
     
     $vecchiaPassword = $_POST['vecchiaPassword'];
@@ -24,22 +25,30 @@ if (isset($_POST['btnModifica'])) {
         $dbh->updateIndirizzo($_SESSION['email'], $indirizzo);
         $dbh->insertNotifica("Modifica indirizzo", "Hai modificato le tue credenziali. Clicca qui per vedere i tuoi dati.","utente2.php",
         date("Y-m-d H:i:s"), 0, $_SESSION['email']);
+        header("Refresh:0");
+
     }
     if($paese!=""){
         $dbh->updatePaese($_SESSION['email'], $paese);
         $dbh->insertNotifica("Modifica paese", "Hai modificato le tue credenziali. Clicca qui per vedere i tuoi dati.","utente2.php",
         date("Y-m-d H:i:s"), 0, $_SESSION['email']);
+        header("Refresh:0");
+
     }
     if($citta!=""){
         $dbh->updateCitta($_SESSION['email'], $citta);
         $dbh->insertNotifica("Modifica citta", "Hai modificato le tue credenziali. Clicca qui per vedere i tuoi dati.","utente2.php",
         date("Y-m-d H:i:s"), 0, $_SESSION['email']);
+        header("Refresh:0");
+
     }
 
     if($cap!=""){
         $dbh->updateCap($_SESSION['email'], $cap);
         $dbh->insertNotifica("Modifica CAP", "Hai modificato le tue credenziali. Clicca qui per vedere i tuoi dati.","utente2.php",
         date("Y-m-d H:i:s"), 0, $_SESSION['email']);
+        header("Refresh:0");
+
     }
     if($vecchiaPassword!="" && $nuovaPassword!=""){
         //if($templateParams["utente"][0]["passwordd"] == $vecchiaPassword){
@@ -49,11 +58,13 @@ if (isset($_POST['btnModifica'])) {
                     date("Y-m-d H:i:s"), 0, $_SESSION['email']);
         }
         else{
-            echo "Errore Password";
+            $templateParams["errore"]="Password Errata!";
         }
         
     }
-    header("Refresh:0");
+    if(isset($templateParams["errore"])){
+        $templateParams["errore"]="Password Errata!";
+    }
     var_dump($templateParams["utente"][0]["passwordd"]); 
 }
 require 'template/utente.php';

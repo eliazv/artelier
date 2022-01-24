@@ -158,7 +158,17 @@ utente
 
 
         <h4 class="mb-3">Modifica i tuoi Dati<br><br>
-          <form class="row g-3"  action="./utente2.php" method="POST">
+        <?php if(isset($templateParams["errore"])): ?>
+          <div class="alert alert-danger" role="alert">
+          <div class="row">
+            <div class="col-8 col-md-6">
+              <h4><?php echo ($templateParams["errore"])?></h4>
+            </div> 
+          </div>
+          </div>
+        <?php endif; ?>
+        
+        <form class="row g-3"  action="./utente2.php" method="POST">
             
             <div class="col-md-6">
               <label for="inputPassword4" class="form-label">Vecchia Password</label>
