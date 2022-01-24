@@ -20,41 +20,41 @@ if(isset($_SESSION['email'])){
 //se gia presente aumenta quantità
 if (isset($_POST["btnAggCarrello"])) {
 
-    //se esaurita la quantità torna alla pagina precedente NON VA
+    //se esaurita la quantità 
     if($quantitaDisp < $quantita || $quantitaDisp < ($qprecedente + $quantita)){
-        header("location: ./archivio-quadri.php"); 
-        //header("location:javascript://history.go(-1)"); 
+        //errore quantità
+        $_SESSION["errQuantita"]="Quantità non disponibile.";
+        header("location: ./archivio-articolo.php?titoloq=$titolo"); 
     }
-
     //aggiunge alla quantità precedente DA TESTARE
     else if($qprecedente != NULL || $qprecedente != 0){
         $qprecedente = $qprecedente + $quantita;
         $dbh->updateQuantitaInCarrello($email, $titolo, $qprecedente);
+        header("location: ./archivio-carrello.php"); 
+
     }
     //altrimenti inserisci
     else{
         $dbh->insertInCarrello($email, $titolo, $quantita);
-    }
-    header("location: ./archivio-carrello.php"); //archivio-articolo.php?titoloq=$titolo");  //    PERCORSO POTREBBE VARIARE  ./archivio-carrello.php
+        header("location: ./archivio-carrello.php"); 
 
+    }
 }
 
 if (isset($_POST["btnBuyNow"])) {
 
-    //se esaurita la quantità torna alla pagina precedente NON VA
     if($quantitaDisp < $quantita){
-        header("location: ./archivio-quadri.php"); 
-        //header("location:javascript://history.go(-1)"); 
+        $_SESSION["errQuantita"]="Quantità non disponibile.";
+        header("location: ./archivio-articolo.php?titoloq=$titolo"); 
     }    
-    $_SESSION["bnquadro"]=$titolo;
-    $_SESSION["bnquantita"]=$quantita;
-    $_SESSION["bnprezzo"]=$prezzo;
+    else{
+        $_SESSION["bnquadro"]=$titolo;
+        $_SESSION["bnquantita"]=$quantita;
+        $_SESSION["bnprezzo"]=$prezzo;
     
-    header("location: ./archivio-pagamento.php");  
+        header("location: ./archivio-pagamento.php");  
+    }
+    
 }
-//require "archivio-quadri.php"//da modificare
-
-//funzione per vedere se il numero della carta è giusto
-
     
 ?>

@@ -111,6 +111,19 @@
 
 <h2 style="padding-top: 80px; padding-left: 40px;">Dettagli Articolo</h2>
 
+<?php if(isset($_SESSION["errQuantita"])):?>
+  <div class="alert alert-danger" role="alert">
+    <div class="row">
+      <div class="col-8 col-md-6">      
+        <h4>Errore! <?php echo ($_SESSION["errQuantita"])?></h4>
+      </div> 
+    </div>         
+</div>
+
+<?php $_SESSION["errQuantita"]= NULL; ?>
+<?php endif; ?>
+<?php $_SESSION["errQuantita"]= NULL; ?>
+
 
 <div class="container">
   <div class="row">

@@ -127,7 +127,7 @@
   <a href="./leggi-notifica.php?codiceNotifica=<?php echo $notifica["codNotifica"]?>">
 
 <div class="row justify-content-center">
-  <div class="col-8">
+  <div class="col-10">
     <div class="<?php echo $visualizzato?>" role="alert">
 
           <div class="row">
@@ -135,7 +135,7 @@
               <h3><?php echo $notifica["titolo"] ?></h2>
             </div> 
 
-            <div class="col-6 col-md-4">
+            <div class="col-8 col-md-4">
               <label for="fname"><?php echo $notifica["dataeora"] ?> </label>
             </div>   
           </div>         
