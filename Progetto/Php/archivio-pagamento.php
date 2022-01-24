@@ -8,7 +8,7 @@ $templateParams["carrello"] = $dbh->getCarrello($_SESSION["email"]); //prendi em
 
 //compra intero carrello
 if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
-     if(empty($_POST["numCarta"]) || !is_numeric($_POST["numCarta"]) || empty($_POST["cardOwn"]) || empty($POST["cvCode"]) ||  !is_numeric($_POST["cvCode"]) || empty($_PO_ST["expDate"])){
+     if(empty($_POST["numCarta"]) || !is_numeric($_POST["numCarta"]) || empty($_POST["cardOwn"]) || empty($_POST["cvCode"]) ||  !is_numeric($_POST["cvCode"])){
           $templateParams["errore"] = "Errore dati";
      } else {
           $dataConsegna = date("Y-m-d H:i:s");
@@ -46,7 +46,7 @@ if (isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] == NULL ) {
 
 //Compra ora
 if(isset($_POST["btnConfPaym"]) && $_SESSION["bnquadro"] != NULL ){
-     if(empty($_POST["numCarta"]) || !is_numeric($_POST["numCarta"]) || empty($_POST["cardOwn"]) || empty($_POST["cvCode"]) ||  !is_numeric($_POST["cvCode"]) || empty($_POST["expDate"])){
+     if(empty($_POST["numCarta"]) || !is_numeric($_POST["numCarta"]) || empty($_POST["cardOwn"]) || empty($_POST["cvCode"]) ||  !is_numeric($_POST["cvCode"])){
           $templateParams["errore"] = "Errore dati";
      } else {
      $prezzotot=$_SESSION["bnprezzo"] * $_SESSION["bnquantita"];

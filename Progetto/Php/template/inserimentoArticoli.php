@@ -114,7 +114,13 @@
           <div class="col-md-10">
             <h1><br><br>Inserisci Quadro</h1><br>
             <?php if (isset($templateParams["erroreQuadri"])): ?>
-              <p><?php echo($templateParams["erroreQuadri"]);?></p>
+              <div class="alert alert-danger" role="alert">
+                <div class="row">
+                  <div class="col-8 col-md-6">
+                    <h4><?php echo ($templateParams["erroreQuadri"])?></h4>
+                  </div> 
+                </div>
+              </div>
             <?php endif; ?>
             <h4 class="mb-3">
               <form action="./archivio-inserimentoArt.php" method="post" class="row g-3">
@@ -183,7 +189,13 @@
           <div class="col-md-10">
             <h1><br><br>Inserisci Artista</h1><br>
             <?php if (isset($templateParams["erroreArtista"])): ?>
-              <p><?php echo($templateParams["erroreArtista"]);?></p>
+              <div class="alert alert-danger" role="alert">
+                <div class="row">
+                  <div class="col-8 col-md-6">
+                    <h4><?php echo ($templateParams["erroreArtista"])?></h4>
+                  </div> 
+                </div>
+              </div>
             <?php endif; ?>
             <h4 class="mb-3">
               <form action="./archivio-inserimentoArt.php" method="post" class="row g-3">
@@ -223,7 +235,13 @@
           <div class="col-md-10">
             <h1><br><br>Inserisci Categoria</h1><br>
             <?php if (isset($templateParams["erroreCategoria"])): ?>
-              <p><?php echo($templateParams["erroreCategoria"]);?></p>
+              <div class="alert alert-danger" role="alert">
+                <div class="row">
+                  <div class="col-8 col-md-6">
+                    <h4><?php echo ($templateParams["erroreCategoria"])?></h4>
+                  </div> 
+                </div>
+              </div>
             <?php endif; ?>
             <h4 class="mb-3">
               <form action="./archivio-inserimentoArt.php" method="post" class="row g-3">

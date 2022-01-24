@@ -114,11 +114,16 @@
             <h1><br><br>Modifica Quadri</h1><br>
             
           </div>
-          <?php if (isset($templateParams["errore"])): ?>
-            <p><?php echo($templateParams["errore"]);?></p>
-          <?php endif; ?>
     </div>
-
+    <?php if (isset($templateParams["errore"])): ?>
+            <div class="alert alert-danger" role="alert">
+                <div class="row">
+                  <div class="col-8 col-md-6">
+                    <h4><?php echo ($templateParams["errore"])?></h4>
+                  </div> 
+                </div>
+            </div>
+          <?php endif; ?>
     <div class="row">
     <div class="col-md-2 col-0"></div>
     

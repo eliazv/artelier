@@ -10,7 +10,15 @@
     <div class="page-header text-center">
         <h1>Pagamento con Carta di Credito</h1>
     </div> <!-- Credit Card Payment Form - START -->
-    
+    <?php if(isset($templateParams["errore"])): ?>
+    <div class="alert alert-danger" role="alert">
+    <div class="row">
+      <div class="col-8 col-md-6">
+        <h4><?php echo ($templateParams["errore"])?></h4>
+      </div> 
+    </div>
+    </div>
+    <?php endif; ?>
     <div class="container">
         <div class="row">
             <div class="col-2"></div>
@@ -75,6 +83,4 @@
 </div>
 
 
-<?php if(isset($templateParams["errore"])): ?>
-        <p><?php echo $templateParams["errore"]; ?></p>
-<?php endif; ?>
+

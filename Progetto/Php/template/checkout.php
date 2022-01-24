@@ -124,9 +124,10 @@
           </div>   
         </div>
         </header>
-    
+
+<main>
 <div class="container">
-  <main>
+  
     <div class="text-center" style="padding-top: 100px;">
       <h1>Checkout</h2>
     </div>
@@ -218,7 +219,8 @@
   </main>
 
   <!-- FOOTER -->
-
+<footer>
+<div id="chisiamo" class="container-fluid mt-5" style="padding: 0px; text-align: center;">
 <div id="chisiamo" class="container-fluid mt-5" style="padding: 0px; text-align: center;">
     <div class="card" style="width: 100%;">
         <div class="row mb-4 ">
@@ -276,7 +278,7 @@
         </div>
       </div>
     </div>
-</main>
+</footer>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
