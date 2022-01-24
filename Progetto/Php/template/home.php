@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="../Css/HomePage2.css" rel="stylesheet">
+    <link href="../Css/HomePage.css" rel="stylesheet">
   </head>
   <body>
     
@@ -245,7 +245,7 @@
 
     <hr class="featurette-divider">
 
-    <h1 id="categorie"><br>Cartegorie</h1>
+    <h1 id="categorie"><br>Categorie</h1>
 
     <?php foreach($templateParams["3Categorie"] as $categoria): ?>
     

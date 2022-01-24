@@ -15,7 +15,7 @@
 
     <!-- Custom styles for this template -->
 
-    <link href="../Css/Checkout.css" rel="stylesheet">
+    <link href="../Css/Input.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {

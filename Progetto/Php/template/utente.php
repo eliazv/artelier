@@ -17,7 +17,7 @@ utente
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="../Css/HomePage2.css" rel="stylesheet">
+    <link href="../Css/Input.css" rel="stylesheet">
   </head>
   <body>
     
@@ -116,7 +116,7 @@ utente
     <div class="row">
     <div class="col-1"> </div>
       
-      <div class="col-md-10">
+      <div class="col-md-10" style="margin-top: 30px">
         <h1>Il tuo Profilo</h1>
 
         <?php foreach($templateParams["utente"] as $utente): ?>
