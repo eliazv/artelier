@@ -46,14 +46,14 @@
                                     <div class="form-group"> <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label> 
                                     <br>
                                     <select class="form-select" id="mese" >
-                                    <option value="">mese</option>
-                                        <?php for($i = 1; $i <= 12; $i++): ?>
+                                    <option value="">1</option>
+                                        <?php for($i = 2; $i <= 12; $i++): ?>
                                         <option><?php echo $i; ?></option>
                                         <?php endfor; ?>
                                     </select>
                                     <select class="form-select" id="anno" >
-                                    <option value="">anno</option>
-                                        <?php for($i = 22; $i <= 40; $i++): ?>
+                                    <option value="">22</option>
+                                        <?php for($i = 23; $i <= 40; $i++): ?>
                                         <option><?php echo $i; ?></option>
                                         <?php endfor; ?>
                                     </select> 
