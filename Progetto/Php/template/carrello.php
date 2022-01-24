@@ -144,6 +144,10 @@
                     <?php 
                       $somma = $somma + $totPaziale;?>
                     <?php endforeach; ?>
+                    <?php if($templateParams["nquadri"][0]["numquadri"] ==0): ?>
+                      <h4 class="text-grey">&emsp;&emsp;Il carrello è vuoto...</h4> 
+                    <?php endif?>
+
                     </form>
 <br><br>
                     <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded"><input type="text" class="form-control border-0 gift-card" placeholder="Totale:"><h6>€<?php echo $somma?></h6></div> 
