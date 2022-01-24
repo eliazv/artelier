@@ -4,23 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>HomePage</title>
+    <title>Artisti</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
 
     <!-- Bootstrap core CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
       
-  <!-- icone-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- icone-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="../Css/Artisti.css" rel="stylesheet">
+    <link href="../Css/Ordini.css" rel="stylesheet">
   </head>
   <body>
     
-     
-  <header>
+    <header>
       <div class="container-fluid" style="padding: 0px;">
         <div class="row">
           <div class="col-12">
@@ -109,7 +108,8 @@
         </header>
 
         <div class="container marketing">
-      
+          
+      <br>
           <h1 id="artisti" style="padding-bottom: 30px;">Tutti i nostri Artisti</h1>
           <!-- Three columns of text below the carousel -->
           <div class="row">

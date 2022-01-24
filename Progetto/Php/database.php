@@ -169,6 +169,17 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getArtista($cognome){
+        $query = "SELECT * FROM artista WHERE cognome = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s',$cognome);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+
        //TUTTE LE NOTIFICHE
     public function getNotifiche($email){
         $query ="SELECT * FROM notifica WHERE email=?";

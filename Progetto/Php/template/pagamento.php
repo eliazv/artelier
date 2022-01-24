@@ -5,6 +5,7 @@
 
 <link href="../Css/Pagamento.css" rel="stylesheet" >
 
+<title>Pagamento</title>
 <div class="container">
 
     <div class="page-header text-center">

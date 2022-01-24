@@ -2,6 +2,7 @@
 require_once 'bootstrap.php';
 
 //Base Template
+$templateParams["datiArtista"] = $dbh->getArtista($_GET["artistaA"]);
 $templateParams["artistaSpecifico"] = $dbh->getQuadriByArtista($_GET["artistaA"]);
 
 if(isset($_SESSION['email'])){
