@@ -27,7 +27,7 @@
             <nav class="navbar navbar-dark bg-dark fixed-top">
 
               <div class="col-4">
-                <a href="./home2.php"><img src="../Immagini/logobiancocut.png" class="d-block" alt="..." style="margin-left: 10px; padding: 0px; width: 150px;"></a>
+                <a href="./home2.php"><img src="../Immagini/logobiancocut.png" class="d-block" alt="logo" style="margin-left: 10px; padding: 0px; width: 150px;"></a>
               </div>
               <div class="col-5"></div>
               <div class="col-1 text-end">
@@ -35,9 +35,9 @@
                 <button class="btn btn-default" type="button">
                   <a href="./archivio-carrello.php">
                   <?php if($templateParams['elemCarrello'][0]['numquadri']!=0):?>
-                    <img src="../Immagini/cart2.png" alt="" style="height:30px"/>
+                    <img src="../Immagini/cart2.png" alt="carrello" style="height:30px"/>
                   <?php else:?>
-                      <img src="../Immagini/cart.png" alt="" style="height:30px"/>
+                      <img src="../Immagini/cart.png" alt="carrello" style="height:30px"/>
                   <?php endif?>
                   </a>
                   </button>
@@ -54,9 +54,9 @@
                   <a href="./archivio-notifiche.php">
 
                 <?php if($templateParams['notifiche'][0]['num']!=0):?>
-                <img src="../Immagini/bell2.png" alt="" style="height:30px"/>
+                <img src="../Immagini/bell2.png" alt="notifiche" style="height:30px"/>
                 <?php else:?>
-                <img src="../Immagini/bell.png" alt="" style="height:30px"/>
+                <img src="../Immagini/bell.png" alt="notifiche" style="height:30px"/>
                 <?php endif?>
                 
                 </a>
@@ -139,7 +139,7 @@
                   <?php $i=0; foreach($templateParams['4Quadri'] as $quadro) :?>
                     <div class="carousel-item <?php if($i==0){ echo 'active';}?> w-100">
                         <a href="./archivio-articolo.php?titoloq=<?php echo $quadro['titolo'];?>">
-                            <img src="<?php echo UPLOAD_DIR.$quadro['immagine'];?>" class="d-block w-100" alt="...">
+                            <img src="<?php echo UPLOAD_DIR.$quadro['immagine'];?>" class="d-block w-100" alt="<?php echo $quadro['titolo']; ?>">
                         </a>
                         
                     </div>
@@ -174,7 +174,7 @@
       <?php foreach($templateParams['3Artisti'] as $artista): ?>
     
         <div class="col-4">
-          <a href="./archivio-artistaSpecifico.php?artistaA=<?php echo $artista['cognome'];?>"><img src="<?php echo UPLOAD_DIR.$artista['immagine']; ?>" class="d-block w-100" style="border-radius: 200px 200px 200px 200px" alt="..."></a>
+          <a href="./archivio-artistaSpecifico.php?artistaA=<?php echo $artista['cognome'];?>"><img src="<?php echo UPLOAD_DIR.$artista['immagine']; ?>" class="d-block w-100" style="border-radius: 200px 200px 200px 200px" alt="<?php echo $artista['cognome'];?>"></a>
           <a href="./archivio-artistaSpecifico.php?artistaA=<?php echo $artista['cognome'];?>"><h2 class="text-center" style="padding-top: 15px;"><?php echo $artista['cognome']; ?></h2></a>
         </div>
 
@@ -207,7 +207,7 @@
             </div>
         
             <div class="col-7">
-            <a href="./archivio-articolo.php?titoloq=<?php echo $quadro['titolo'];?>"><img src="<?php echo UPLOAD_DIR.$quadro['immagine']; ?>" class="d-block w-100" alt="..."></a>
+            <a href="./archivio-articolo.php?titoloq=<?php echo $quadro['titolo'];?>"><img src="<?php echo UPLOAD_DIR.$quadro['immagine']; ?>" class="d-block w-100" alt="<?php echo $quadro['titolo'];?>"></a>
             </div>
           </div>
 
@@ -216,7 +216,7 @@
           <div class="row featurette">
       
             <div class="col-7">
-            <a href="./archivio-articolo.php?titoloq=<?php echo $quadro['titolo'];?>"><img src="<?php echo UPLOAD_DIR.$quadro['immagine']; ?>" class="d-block w-100" alt="..."></a>
+            <a href="./archivio-articolo.php?titoloq=<?php echo $quadro['titolo'];?>"><img src="<?php echo UPLOAD_DIR.$quadro['immagine']; ?>" class="d-block w-100" alt="<?php echo $quadro['titolo'];?>"></a>
             </div>
 
             <div class="col-5">
@@ -247,7 +247,7 @@
     
       <div class="row">
         <div class="col-12">
-        <a href="./archivio-CategoriaSpecifica.php?nomec=<?php echo $categoria['nomeCorrArt']; ?>"><img src="<?php echo UPLOAD_DIR.$categoria['immagine']; ?>" alt="" class="rounded mx-auto d-block" ;  style=" margin: 20px; max-height: 300px; max-width:90%;"> </a>
+        <a href="./archivio-CategoriaSpecifica.php?nomec=<?php echo $categoria['nomeCorrArt']; ?>"><img src="<?php echo UPLOAD_DIR.$categoria['immagine']; ?>" alt="<?php echo $categoria['nomeCorrArt']; ?>" class="rounded mx-auto d-block" ;  style=" margin: 20px; max-height: 300px; max-width:90%;"> </a>
         </div>
       </div>
 
@@ -272,7 +272,7 @@
             <div class="col-md-4 ">
                 <div class="footer-text">
                     
-                        <a href="./home2.php"> <img src="../Immagini/logobiancocut.png" alt="" style="max-height: 50px; margin-bottom: 10px;"></a>
+                        <a href="./home2.php"> <img src="../Immagini/logobiancocut.png" alt="logo" style="max-height: 50px; margin-bottom: 10px;"></a>
                     
                     <p class="card-text">Artelier è un progetto universitario con l'obiettivo di simulare il funzionamento di un negozio online che mette a disposizione riproduzioni di quadri famosi.<br> 
                       E' sviluppato dagli studenti: Elia Zavatta, Pietro Lelli e Giovanni Maffi dell'Università di Bologna per la materia Tecnologie Web.</p>
@@ -295,7 +295,7 @@
                 <?php if(isUserLoggedIn()): ?>
                     <li><a href="./utente2.php">Account</a></li>
                     <li><a href="./archivio-carrello.php">Carrello</a></li>
-                    <li><a href="./logout.php">Logout</a></li>
+                    <li><a href="./logout.php">Logout</a></li>   
                     <?php else: ?> 
                       <li><a href="./login.php">Login</a></li>
                       <li><a href="./registrazione.php">Registrazione</a></li>
