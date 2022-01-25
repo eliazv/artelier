@@ -225,10 +225,10 @@ utente
             <div class="col-md-3">
                 <h5 class="heading" style="margin-top: 15px;">Pagine</h5>
                 <ul>
-                  <a href="./home2.php"><li>Home</li></a>
-                  <a href="./archivio-quadri.php"><li>Quadri</li></a>
-                  <a href="./archivio-artisti.php"><li>Artisti</li></a>
-                  <a href="./archivio-Categorie.php"><li>Categorie</li></a>
+                  <li><a href="./home2.php">Home</a></li>
+                  <li><a href="./archivio-quadri.php">Quadri</a></li>
+                  <li><a href="./archivio-artisti.php">Artisti</a></li>
+                  <li><a href="./archivio-Categorie.php">Categorie</a></li>
                 </ul>
             </div>
             
@@ -236,12 +236,12 @@ utente
                 <h5 class="heading" style="margin-top: 15px;">Utente</h5>
                 <ul class="card-text">
                 <?php if(isUserLoggedIn()): ?>
-                    <a href="./utente2.php"><li>Account</li></a>
-                    <a href="./archivio-carrello.php"><li>Carrello</li></a>
-                    <a href="./logout.php"><li>Logout</li></a>   
+                    <li><a href="./utente2.php">Account</a></li>
+                    <li><a href="./archivio-carrello.php">Carrello</a></li>
+                    <li><a href="./logout.php">Logout</a></li>   
                     <?php else: ?> 
-                      <a href="./login.php"><li>Login</li></a>
-                      <a href="./registrazione.php"><li>Registrazione</li></a>
+                      <li><a href="./login.php">Login</a></li>
+                      <li><a href="./registrazione.php">Registrazione</a></li>
                     <?php endif; ?> 
                 </ul>
             </div>

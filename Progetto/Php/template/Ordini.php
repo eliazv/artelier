@@ -34,7 +34,7 @@
               <?php if(isUserLoggedIn()): ?>
                 <button class="btn btn-default" type="button">
                   <a href="./archivio-carrello.php">
-                  <?php if($templateParams["elemCarrello"][0]["numquadri"]!=0):?>
+                  <?php if($templateParams['elemCarrello'][0]['numquadri']!=0):?>
                     <img src="../Immagini/cart2.png" alt="" style="height:30px"/>
                   <?php else:?>
                       <img src="../Immagini/cart.png" alt="" style="height:30px"/>
@@ -53,7 +53,7 @@
 
                   <a href="./archivio-notifiche.php">
 
-                <?php if($templateParams["notifiche"][0]["num"]!=0):?>
+                <?php if($templateParams['notifiche'][0]['num']!=0):?>
                 <img src="../Immagini/bell2.png" alt="" style="height:30px"/>
                 <?php else:?>
                 <img src="../Immagini/bell.png" alt="" style="height:30px"/>
@@ -82,7 +82,7 @@
                       <li class="nav-item">
                       <?php if(isUserLoggedIn()): ?>
                         <a class="nav-link" href="./utente2.php"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
-                        <a class="nav-link" href="./archivio-notifiche.php"><i class="fa fa-bell"></i>&nbsp; Notifiche <span class="badge bg-danger"> <?php echo $templateParams["notifiche"][0]["num"]?></span> </a>
+                        <a class="nav-link" href="./archivio-notifiche.php"><i class="fa fa-bell"></i>&nbsp; Notifiche <span class="badge bg-danger"> <?php echo $templateParams['notifiche'][0]['num']?></span> </a>
                         <a class="nav-link" href="./archivio-carrello.php"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
                         <a class="nav-link" href="./archivio-categorie.php"> &nbsp; Categorie</a>
                         <a class="nav-link" href="./archivio-artisti.php"> &nbsp; Artisti</a>
@@ -105,19 +105,20 @@
             </nav>
           </div>   
         </div>
+        </div>
         </header>
-
+        <main>
 
         <div class="container mt-5 mb-5">
-            <?php if($_SESSION["email"] == NULL):
+            <?php if($_SESSION['email'] == NULL):
               
             ?>
               <h3>DEVI EFFETTUARE IL LOGIN PER VISUALIZZARE GLI ORDINI</h3>
             <?php else: ?>
-            <?php foreach($templateParams["ordini"] as $ordini): ?>
-              <?php if(date("Y-m-d H:i:s") >= $ordini["dataConsegna"] && $ordini["arrivato"] == 0): ?>
-                <?php $dbh->setOrderDelivered($ordini["codOrdine"]) ?>
-                <?php $codOrd = $ordini["codOrdine"]; ?>
+            <?php foreach($templateParams['ordini'] as $ordini): ?>
+              <?php if(date("Y-m-d H:i:s") >= $ordini['dataConsegna'] && $ordini['arrivato'] == 0): ?>
+                <?php $dbh->setOrderDelivered($ordini['codOrdine']) ?>
+                <?php $codOrd = $ordini['codOrdine']; ?>
                 <?php $dbh->insertNotifica("Ordine  #$codOrd consegnato", "Ordine  #$codOrd consegnato all'indirizzo di destinazione. Clicca qui per verdere i dettaglia","archivio-Ordini.php", date("Y-m-d H:i:s"), 0, $_SESSION['email']);?>
               <?php endif; ?>
             <?php endforeach; ?>
@@ -127,23 +128,23 @@
                     <div class="p-2">
                         <h3>Ordini in transito</h3>
                     </div>
-                    <?php foreach($templateParams["ordiniShip"] as $ordini): ?>
-                        <h4>&ensp;Ordine <?php echo($ordini["codOrdine"]) ?>: </h4>
-                        <?php $templateParams["ordiniShip"] = $dbh->getSpecificOrders($_SESSION["email"], $ordini["codOrdine"]); ?>
-                    <?php foreach($templateParams["ordiniShip"] as $ordine): ?>
+                    <?php foreach($templateParams['ordiniShip'] as $ordini): ?>
+                        <h4>&ensp;Ordine <?php echo($ordini['codOrdine']) ?>: </h4>
+                        <?php $templateParams['ordiniShip'] = $dbh->getSpecificOrders($_SESSION['email'], $ordini['codOrdine']); ?>
+                    <?php foreach($templateParams['ordiniShip'] as $ordine): ?>
                     <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                      <div class="mr-1"><img class="rounded" src="<?php echo UPLOAD_DIR.$ordine["immagine"] ?> " width="120" height="70"></div>
-                      <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold"><?php echo $ordine["titoloQuaOrd"]?></span>
+                      <div class="mr-1"><img class="rounded" src="<?php echo UPLOAD_DIR.$ordine['immagine'] ?> " width="120" height="70"></div>
+                      <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold"><?php echo $ordine['titoloQuaOrd']?></span>
                           <div class="d-flex flex-row product-desc">
                           </div>
                       </div>
                       <div class="d-flex flex-row align-items-center qty">
-                          <h6 class="text-grey mt-1 mr-1 ml-1">&nbsp;QT:<?php echo $ordine["quantita"]?>&nbsp;</h6>
+                          <h6 class="text-grey mt-1 mr-1 ml-1">&nbsp;QT:<?php echo $ordine['quantita']?>&nbsp;</h6>
                       </div>
                       <div>
-                          <h6 class="text-grey mt-1 mr-1 ml-1">$<?php echo $ordine["prezzo"] * $ordine["quantita"]?></h6>
+                          <h6 class="text-grey mt-1 mr-1 ml-1">$<?php echo $ordine['prezzo'] * $ordine['quantita']?></h6>
                       </div>
-                      <div class="d-flex align-items-center"><a href="archivio-Tracciamento.php?titoloq=<?php echo $ordine["titoloQuaOrd"]; ?>"><button class="btn btn-sm btn-outline-secondary">traccia</button></a>&nbsp;
+                      <div class="d-flex align-items-center"><a href="archivio-Tracciamento.php?titoloq=<?php echo $ordine['titoloQuaOrd']; ?>"><button class="btn btn-sm btn-outline-secondary">traccia</button></a>&nbsp;
                       </div>
 
                     </div>
@@ -156,18 +157,18 @@
                     <div class="p-2">
                         <h3>Ordini arrivati</h3>
                     </div>
-                    <?php foreach($templateParams["ordiniArrivati"] as $ordineArrivato): ?>
+                    <?php foreach($templateParams['ordiniArrivati'] as $ordineArrivato): ?>
                     <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                        <div class="mr-1"><img class="rounded" src="<?php echo UPLOAD_DIR.$ordineArrivato["immagine"] ?>" width="120" height="70"></div>
-                        <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold"><?php echo $ordineArrivato["titoloQuaOrd"] ?></span>
+                        <div class="mr-1"><img class="rounded" src="<?php echo UPLOAD_DIR.$ordineArrivato['immagine'] ?>" width="120" height="70"></div>
+                        <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold"><?php echo $ordineArrivato['titoloQuaOrd'] ?></span>
                             <div class="d-flex flex-row product-desc">
                             </div>
                         </div>
                         <div>
-                            <h6 class="text-grey mt-1 mr-1 ml-1">&nbsp;QT: <?php echo $ordineArrivato["quantita"]?>&nbsp;</h6>
+                            <h6 class="text-grey mt-1 mr-1 ml-1">&nbsp;QT: <?php echo $ordineArrivato['quantita']?>&nbsp;</h6>
                         </div>
                         <div>
-                            <h6 class="text-grey">$<?php echo $ordineArrivato["prezzo"] * $ordineArrivato["quantita"]?></h6>
+                            <h6 class="text-grey">$<?php echo $ordineArrivato['prezzo'] * $ordineArrivato['quantita']?></h6>
                         </div>
                     </div>
                     <?php endforeach; ?>  
@@ -194,19 +195,24 @@
             <div class="col-md-3">
                 <h5 class="heading" style="margin-top: 15px;">Pagine</h5>
                 <ul>
-                  <a href="./home2.php"><li>Home</li></a>
-                  <a href="./archivio-quadri.php"><li>Quadri</li></a>
-                  <a href="./archivio-artisti.php"><li>Artisti</li></a>
-                  <a href="./archivio-Categorie.php"><li>Categorie</li></a>
+                  <li><a href="./home2.php">Home</a></li>
+                  <li><a href="./archivio-quadri.php">Quadri</a></li>
+                  <li><a href="./archivio-artisti.php">Artisti</a></li>
+                  <li><a href="./archivio-Categorie.php">Categorie</a></li>
                 </ul>
             </div>
             
             <div class="col-md-3">
                 <h5 class="heading" style="margin-top: 15px;">Utente</h5>
                 <ul class="card-text">
-                    <a href="./Utente.php"><li>Account</li></a>
-                    <a href="./archivio-carrello.php"><li>Carrello</li></a>
-                    <a href="./logout.php"><li>Logout</li></a>              
+                <?php if(isUserLoggedIn()): ?>
+                    <li><a href="./utente2.php">Account</a></li>
+                    <li><a href="./archivio-carrello.php">Carrello</a></li>
+                    <li><a href="./logout.php">Logout</a></li>   
+                    <?php else: ?> 
+                      <li><a href="./login.php">Login</a></li>
+                      <li><a href="./registrazione.php">Registrazione</a></li>
+                    <?php endif; ?> 
                 </ul>
             </div>
         </div>

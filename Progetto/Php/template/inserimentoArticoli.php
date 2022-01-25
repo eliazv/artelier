@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Inserimento Quadri</title>
+    <title>inserimentoArt</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
 
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Custom styles for this template -->
-    <link href="../Css/Style.css" rel="stylesheet">
+    <link href="../Css/InsertArt.css" rel="stylesheet">
   </head>
   <body>
      
@@ -34,7 +34,7 @@
               <?php if(isUserLoggedIn()): ?>
                 <button class="btn btn-default" type="button">
                   <a href="./archivio-carrello.php">
-                  <?php if($templateParams["elemCarrello"][0]["numquadri"]!=0):?>
+                  <?php if($templateParams['elemCarrello'][0]['numquadri']!=0):?>
                     <img src="../Immagini/cart2.png" alt="" style="height:30px"/>
                   <?php else:?>
                       <img src="../Immagini/cart.png" alt="" style="height:30px"/>
@@ -53,7 +53,7 @@
 
                   <a href="./archivio-notifiche.php">
 
-                <?php if($templateParams["notifiche"][0]["num"]!=0):?>
+                <?php if($templateParams['notifiche'][0]['num']!=0):?>
                 <img src="../Immagini/bell2.png" alt="" style="height:30px"/>
                 <?php else:?>
                 <img src="../Immagini/bell.png" alt="" style="height:30px"/>
@@ -82,7 +82,7 @@
                       <li class="nav-item">
                       <?php if(isUserLoggedIn()): ?>
                         <a class="nav-link" href="./utente2.php"><i class="fa fa-fw fa-user"></i> &nbsp; Account</a>
-                        <a class="nav-link" href="./archivio-notifiche.php"><i class="fa fa-bell"></i>&nbsp; Notifiche <span class="badge bg-danger"> <?php echo $templateParams["notifiche"][0]["num"]?></span> </a>
+                        <a class="nav-link" href="./archivio-notifiche.php"><i class="fa fa-bell"></i>&nbsp; Notifiche <span class="badge bg-danger"> <?php echo $templateParams['notifiche'][0]['num']?></span> </a>
                         <a class="nav-link" href="./archivio-carrello.php"><i class="fa fa-shopping-cart"></i> &nbsp; Carrello</a>
                         <a class="nav-link" href="./archivio-categorie.php"> &nbsp; Categorie</a>
                         <a class="nav-link" href="./archivio-artisti.php"> &nbsp; Artisti</a>
@@ -113,11 +113,11 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <h1><br><br>Inserisci Quadro</h1><br>
-            <?php if (isset($templateParams["erroreQuadri"])): ?>
+            <?php if (isset($templateParams['erroreQuadri'])): ?>
               <div class="alert alert-danger" role="alert">
                 <div class="row">
                   <div class="col-8 col-md-6">
-                    <h4><?php echo ($templateParams["erroreQuadri"])?></h4>
+                    <h4><?php echo ($templateParams['erroreQuadri'])?></h4>
                   </div> 
                 </div>
               </div>
@@ -133,8 +133,8 @@
                   <!--<input type="text" class="form-control" id="artista" name="artista">-->
                   <select class="form-select" name="artista" >
                     <option value=""></option>
-                    <?php foreach($templateParams["artisti"] as $artista): ?>
-                    <option value="<?php echo $artista["cognome"]; ?>"><?php echo $artista["nome"]; echo " "; echo $artista["cognome"]; ?></option>
+                    <?php foreach($templateParams['artisti'] as $artista): ?>
+                    <option value="<?php echo $artista['cognome']; ?>"><?php echo $artista['nome']; echo " "; echo $artista['cognome']; ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
@@ -151,8 +151,8 @@
                   <!--<input type="text" class="form-control" id="corrente" name="corrente">-->
                   <select class="form-select" name="corrente" >
                     <option value=""></option>
-                    <?php foreach($templateParams["correnteartistica"] as $categoria): ?>
-                    <option value="<?php echo $categoria["nomeCorrArt"]; ?>"><?php echo $categoria["nomeCorrArt"]; ?></option>
+                    <?php foreach($templateParams['correnteartistica'] as $categoria): ?>
+                    <option value="<?php echo $categoria['nomeCorrArt']; ?>"><?php echo $categoria['nomeCorrArt']; ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
@@ -188,11 +188,11 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <h1><br><br>Inserisci Artista</h1><br>
-            <?php if (isset($templateParams["erroreArtista"])): ?>
+            <?php if (isset($templateParams['erroreArtista'])): ?>
               <div class="alert alert-danger" role="alert">
                 <div class="row">
                   <div class="col-8 col-md-6">
-                    <h4><?php echo ($templateParams["erroreArtista"])?></h4>
+                    <h4><?php echo ($templateParams['erroreArtista'])?></h4>
                   </div> 
                 </div>
               </div>
@@ -234,11 +234,11 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <h1><br><br>Inserisci Categoria</h1><br>
-            <?php if (isset($templateParams["erroreCategoria"])): ?>
+            <?php if (isset($templateParams['erroreCategoria'])): ?>
               <div class="alert alert-danger" role="alert">
                 <div class="row">
                   <div class="col-8 col-md-6">
-                    <h4><?php echo ($templateParams["erroreCategoria"])?></h4>
+                    <h4><?php echo ($templateParams['erroreCategoria'])?></h4>
                   </div> 
                 </div>
               </div>
@@ -298,10 +298,10 @@
             <div class="col-md-3">
                 <h5 class="heading" style="margin-top: 15px;">Pagine</h5>
                 <ul>
-                  <a href="./home2.php"><li>Home</li></a>
-                  <a href="./archivio-quadri.php"><li>Quadri</li></a>
-                  <a href="./archivio-artisti.php"><li>Artisti</li></a>
-                  <a href="./archivio-Categorie.php"><li>Categorie</li></a>
+                  <li><a href="./home2.php">Home</a></li>
+                  <li><a href="./archivio-quadri.php">Quadri</a></li>
+                  <li><a href="./archivio-artisti.php">Artisti</a></li>
+                  <li><a href="./archivio-Categorie.php">Categorie</a></li>
                 </ul>
             </div>
             
@@ -309,12 +309,12 @@
                 <h5 class="heading" style="margin-top: 15px;">Utente</h5>
                 <ul class="card-text">
                 <?php if(isUserLoggedIn()): ?>
-                    <a href="./utente2.php"><li>Account</li></a>
-                    <a href="./archivio-carrello.php"><li>Carrello</li></a>
-                    <a href="./logout.php"><li>Logout</li></a>   
+                    <li><a href="./utente2.php">Account</a></li>
+                    <li><a href="./archivio-carrello.php">Carrello</a></li>
+                    <li><a href="./logout.php">Logout</a></li>   
                     <?php else: ?> 
-                      <a href="./login.php"><li>Login</li></a>
-                      <a href="./registrazione.php"><li>Registrazione</li></a>
+                      <li><a href="./login.php">Login</a></li>
+                      <li><a href="./registrazione.php">Registrazione</a></li>
                     <?php endif; ?> 
                 </ul>
             </div>
