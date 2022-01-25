@@ -108,7 +108,7 @@
         </header>
 <main>
 
-<h1 id="categorie"><br>Categorie</h1>
+<h1 id="categorie" style="padding-left: 10px"><br>Categorie</h1>
 <div class="row">
   
 <?php foreach($templateParams["correnteartistica"] as $categoria): ?>
