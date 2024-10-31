@@ -1,3 +1,8 @@
+# Artelier
+Negozio online di opere d'arte. 
+L'applicazione è stata implementata con lo stack WAMP (Windows, Apache, MySQL, PHP) e Bootstrap per il design front-end.
+
+## Avvio
 1. Apri XAMPP 
 2. Avvia apache e MySQL
 3. Clicca su MySQL admin
